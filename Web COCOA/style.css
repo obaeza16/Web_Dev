@@ -1,0 +1,84 @@
+body {
+    background-color: grey;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 1024px;
+    margin: auto;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    justify-content: left;
+    width: 300px;
+    height: 66px;
+}
+
+.banner {
+    padding: 10px 0px;
+}
+
+.border {
+    background-color:  rgb(177, 177, 177);
+    border-radius: 25px;
+    background:  rgb(177, 177, 177);
+    padding: 20px 0px;
+}
+
+.button {
+    padding: 0;
+    float: right;
+}
+
+.button li {
+    display: inline;
+}
+
+.button li a {
+    font-size: 13px;
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    background-color: #ff00ea;
+    color: rgb(24, 5, 54);
+}
+
+.button li a:hover {
+    background-color: #ffc5fc;
+    margin-top: -2;
+    padding-bottom: 10px;]
+}
+
+.header {
+    padding-bottom: 20px;
+}
+
+.title h2 {
+    display: inline-block;
+    text-align: center;
+}
+
+.title {
+    padding-top: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lorem {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    text-align: justify;
+}
+
+.footer {
+    justify-content: space-between;
+    padding-left: 10px;
+}

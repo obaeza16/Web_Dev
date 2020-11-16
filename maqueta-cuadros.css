@@ -1,0 +1,124 @@
+/* Modificaciones Generales */
+
+body {
+    margin: auto;
+    max-width: 80vw;
+    background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg");
+}
+
+div {
+    vertical-align: top;
+    height: 250px;
+    width: 250px;
+    background-color: grey;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+}
+
+div.trumpo {
+    background-color: rgba(44, 224, 20, 0.712);
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/250x250.png");
+}
+
+.blue {
+    background-color: steelblue;
+}
+
+.rotate {
+    transform: skew(10deg);
+}
+
+.rotate2 {
+    transform: skew(-10deg);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Modificaciones Texto */
+
+.left {
+    text-align: left;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.large {
+    font-size: large;
+}
+
+.rigth {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.versalite {
+    font-variant: small-caps;
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+.weirdletters {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Modificaciones Bordes */
+
+.strongborder {
+    padding: 5px;
+    border: indigo;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.smallborder {
+    border: firebrick;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.imageborder1 {
+    border-image: url(./img/bluewave.jpeg) repeat;
+    border-style: solid;
+    border-width: 30px;
+    padding-top: 0px;
+}
+
+.border {
+    border-style: dashed;
+    border-radius: 10px;
+    border-color: rgba(44, 224, 20, 0.712);
+    border-width: 10px;
+}
+
+.shadow1 {
+    box-shadow: 15px 10px 20px 10px gold;
+}
+
+.shadow2 {
+    box-shadow: 5px 10px black;
+}
+
+.shadow3 {
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,212,255,0.40667604932598034) 100%);
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    background: red;
+    border-radius: 50%;
+}

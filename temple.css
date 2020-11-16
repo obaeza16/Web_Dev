@@ -1,0 +1,46 @@
+body {
+    width: 1024px;
+    margin: auto;
+}
+
+.img {
+    background-image: url(./img/panteon.jpg);
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    width: 722px;
+    height: 480px;
+    margin: 100px auto;
+}
+
+
+.title{
+    text-align: center;
+    padding: 55px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  */
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2em;
+    width: 350px;
+    height: 250px;
+    margin: auto;
+    padding-bottom: 40px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.text {
+    overflow: auto;
+    font-size: smaller;
+    width: 100px;
+    height: 180px;
+}

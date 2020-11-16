@@ -1,0 +1,51 @@
+/* Made by Óscar Baeza */
+
+body {
+    margin: auto;
+    max-width: 800px;
+    margin-top: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+div {
+    margin: 0px;
+}
+
+div.header {
+    margin-bottom: 0px;
+    height: 129px;
+}
+
+div.title {
+    background-color: rgb(16, 40, 66);
+    color: white;
+    margin-top: 0px;
+}
+
+h1.title {
+    margin: 0px 100px;
+    text-align: center;
+    padding: 10px;
+}
+
+div.text {
+    margin: 0px;
+    background: linear-gradient(180deg, rgba(16,40,66,1) 16%, rgba(68,80,96,1) 68%);
+    color: white;
+    padding: 30px;
+}
+
+p {
+    padding: 10px;
+}
+
+div.copy {
+    text-align: center;
+    padding: 15px;
+    padding-top: 5px;
+}
+
+div.last {
+    padding-bottom: 25px;
+}
+

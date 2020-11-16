@@ -1,0 +1,109 @@
+body {
+    margin: auto;
+    width: 1024px;
+    padding-top: 20px;
+    font-family: shrimp;
+    background: rgb(0,255,25);
+    background: radial-gradient(circle, rgba(0,255,25,1) 0%, rgba(255,255,255,1) 54%, rgba(255,0,0,1) 98%);  
+    /* background-repeat: no-repeat; */
+}
+
+@font-face {
+    font-family: shrimp;
+    src: url(./res/SHRIMP.ttf);
+}
+
+.title {
+    display: flex;
+    justify-content: left;
+    font-size: larger;
+}
+
+li {
+    display: inline-block;
+}
+
+ul {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.menu a {
+    padding: 5px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+}
+
+.menu a:hover {
+    color: rgba(255, 0, 0,100);
+}
+
+.text1 {
+    padding-bottom: 5px;
+    text-align: justify;
+}
+.text2 {
+    padding-bottom: 5px;
+    text-align: justify;
+}
+.text3 {
+    padding-bottom: 5px;
+    text-align: justify;
+}
+.text4 {
+    padding-bottom: 5px;
+    text-align: justify;
+}
+.text5 {
+    padding-bottom: 5px;
+    text-align: justify;
+}
+
+.flag {
+    display: block;
+    float: right;
+    padding: 10px;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+
+h2 {
+    background-color: aqua;
+    padding: 0px 8px;
+    text-align: right;
+}
+
+.coast {
+    display: block;
+    float: left;
+    padding: 15px;
+    padding-left: 0px;
+}
+
+.globe {
+    display: block;
+    float: left;
+    padding: 10px 25px;
+}
+
+.footer {
+    padding: 15px 0px 25px 0px;
+}
+
+.copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+   -moz-transform: scaleX(-1);
+   -o-transform: scaleX(-1);
+   -webkit-transform: scaleX(-1);
+   transform: scaleX(-1);
+   filter: FlipH;
+   -ms-filter: "FlipH";
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+}

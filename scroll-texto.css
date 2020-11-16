@@ -1,0 +1,18 @@
+body {
+    background-image: url("https://as01.epimg.net/showroom/imagenes/2019/03/18/portada/1552864656_485380_1552900645_noticia_normal.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.text {
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1em;
+    height: 100px;
+    width: 500px;
+}

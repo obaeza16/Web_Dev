@@ -1,0 +1,37 @@
+body {
+    margin: auto;
+    width: 1024px;
+    padding-top: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.derecha {
+    padding: 10px;
+    margin: 75px 20px;
+}
+
+.izquierda {
+    padding: 50px 0px;
+    border-right: black;
+    border-right-style: solid;
+    border-right-width: 2px;
+}
+
+a {
+    display: block;
+    margin: 15px;
+}
+
+.img {
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+img {
+    margin: 5px;
+    padding: 10px;
+}

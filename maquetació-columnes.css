@@ -1,0 +1,25 @@
+body {
+    background-image: url("./img/fondos3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 80vw;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px; */
+}
+
+.container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.general_text {
+    column-count: 3;
+    column-gap: 35px;
+    column-width: 210px;
+}
