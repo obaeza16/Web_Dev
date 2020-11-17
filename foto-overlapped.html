@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Overlapeada</title>
+    <style>
+        body {
+            width: 1024px;
+            display: flex;
+            margin: 10px auto;
+        }
+        
+        .color {
+            width: 450px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            display: flex;
+            position: relative;
+        }
+        
+        .yellow {
+            background-color: darkolivegreen;
+            position: relative;
+        }
+        
+        .red {
+            background-color: royalblue;
+            position: relative;
+        }
+        
+        .img {
+            position: absolute;
+            top: 200px;
+            left: 285px;
+        }
+        
+        .blue {
+            background-color: teal;
+            position: relative;
+        }
+        
+        .green {
+            background-color: yellowgreen;
+            position: relative;
+        }
+        
+        div.color:hover {
+            filter: brightness(180%);
+            z-index: 100;
+            -webkit-transition:all 0.2s ease-in-out;
+            transition:all 0.2s ease-in-out;
+        }
+        
+        p:hover {
+            text-shadow: 2px 2px 10px #ffffff;
+            filter: dropshadow(color=#ffffff, offx=2, offy=2);
+            -webkit-transition:all 0.2s ease-in-out;
+            transition:all 0.2s ease-in-out;
+        }
+        
+        div.img:hover .special {
+            display: block;
+        }
+        
+        p {
+            display: flex;
+            justify-content: center;
+            margin: 0px;
+            width: 180px;
+        }
+        
+        .special {
+            display: none;
+            position: relative;
+            top: -166px;
+            left: 95px;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="yellow color"><p>Amazing kitten OMG !!!1!</p></div>
+            <div class="red color"><p>Amazing kitten OMG !!!1!</p></div>
+        </div>
+        <div class="bottom">
+            <div class="blue color"><p>Amazing kitten OMG !!!1!</p></div>
+            <div class="green color"><p>Amazing kitten OMG !!!1!</p></div>
+        </div>
+        <div class="img">
+            <img src='http://placekitten.com/300/300' alt=''/>
+            <p class="special">This is a GATITO</p>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

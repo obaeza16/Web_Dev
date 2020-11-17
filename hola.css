@@ -12,8 +12,7 @@ p#esp {
 }
 
 div#arriba {
-    /* margin: 2em 2em; */
-    margin-top: 1em;
+    margin: 1em;
 }
 
 .wiki {
@@ -32,6 +31,14 @@ p.lorem {
 
 .youtube {
     max-height: 1080px;
+}
+
+.oculto {
+    display: none;
+}
+
+.tocar:hover .oculto {
+    display: block;
 }
 
 body {
