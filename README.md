@@ -11,6 +11,10 @@ https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fobaeza16%2FWeb
 Estos son los archivos que he ido generando al largo del curso de Front-End Developer (SINGULARS 2020) en PIMEC.
 Este README irá evolucionando a lo largo del curso.
 
+## Apuntes
+
+Los apuntes se puden ver en Apuntes.html. Están enlazados con todos los ejercicios que hemos relalizado en este curso.
+
 ## Copyright
 
 &copy; Copyright 2020 Óscar B. F.
