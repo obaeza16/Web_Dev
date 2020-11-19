@@ -6,15 +6,14 @@ https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fobaeza16%2FWeb
 
 # Web_Dev README
 
+## Qué es este repo?
+
 Estos son los archivos que he ido generando al largo del curso de Front-End Developer (SINGULARS 2020) en PIMEC.
-Este README irá evolucionando a lo largo del curso
+Este README irá evolucionando a lo largo del curso.
 
+## Copyright
 
-
-
-## Copyrigth
-
-Copyright 2020 Óscar B. F.
+&copy; Copyright 2020 Óscar B. F.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
