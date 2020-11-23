@@ -28,7 +28,6 @@ body {
     display: inline-block;
     font-size: 17px;
     margin: 10px;
-    /* transition-duration: 0.4s; */
     border-radius: 2px;
 }
 
@@ -58,12 +57,8 @@ body {
     font-size: 17px;
 }
 
-.menu ul li {
+.menu ul li:not(:last-of-type) {
     border-right: 1px solid white;
-}
-
-.menu ul li:last-of-type {
-    border-right: none;
 }
 
 .menu ul li a:hover {
