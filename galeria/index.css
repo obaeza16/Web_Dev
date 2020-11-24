@@ -1,0 +1,165 @@
+@font-face {
+    font-family: roboto;
+    src: url("./res/Roboto-Thin.ttf");
+}
+
+*{
+    font-family: roboto;
+    margin: 0;
+}
+
+.body {
+    width: 1024px;
+}
+
+.title {
+    background-image: url(./img/mr.robot-banner.jpg);
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.sticky {
+    position: sticky;
+    top: 10px;
+    overflow: hidden;
+}
+
+.basic {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu {
+    width: 200px;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu ul li a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.menu ul li a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.menu ul li a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.cuerpo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.content {
+    width: 700px;
+    padding: 25px;
+}
+
+.central {
+    display: flex;
+    padding-top: 30px;
+}
+
+.texto {
+    width: 75%;
+}
+
+.texto img {
+    float: right;
+    padding-left: 10px;
+}
+
+.central .enlaces {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: inline-grid;
+    width: 400px;
+    grid-template-columns:  100px 100px 100px 100px;
+    grid-template-areas: 
+    'div1 div2 div2 div2' 
+    'div1 div2 div2 div2' 
+    'div1 div4 div5 div5' 
+    'div6 div4 div8 div8' 
+    'div6 div4 div8 div8' 
+    'div7 div7 div8 div8';
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.enlaces_ {
+    position: relative;
+    clear: both;
+}
+
+.grid div{
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.grid div img {
+    width: 100%;
+    height: 100%;
+}
+
+.div1{
+    grid-area: div1;
+}
+.div2{
+    grid-area: div2;
+}
+.div4{
+    grid-area: div4;
+}
+.div5{
+    grid-area: div5;
+}
+.div6{
+    grid-area: div6;
+}
+.div7{
+    grid-area: div7;
+}
+.div8{
+    grid-area: div8;
+}
+
+.rrss {
+    width: 100%;
+}
+
+.contenido {
+    width: 700px;
+    padding: 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0px;
+    width: 100%;
+    height: 40px;
+    background-color: #132729;
+    color: white;
+}
