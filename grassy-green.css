@@ -1,0 +1,120 @@
+@font-face {
+  font-family: roboto;
+  src: url(./res/Roboto/Roboto-Regular.ttf);
+}
+
+* {
+  font-family: roboto;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+}
+
+.line {
+  width: 100%;
+  margin: 0%;
+}
+
+.nav {
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(41, 255, 0, 60);
+  position: sticky; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  opacity: 0.5;
+}
+
+ul {
+  margin: 0%;
+}
+
+.nav a {
+  padding: 20px;
+  text-decoration: none;
+}
+
+.nav li {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.nav a:hover {
+  background: rgb(27, 95, 0);
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.title {
+  background-color: #43464b;
+  color: white;
+  height: 200px;
+  text-align: center;
+}
+
+.title h1 {
+  margin: 0px;
+  padding: 50px 5px;
+  padding-bottom: 0px;
+}
+
+.banner {
+  background-image: url(./img/grass.jpg);
+  width: 100%;
+  height: 400px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.content {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  text-align: justify;
+  padding: 15px;
+}
+
+.der {
+  width: 70%;
+}
+
+.izq {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 35px;
+}
+
+.izq a {
+  width: 100px;
+}
+
+.grey {
+  background-color: #43464b;
+  color: white;
+  height: 250px;
+  display: flex;
+}
+
+.column {
+  width: 33%;
+  padding: 10px;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
