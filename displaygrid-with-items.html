@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Test</title>
+    <style>
+
+        .grid {
+            display: grid;
+            margin: auto;
+            width: 1024px;
+            grid-template-columns:  200px 200px 200px 200px;
+            grid-template-areas: 
+            'div1 div2 div2 div2 div2 div3' 
+            'div1 div2 div2 div2 div2 div3' 
+            'div1 div4 div4 div5 div5 div3' 
+            'div6 div4 div4 div8 div8 div3' 
+            'div6 div4 div4 div8 div8 div3' 
+            'div7 div7 div7 div8 div8 div3';
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+
+        .grid div{
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .grid div p {
+            font-size: .8rem;
+        }
+
+        .grid div h2 {
+            font-size: .8rem;
+        }
+
+        .grid div img {
+            width: 90%;
+            height: 40px;
+        }
+
+        .div1{
+            grid-area: div1;
+        }
+        .div2{
+            grid-area: div2;
+        }
+        .div3{
+            grid-area: div3;
+        }
+        .div4{
+            grid-area: div4;
+        }
+        .div5{
+            grid-area: div5;
+        }
+        .div6{
+            grid-area: div6;
+        }
+        .div7{
+            grid-area: div7;
+        }
+        .div8{
+            grid-area: div8;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="div1">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div2">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div3">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div4">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div5">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div6">
+           <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div7">
+            <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+        <div class="div8">
+            <img src='http://placeskull.com/100/40' alt=''/>
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, voluptate corrupti enim aut rerum, quos ipsa assumenda odio quidem blanditiis quo obcaecati ullam fugiat, mollitia ipsam inventore officia delectus consectetur maiores sequi itaque in minima soluta. Sed voluptate eveniet nam!</p>
+        </div>
+    </div>
+</body>
+</html>

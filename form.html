@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari 1</title>
+    <style>
+        form label {
+            width: 150px;
+            height: 40px;
+            display: inline-block;
+        }
+        
+        form fieldset {
+            width: 500px;
+            margin: 20px;
+        }
+        
+        input, select, textarea {
+            background-color: #bde9ba;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Formulari 1</h2>
+        <form>
+            <fieldset>
+                <legend>Part 1</legend>
+                <label for="entrega">Data d'entrega</label>
+                <input type="date" id="entrega"><br>
+                
+                <label for="exercici">Nom de l'exercici</label>
+                <input type="text" name="exercici" placeholder="Nom del exercici"><br>
+                
+                <label for="completat">Exercici finalitzat</label>
+                <input type="checkbox" name="completat"><br>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Part 2</legend>
+                <label for="comments">Descripció de l'exercici</label>
+                <textarea type="desc" placeholder="Descriu el teu exercici"></textarea><br>
+                
+                <label for="nota">Escull una nota:</label>
+                <select name="nota">
+                    <option value="0">Zero</option>
+                    <option value="1">Un</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                    <option value="4">Cuatre</option>
+                </select><br>
+                
+                <label for="gender">Introdueix genere:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br>
+            </fieldset>
+            
+            <button>Enviar</button><br>
+            
+            <input type="image" src="./img/bluewave.jpeg" alt="Submit" style="float:right" width="48" height="48">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
