@@ -1,198 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animaciones</title>
-        <style>
-            body {
-                /* width: 1024px; */
-                /* height: auto; */
-                /* display: inline; */
-                padding: 10px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones</title>
+    <style>
+        body {
+            /* width: 1024px; */
+            height: 50000px;
+            /* display: inline; */
+            padding: 10px;
+        }
+        
+        .div1 {
+            transition: 3s;
+            left: 0px;
+            position: relative;
+        }
+        
+        .div1:hover {
+            left: 20px;
+        }
+        
+        /* DIV 2 */
+        
+        .div2 {
+            display: flex;
+            align-items: center;
+            transition: 3s;
+            position: relative;
+            padding: 10px 0px;
+        }
+        
+        .div2 p {
+            padding: 10px;
+        }
+        
+        .div2:hover p {
+            font-size: 35px;
+            transition: 3s;
+        }
+        
+        .div3 {
+            border: solid 1px #000;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            -webkit-transition: -webkit-transform 0.4s;
+            -moz-transition: -moz-transform 0.4s;
+            -o-transition: -o-transform 0.4s;
+            transition: transform 0.4;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+        
+        .div3 img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            line-height: 260px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 45px;
+            position: absolute;
+            margin: 0;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .front {
+            background: red;
+        }
+        
+        .back {
+            background: blue;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        
+        .div3:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .div4 {
+            margin-top: 330px;
+            width: 300px;
+            background-color: #FFFFFF;
+        }
+        
+        .div4:hover {
+            background-color: #000000;
+            color: white;
+        }
+        
+        .div5 {
+            height: 300px;
+            width: 300px;
+            background-color: mediumorchid;
+            /* float: left; */
+            position: relative;
+            transition: width 0.5s;
+            -webkit-transition: width 0.5s;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .div5:hover {
+            width: 500px;
+        }
+        
+        .div6 {
+            transition: 3s;
+            margin: 10px 0px;
+        }
+        
+        .div6:hover {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        
+        /* DIV 7 */
+        
+        .div7 {
+            transition: 1s;
+        }
+        
+        .div7:hover {
+            transform: translateX(600px) rotateZ(360deg);
+        }
+        
+        /* DIV 8 */
+        
+        .div8 {
+            width: 200px;
+            height: 200px;
+            background-repeat: no-repeat;
+            background-color: mediumorchid;
+            background-image: url(./img/omar.jpg);
+            background-position-y: 200px;
+            transition: 1s;
+        }
+        
+        .div8:hover {
+            background-position-y: 0;
+        }
+        
+        
+        
+        /* input {
+            
+            display: none;
+            background-color: black;
+        }
+        
+        input[type="checkbox"]:checked + div {
+            animation: bounce linear 5s;
+        } */
+        
+        .ball{
+            position: relative;
+            float: left ;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            /* border-radius: 50%;
+            background-image: linear-gradient(45deg, #F58A07, #909CC2, white); */
+            background-color: red;
+            margin-top: 10px;
+        }
+
+        .ball:hover {
+            animation-name: bounce;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes bounce{
+            0% {
+                top: 0px
             }
-
-            .div1 {
-                transition: 3s;
-                left: 0px;
-                position: relative;
+            50% {
+                top: 250px;
+                width: 350px;
+                height: 250px;
             }
-
-            .div1:hover {
-                left: 20px;
+            100% {
+                top: 0px;
             }
+        } 
+        
+        /* .bounce:hover {
+            left: 200px;
+            top: 200px;
+            width: 400px;
+            position: relative;
+            transition: 3s;
+        } */
+        
+    </style>
+</head>
 
-            .div2 {
-                transition: 3s;
-                position: relative;
-            }
-
-            /* .div2:hover {} */
-
-            .div3 {
-                border: solid 1px #000;
-                width: 300px;
-                height: 300px;
-                position: absolute;
-                -webkit-transition: -webkit-transform 0.4s;
-                -moz-transition: -moz-transform 0.4s;
-                -o-transition: -o-transform 0.4s;
-                transition: transform 0.4;
-                -webkit-transform-style: preserve-3d;
-                -moz-transform-style: preserve-3d;
-                -o-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-            }
-
-            .div3 img {
-                display: block;
-                height: 100%;
-                width: 100%;
-                line-height: 260px;
-                color: white;
-                text-align: center;
-                font-weight: bold;
-                font-size: 45px;
-                position: absolute;
-                margin: 0;
-                -webkit-backface-visibility: hidden;
-                -moz-backface-visibility: hidden;
-                -o-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-
-            .front {
-                background: red;
-            }
-
-            .back {
-                background: blue;
-                -webkit-transform: rotateY(180deg);
-                -moz-transform: rotateY(180deg);
-                -o-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-            }
-
-            .div3:hover {
-                transform: rotateY(180deg);
-            }
-
-            .div4 {
-                margin-top: 330px;
-                width: 300px;
-                background-color: #FFFFFF;
-            }
-
-            .div4:hover {
-                background-color: #000000;
-                color: white;
-            }
-
-            .div5 {
-                height: 300px;
-                width: 300px;
-                background-color: mediumorchid;
-                /* float: left; */
-                position: relative;
-                transition: width 0.5s;
-                -webkit-transition: width 0.5s;
-                text-align: center;
-                overflow: hidden;
-            }
-
-            .div5:hover {
-                width: 500px;
-            }
-
-            .div6 {
-                transition: 3s;
-                margin: 10px 0px;
-            }
-
-            .div6:hover {
-                opacity: 0;
-                filter: alpha(opacity=0);
-            }
-
-            /* DIV 7 */
-
-            .div7 {
-                transition: 1s;
-            }
-
-            .div7:hover {
-                transform: translateX(600px) rotateZ(360deg);
-            }
-
-            /* DIV 8 */
-
-            .div8 {
-                width: 200px;
-                height: 200px;
-                background-repeat: no-repeat;
-                background-color: mediumorchid;
-                background-image: url(./img/omar.jpg);
-                background-position-y: 200px;
-                transition: 1s;
-            }
-
-            .div8:hover {
-                background-position-y: 0;
-            }
-
-        </style>
-    </head>
-
-    <body>
-
-        <div class="div1">
-            <img src="./img/nature.jpg" alt="">
-        </div>
-
-        <div class="div2">
-            <img src="./img/nature.jpg" alt="">
-            <p>Lorem</p>
-        </div>
-
-        <div class="div3">
-            <img src="./img/nature.jpg" alt="">
-            <img class="back" src="./img/grass.jpg" alt="">
-        </div>
-
-        <div class="div4">
-            <p>I change colors! WOW</p>
-        </div>
-
-        <div class="div5">
-        </div>
-
-        <div class="div6">
-            <img src="./img/nature.jpg" alt="">
-        </div>
-
-        <div class="div7">
-            <img src="./img/nature.jpg" alt="">
-        </div>
-
-        <div class="div8">
-            <p class="text">Omar Olemdo, Profe</p>
-        </div>
-
-        <div class="div9">
-
-        </div>
-        <div class="numbers">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-        </div>
-
-        <div class="div10">
-
-        </div>
-
-    </body>
+<body>
+    
+    <div class="div1">
+        <img src="./img/nature.jpg" alt="">
+    </div>
+    
+    <div class="div2">
+        <img src="./img/nature.jpg" alt="">
+        <p>Animated Text</p>
+    </div>
+    
+    <div class="div3">
+        <img src="./img/nature.jpg" alt="">
+        <img class="back" src="./img/grass.jpg" alt="">
+    </div>
+    
+    <div class="div4">
+    </div>
+    
+    <div class="div5">
+    </div>
+    
+    <div class="div6">
+        <img src="./img/nature.jpg" alt="">
+    </div>
+    
+    <div class="div7">
+        <img src="./img/nature.jpg" alt="">
+    </div>
+    
+    <div class="div8">
+        <p class="text">Omar Olemdo, Profe</p>
+    </div>
+    
+    <!-- <div class="div9">
+        
+    </div>
+    <div class="numbers">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    
+    <div class="div10">
+        
+    </div> -->
+    
+    <div class="ball"></div>
+    
+</body>
 
 </html>
