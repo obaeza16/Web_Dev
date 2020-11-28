@@ -21,7 +21,12 @@ body {
     width:500px;
 }
 
-ul, ol {
+
+.nav {
+    display: flex;
+}
+
+ul {
     list-style:none;
 }
 
@@ -42,13 +47,13 @@ ul, ol {
 }
 
 .nav li ul {
-    display:none;
+    visibility: hidden;
     position:absolute;
     min-width:140px;
 }
 
 .nav li:hover > ul {
-    display:block;
+    visibility: visible;
 }
 
 .nav li ul li {
@@ -58,4 +63,25 @@ ul, ol {
 .nav li ul li ul {
     right:-140px;
     top:0px;
+}
+
+/* FADE IN */
+li.fade ul {
+    opacity: 0;
+}
+
+li.fade:hover ul {
+    opacity: 1;
+    transition:  1s;
+}
+
+/* PERSIANA */
+li.roll ul {
+    overflow: hidden;
+    height: 0px;
+    transition: 1s;
+}
+
+li.roll:hover ul {
+    height: 300px;
 }
