@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Querys</title>
+    
+    <link rel="stylesheet" media="screen" href="styleM.css"> <!--mobile CSS-->
+    <link rel="stylesheet" media="screen and (min-width:800px)" href="styleD.css"> <!--desktop CSS-->
+    
+    <style>
+        #media,#media2,#media3 {
+            width: 200px;
+            height: 300px;
+        }
+        
+        #media {
+            background-color: springgreen;
+        }
+        
+        #media2 {
+            background-color: gold; /* desktop-first */
+        }
+        
+        #media3 {
+            background-color: green; /* mobile first */
+        }
+        
+        @media only screen and (min-width: 900px){
+            #media {
+                background-color: fuchsia;
+            }
+        }
+        
+        @media only screen and (max-width: 800px) { /* es carrega en pantalles més petites de 800px */
+            #media2 {
+                background-color: grey;
+            }
+        }
+        
+        @media only screen and (min-width: 800px) { /* es carrega en pantalles més grans de 800px */
+            #media3 {
+                background-color: royalblue;
+            }
+        } 
+    </style>
+    
+</head>
+<body>
+    <div id="media">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, sint. Obcaecati, delectus asperiores magni omnis fugit dignissimos quis quae amet minima earum officia deleniti dolorem adipisci, consequuntur inventore odio recusandae.</p>
+    </div>
+    <div id="media2">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, sint. Obcaecati, delectus asperiores magni omnis fugit dignissimos quis quae amet minima earum officia deleniti dolorem adipisci, consequuntur inventore odio recusandae.</p>
+    </div>
+    <div id="media3">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, sint. Obcaecati, delectus asperiores magni omnis fugit dignissimos quis quae amet minima earum officia deleniti dolorem adipisci, consequuntur inventore odio recusandae.</p>
+    </div>
+</body>
+</html>

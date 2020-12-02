@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Divs</title>
+    
+    <style>
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        /* @media only screen and (min-width: 600px) {
+            .text {
+                width: 550px;
+            }
+
+            .wrap {
+                width: 550px;
+                height: 500px;
+                flex-wrap: wrap;
+                flex-direction: row; 
+            }
+        } */
+        
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (max-width: 768px) {
+            .text {
+                max-width: 730px;
+            }
+
+            .wrap {
+                width: 350px;
+                /* height: 500px; */
+                /* flex-wrap: wrap; */
+                /* flex-direction: row; */
+                flex-direction: column;
+            }
+        }
+        
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (max-width: 992px) {
+            .text {
+                width: 330px;
+            }
+
+            .wrap {
+                max-width: 700px;
+                /* height: 250px; */
+                /* flex-direction: row; */
+                flex-wrap: wrap;
+            }
+        }
+        
+        .wrap {
+            display: flex;
+            /* width: auto; */
+            /* flex-wrap: nowrap; */
+            /* flex-direction: column; */
+            border: grey solid 2px;
+        }
+
+        .text {
+            background-color: grey;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quas nulla quam quod. Ea voluptatum necessitatibus cupiditate aut qui odit eaque veritatis dolore nostrum nisi itaque, saepe a, et asperiores?</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quas nulla quam quod. Ea voluptatum necessitatibus cupiditate aut qui odit eaque veritatis dolore nostrum nisi itaque, saepe a, et asperiores?</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quas nulla quam quod. Ea voluptatum necessitatibus cupiditate aut qui odit eaque veritatis dolore nostrum nisi itaque, saepe a, et asperiores?</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quas nulla quam quod. Ea voluptatum necessitatibus cupiditate aut qui odit eaque veritatis dolore nostrum nisi itaque, saepe a, et asperiores?</div>
+    </div>
+</body>
+</html>
