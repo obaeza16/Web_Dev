@@ -1,0 +1,145 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+.wrap {
+    width: 100%;
+    background-color: #2E77B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    padding: 15px;
+    padding-top: 0;
+    text-shadow: 2px 2px 5px white;
+}
+
+.header img {
+    padding: 15px;
+}
+
+.menu {
+    min-width: 200px;
+    background-color: #2E77B8;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li a {
+    background-color: #0E4E90; 
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 15px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.menu ul li a:hover {
+    background-color:#01133A;
+    color: white;
+    text-shadow: 2px 2px 5px black; 
+}
+
+.central {
+    display: flex;
+    max-width: 1216px;
+    background-color: #9CCBF2;
+}
+
+.content {
+    margin: 10px;
+    width: 60%;
+    padding: 15px;
+}
+
+.content1 img {
+    float: right;
+    padding: 0 10px;
+    padding-right: 0;
+}
+
+.content2 img {
+    float: left;
+    padding: 0 10px;
+    padding-left: 0;
+}
+
+.lateral {
+    width: 256px;
+    padding: 15px;
+}
+
+.lateral h2 {
+    padding: 10px 10px 10px 0;
+}
+
+.lateral .enlaces {
+ width: 50px;
+}
+
+
+.footer {
+    width: 1200px;
+    height: 60px;
+    background-color: #2E77B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .header {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    h2 {
+        padding: 5px 0;
+    }
+
+    .central {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .content {
+        margin: 0;
+        width: auto;
+        padding: 15px;
+    }
+
+    .content1 img {
+        float: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .content2 img {
+        float: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .lateral {
+        width: auto;
+        padding: 15px;
+        display: block;
+    }
+}
