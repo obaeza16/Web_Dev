@@ -1,74 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gatitos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <style>
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatitos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/40cbc17b5a.js" crossorigin="anonymous"></script>
+  
+  <style>
+    .blue {
+      background-color: #b5ead7;
+    }
+    
+    .pink {
+      background-color: #ffb7b2;
+    }
+    
+    div.text-center {
+      padding: 10px 0px;
+      padding-top: 0;
+    }
+    
+  </style>
+  
 </head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Gatitos</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Menu 1<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Menu 2</a>
-            </li>
-
-          </ul>
+<body>  
+  
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top pink mb-2">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img class="rounded" src='http://placekitten.com/150/150' alt=''/>
+      </a>
+      <h1>
+        Gatitos
+      </h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu 2</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Desplegable
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Menu 3</a>
+              <a class="dropdown-item" href="#">Menu 4</a>
+              <a class="dropdown-item" href="#">Menu 5</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <div class="container mb-2">
+    <div class="row">
+      <div class="blue rounded col-sm-9">
+        <div class="p-0">
+          <!-- TITULO + TEXTOS -->
+          <h2 class="pt-3">All about kittens</h2>
+          <img class="img-fluid rounded float-right pt-3 pl-3 pb-3 pr-0 " src='http://placekitten.com/400/250' alt=''/>
+          <p class="text-justify py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugit distinctio ab! Culpa ipsam cumque incidunt, itaque unde quod eveniet, at eaque nisi tenetur mollitia nemo ullam ab excepturi, beatae possimus nulla doloribus. Nobis sit alias doloremque mollitia, aliquid nemo? Doloremque veniam ipsum velit corrupti? Magnam doloribus soluta odio nam, aliquid numquam ipsum earum placeat inventore! Aperiam laborum minus autem!</p>
+          
+          <p class="text-justify py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugit distinctio ab! Culpa ipsam cumque incidunt, itaque unde quod eveniet, at eaque nisi tenetur mollitia nemo ullam ab excepturi, beatae possimus nulla doloribus. Nobis sit alias doloremque mollitia, aliquid nemo? Doloremque veniam ipsum velit corrupti? Magnam doloribus soluta odio nam, aliquid numquam ipsum earum placeat inventore! Aperiam laborum minus autem!</p>
+          
+          <p class="text-justify py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus possimus distinctio cum eaque, quibusdam, labore libero sunt dolorem inventore repellendus pariatur voluptates animi tempora quisquam! Doloremque quo ipsa laboriosam consectetur ullam assumenda, esse at quisquam reprehenderit earum atque incidunt iusto amet tempore cumque eaque nobis cum, qui ratione sunt magni dolore corporis velit nam. Sint, asperiores libero aliquid aperiam iure rerum voluptate fugit aliquam ut!</p>
         </div>
-      </nav>
+        
+        <!-- PRIMERAS TARJETAS -->
+        <div class="row">
+          <div class="col-sm-8 col-12">
+            <h2>Título</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat blanditiis facilis officiis quibusdam qui neque optio laudantium, quia tempora odit quam earum illo quo quos nesciunt sunt, est, eos tenetur doloribus maiores cum? Officia officiis vel omnis provident praesentium sint eos delectus suscipit consectetur repellendus inventore, necessitatibus impedit tempora optio rem dignissimos debitis ad neque vero iste voluptatem a itaque. Facilis nihil aspernatur eius mollitia nesciunt assumenda eveniet laborum reiciendis incidunt atque cum tenetur dicta, rem totam libero animi numquam. Porro, ad similique ducimus eius, ut et soluta quod nemo eveniet dolorem id perspiciatis reprehenderit. Assumenda et praesentium aliquam nulla at culpa, soluta vitae tenetur qui? Recusandae, ullam ipsam suscipit asperiores voluptatum impedit aliquam quasi eos sit, aut aspernatur natus perspiciatis vitae incidunt odio numquam officiis alias modi sunt quis minus ipsum nihil! Dolor aspernatur saepe similique quidem a, aliquam nisi laboriosam ipsa temporibus dolores natus debitis iure rem aliquid autem. Harum hic, debitis minus eligendi laborum provident commodi molestias nisi nesciunt delectus maxime eius ut temporibus natus eveniet non quae amet soluta blanditiis ipsum.</p>
+          </div>
 
+          <div class="p-1 col-sm-2 col-6" >
+            <div class="bg-white rounded m-1 p-2">
+              <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis doloremque dignissimos dolore natus cum, dolorum magni dolores rerum nulla, necessitatibus inventore, neque voluptatem? Laborum voluptatibus sequi dicta sunt ex?</p>
+              <img class="w-100 m-auto p-1" src='http://placekitten.com/350/200' alt=''/>
+            </div>
+          </div>
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-                <img src='http://placekitten.com/200/150' alt=''/>
-              </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Menu 1
-                      <span class="sr-only">(current)</span>
-                    </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Menu 2</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Desplegable
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Menu 3</a>
-                  <a class="dropdown-item" href="#">Menu 4</a>
-                  <a class="dropdown-item" href="#">Menu 5</a>
-                </div>
-              </li>
-            </ul>
+          <div class="p-1 col-sm-2 col-6">
+            <div class="bg-white rounded m-1 p-2">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis doloremque dignissimos dolore natus cum, dolorum magni dolores rerum nulla, necessitatibus inventore, neque voluptatem? Laborum voluptatibus sequi dicta sunt ex?</p>
+              <img class="w-100 m-auto p-1" src='http://placekitten.com/350/200' alt=''/>
+            </div>
           </div>
         </div>
-      </nav>
-    
+        
+        <!-- SEGUNDAS TARJETAS -->
+        <div class="row">
+          <div class="col-sm-8 col-12">
+            <h2>Título</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat blanditiis facilis officiis quibusdam qui neque optio laudantium, quia tempora odit quam earum illo quo quos nesciunt sunt, est, eos tenetur doloribus maiores cum? Officia officiis vel omnis provident praesentium sint eos delectus suscipit consectetur repellendus inventore, necessitatibus impedit tempora optio rem dignissimos debitis ad neque vero iste voluptatem a itaque. Facilis nihil aspernatur eius mollitia nesciunt assumenda eveniet laborum reiciendis incidunt atque cum tenetur dicta, rem totam libero animi numquam. Porro, ad similique ducimus eius, ut et soluta quod nemo eveniet dolorem id perspiciatis reprehenderit. Assumenda et praesentium aliquam nulla at culpa, soluta vitae tenetur qui? Recusandae, ullam ipsam suscipit asperiores voluptatum impedit aliquam quasi eos sit, aut aspernatur natus perspiciatis vitae incidunt odio numquam officiis alias modi sunt quis minus ipsum nihil! Dolor aspernatur saepe similique quidem a, aliquam nisi laboriosam ipsa temporibus dolores natus debitis iure rem aliquid autem. Harum hic, debitis minus eligendi laborum provident commodi molestias nisi nesciunt delectus maxime eius ut temporibus natus eveniet non quae amet soluta blanditiis ipsum.</p>
+          </div>
 
+          <div class="p-1 col-sm-2 col-6" >
+            <div class="bg-white rounded m-1 p-2">
+              <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis doloremque dignissimos dolore natus cum, dolorum magni dolores rerum nulla, necessitatibus inventore, neque voluptatem? Laborum voluptatibus sequi dicta sunt ex?</p>
+              <img class="w-100 m-auto p-1" src='http://placekitten.com/350/200' alt=''/>
+            </div>
+          </div>
 
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+          <div class="p-1 col-sm-2 col-6">
+            <div class="bg-white rounded m-1 p-2">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis doloremque dignissimos dolore natus cum, dolorum magni dolores rerum nulla, necessitatibus inventore, neque voluptatem? Laborum voluptatibus sequi dicta sunt ex?</p>
+              <img class="w-100 m-auto p-1" src='http://placekitten.com/350/200' alt=''/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- VÍDEOS -->
+      <div class="col-sm-3 col-12 p-0 m-0 mt-3">
+        <div class="blue rounded p-3">
+          <h2>Videos</h2>
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SB-qEYVdvXA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-4by3 mt-3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Muh1m1K3XMw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="embed-responsive embed-responsive-4by3 mt-3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/L6EwZWWRA-U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- AUDIOS -->
+        <div class="blue rounded mt-3 p-3">
+          <h2>Audios</h2>
+          <div class="embed-responsive embed-responsive-4by3 ">
+            <iframe class="embed-responsive-item" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/936968155&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/badbunny15" title="Bad-Bunny" target="_blank" style="color: #cccccc; text-decoration: none;">Bad-Bunny</a> · <a href="https://soundcloud.com/badbunny15/bad-bunny-rosalia-la-noche-de" title="Bad Bunny, ROSALÍA - LA NOCHE DE ANOCHE" target="_blank" style="color: #cccccc; text-decoration: none;">Bad Bunny, ROSALÍA - LA NOCHE DE ANOCHE</a></div>
+          </div>
+          <div class="embed-responsive embed-responsive-4by3 mt-3">
+            <iframe class="embed-responsive-item" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/913090810&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ctangana" title="C. Tangana" target="_blank" style="color: #cccccc; text-decoration: none;">C. Tangana</a> · <a href="https://soundcloud.com/ctangana/tu-me-dejaste-de-querer-feat" title="Tú Me Dejaste De Querer (feat. La Hungara &amp; Niño de Elche)" target="_blank" style="color: #cccccc; text-decoration: none;">Tú Me Dejaste De Querer (feat. La Hungara &amp; Niño de Elche)</a></div>
+          </div>
+          <div class="embed-responsive embed-responsive-4by3 mt-3">
+            <iframe class="embed-responsive-item" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/751071310&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rauwalejandro" title="Rauw Alejandro" target="_blank" style="color: #cccccc; text-decoration: none;">Rauw Alejandro</a> · <a href="https://soundcloud.com/rauwalejandro/tattoo" title="Tattoo" target="_blank" style="color: #cccccc; text-decoration: none;">Tattoo</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- FOOTER -->
+  <div class="container-fluid pink p-4">
+    <div class="container">
+      <p style="margin-bottom: 0;" class="text-center"><i class="fas fa-copyright    "></i> Óscar Baeza - Singulars PIMEC 2020</p>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
