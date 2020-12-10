@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Form 1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+    <style type="text/css">
+        .body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px}
+    </style>
+</head>
+
+<body style="background-color: #ffffff; color: #000000;">
+    <form enctype="multipart/form-data" action="https://form-mailer.dinaserver.com/" method="POST" id ="formGenGdc"">
+        <table width="750px" cellpadding="10" cellspacing="0" border="1" class="todo" background-color="#E5E5E5" bordercolor="#ffffff">
+            <tr>
+                <td colspan="2" height="25">Los campos marcados con '*' son obligatorios.</td>
+            </tr>
+            <tr>
+                <td>* Nombre</td>
+                <td><input type="text" name="nombre" class="todo"  /></td>
+            </tr>
+            <tr>
+                <td>* Cuenta de correo</td>
+                <td><input type="email" name="email" class="todo"  /></td>
+            </tr>
+            <tr>
+                <td>Mensaje</td>
+                <td><br><textarea name="Mensaje" class="todo" rows="8" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td>* Acepto las condiciones</td>
+                <td><input type="checkbox" id="legal" name="textoLegal" class="todo" required />Acepto las <a href="http://www.oscarbaeza.cat/legal.html" target="_blank">condiciones legales</a></td>
+            </tr>
+            <tr>
+                <td>Captcha</td>
+                <td><input type="hidden" value="" id="verificacionOculto" name="verificacionOculto"/><div id="muestraVerificacion"></div>
+                    <input type="text" id="entradaVerificacion" name="entradaVerificacion" />
+                </td>
+            </tr>
+            <td colspan="2">
+                <input type="hidden" name="redirigir" class="" value="http://www.oscarbaeza.cat/gracias.html" />
+                <input type="hidden" name="recipe" class="" value="oscarbaeza@oscarbaeza.cat" />
+                <input type="hidden" name="asunto" class="" value="Envío formulario desde oscarbaeza.cat" />
+                <input type="hidden" name="required" class="" value="nombre;email;textoLegal" />
+                <input type="hidden" name="dominio" class="" value="oscarbaeza.cat" />
+                <input type="hidden" name="idioma" class="" value="es" />
+                <input type="submit" name="enviar" class="" value="Enviar" />
+            </td>
+        </table>
+    </form>
+    <script type="text/javascript">
+        var a = Math.ceil(Math.random() * 10);
+        var b = Math.ceil(Math.random() * 10);
+        var c = a + b;
+        function GenerarCaptcha(){
+            var hidden = document.getElementById("verificacionOculto");
+            var inputField = document.getElementById("entradaVerificacion");
+            var muestra = document.getElementById("muestraVerificacion");
+            muestra.innerHTML = a + " + " + b + " = ";
+            hidden.value = c ;
+        }
+        function ValidarCaptcha(){
+            var inputField = document.getElementById("entradaVerificacion");
+            if (inputField.value == c) return true;
+            else{inputField.style.color="red"; return false;}
+        }
+        GenerarCaptcha();
+    </script>
+    <script type="text/javascript">
+        var legalCheck = document.getElementById("legal");
+        var btnEnviar = document.querySelector("input[name='enviar']");
+        if (legalCheck && btnEnviar){
+            btnEnviar.setAttribute("disabled", "disabled")
+            legalCheck.addEventListener("change", function(event){
+                if (event.target.checked){
+                    btnEnviar.removeAttribute("disabled")
+                }else{
+                    btnEnviar.setAttribute("disabled", "disabled")
+                }
+            });
+        }
+    </script>
+</body>
+</html>
