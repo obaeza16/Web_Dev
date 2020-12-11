@@ -9,15 +9,63 @@
     <script>
         a=3;
         b=4;
-
-// EJERCICO: Queremos invertir los números y printar 
-
+        
+        // EJERCICO: Queremos invertir los números y printar 
+        
         c=b;
         b=a;
         a=c;
-
+        
         console.log(a);
         console.log(b);
+        
+        // condicional if
+        
+        edat = 9
+        
+        if(edat < 7){
+            console.log("TENS MENYS DE 7 ANYS");
+        } else if(edat < 13) { 
+            console.log("TENS MENYS DE 13 ANYS");
+        } else if(edat < 18){
+            console.log("TENS MENYS DE 18 ANYS");
+        } else {
+            console.log("POTS JUGAR AL QUE SIGUI!!!");
+        }
+        
+
+        // EXERCICI SUSPÉS/APROBAT
+
+        nota = 8.5
+
+        if(nota < 5 ){
+            console.log("HAS SUSPÉS, TRY AGAIN");
+        } else if(nota < 6.5) {
+            console.log("HAS APROBAT JUSTET, INTENTA ESTUDIAR MÉS");
+        } else if(nota < 8) {
+            console.log("NO ESTÁ MALAMENT, HAS TRET UN NOTABLE");
+        } else if(nota > 8) {
+            console.log("TENS UN 8, BONA NOTA SEGUEIX AIXI");
+        } else if(nota > 8.9) {
+            console.log("ENHORABONA PEL 9 A L'EXAMEN!");
+        } else {
+            console.log("MATRICULA CRAK!!! ENHORABONA")
+        }
+
+        // EJERCICIOS INTEGER
+
+        var num = parseFloat(prompt("Introdueix el numero que proposes:"));
+
+
+        if(num < 0) document.write("<p>THIS NUMBER IS NEGATIVE</p>"); else if(num > 0) document.write("<p>THIS NUMBER IS POSITIVE</p>"); else document.write("<p>THIS NUMBER IS 0 LITERALLY </p>");
+
+        if(num % 2 == 0) document.write("<p>THIS NUMBER IS EVEN</p>"); else document.write("<p>THIS NUMBER IS ODD KEKW</p>");
+
+        if(num % 5 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 5</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 5 KEKW</p>");
+
+        if(num % 10 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 10</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 10 KEKW</p>");
+
+        if(num < 100) document.write("<p>THIS NUMBER IS SMALLER THAN 100</p>"); else if(num > 100) document.write("<p>THIS NUMBER IS LARGER THAN 100 KEKW</p>"); else document.write("<p>THIS NUMBER IS LITERALLY 100 KEKW</p>");
     </script>
 </body>
 </html>
