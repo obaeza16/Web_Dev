@@ -29,20 +29,33 @@
             width: 50%;
             border-bottom: 1px solid grey;
         }
+
+        .on_hover:hover {
+            background-color: blueviolet !important;
+            color: white;
+        }
+
+        .back_color {
+            background-color: #a4de02;
+        }
+
+        .menu_color {
+            background-color: #76ba1b;
+        }
     </style>
 </head>
 <body>
     
     <!-- HEADER -->
-    <div class="container-fluid bg-success p-3"> 
+    <div class="container-fluid menu_color p-3"> 
         <div class="container">
-            <div class="row title">
+            <div class="row title justify-content-center justify-content-lg-between">
                 <div>
                     <a href="./index.html"><img src="./img/logo.png" class="rounded img-fluid" alt=""></a>
                 </div>
                 
-                <div class="h-100 align-middle">
-                    <a class="d-inline-block " href="mailto:karina@gmail.com" target="_blank"><img src="./img/mail.png" width="50px" alt=""></a> 
+                <div class="h-100 align-middle mt-4 mt-md-0">
+                    <a class="d-inline-block " href="mailto:kbaezortiz@gmail.com" target="_blank"><img src="./img/mail.png" width="50px" alt=""></a> 
                     <a class="d-inline-block " href="https://es-es.facebook.com/" target="_blank"><img width="50px" src="./img/facebook.png" alt=""></a>
                     <a class="d-inline-block " href="https://twitter.com/home" target="_blank"><img width="50px" src="./img/twitter.png" alt=""></a>
                 </div>
@@ -52,17 +65,17 @@
     
     
     <!-- MENU -->
-    <div class="container-fluid bg-warning"> 
+    <div class="container-fluid back_color"> 
         <div class="container">
             <ul class="nav w-50 m-auto row">
-                <li class="col-12 col-md nav-item border-left border-dark">
-                    <a class="text-center nav-link" href="./index.html">Home</a>
+                <li class="col-12 col-md nav-item border border-dark m-1 p-0 ">
+                    <a class="text-center nav-link on_hover" href="./index.html">Home</a>
                 </li>
-                <li class="col-12 col-md nav-item border-left border-right border-dark">
-                    <a class="text-center nav-link" href="./servicios.html">Servicios</a>
+                <li class="col-12 col-md nav-item border border-dark m-1 p-0">
+                    <a class="text-center nav-link on_hover" href="./servicios.html">Servicios</a>
                 </li>
-                <li class="col-12 col-md nav-item border-right border-dark">
-                    <a class="text-center nav-link" href="./blog.html">Blog</a>
+                <li class="col-12 col-md nav-item border border-dark m-1 p-0">
+                    <a class="text-center nav-link on_hover" href="./blog.html">Blog</a>
                 </li>
             </ul>
         </div>
@@ -72,7 +85,7 @@
     <!-- TEXT AND  IMAGE -->
     <div class="container-fluid p-5">
         <div class="container">
-            <img class="w-75 ml-2 rounded float-right img-fluid" src="./img/img (4).jpg" alt="">
+            <img class="w-75 ml-2 rounded float-right img-fluid" src="./img/img (6).jpg" alt="">
             
             <p class="pr-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident voluptatum unde rerum, ducimus, deserunt laudantium sapiente mollitia ea perspiciatis commodi officiis natus a. Earum ex libero, modi ipsam officiis asperiores, repellendus facilis soluta cumque aliquid nihil voluptatibus excepturi delectus. Debitis deleniti error laborum molestias dolores sed totam obcaecati quae exercitationem ad provident cumque, dolor soluta magnam placeat, pariatur voluptatem maiores ullam repellendus ipsum necessitatibus tempora eveniet! Amet alias rerum culpa iste adipisci cum sequi laboriosam quas qui tempore, ex tempora nemo magnam eaque explicabo assumenda reprehenderit nostrum distinctio eveniet sint magni! Ea aut eius aliquam quos temporibus, aperiam facere possimus exercitationem sint, provident nisi minima explicabo. Aspernatur, iure. Explicabo ratione doloribus reiciendis velit sapiente modi cupiditate odio quibusdam eveniet quos incidunt maxime, doloremque necessitatibus minima veritatis qui deserunt nihil nam quo fugit laborum ullam. Ipsum ad ullam consequatur esse sapiente rem exercitationem velit amet quaerat dolor quisquam non impedit, provident voluptate distinctio adipisci ipsa quibusdam ducimus maiores repudiandae excepturi. Eum magnam repellat, consequatur at quos quisquam facilis eos vitae voluptatibus maiores aspernatur aliquam non accusamus dolor soluta eius. Doloribus fugiat dolor non nisi, repudiandae nulla dignissimos impedit ad aliquam odit libero? Veritatis itaque dolorem vero temporibus labore placeat odit ea.</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error beatae officia quia omnis placeat deleniti magnam harum optio fuga perferendis! Dolorem consectetur molestiae aliquid quidem cumque quod repellat. Optio repellendus omnis reprehenderit hic architecto? Dignissimos sit perferendis assumenda error! Molestiae voluptatibus dolorem consequuntur earum minus. Minima esse quia inventore qui dolor quas reiciendis, quos, omnis accusamus in maiores mollitia, veniam deserunt pariatur illo nulla fugiat id perspiciatis provident culpa non ab. Nemo, voluptatibus. Repudiandae ex eum rerum, numquam sint autem expedita odit at magnam natus, voluptatem, quasi assumenda obcaecati laborum cumque odio et! Illum accusamus alias voluptatibus, fuga repudiandae provident!</p>
@@ -119,7 +132,7 @@
     </div>
     
     <!-- FOOTER -->
-    <div class="container-fluid bg-success p-3 mt-5"> 
+    <div class="container-fluid menu_color p-3 mt-5"> 
         <div class="container text-center">
             <a href="./index.html" target="_blank"><img src="./img/logo.png" alt=""></a>
         </div>
