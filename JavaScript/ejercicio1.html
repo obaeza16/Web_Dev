@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/40cbc17b5a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <script>
@@ -33,11 +34,11 @@
             console.log("POTS JUGAR AL QUE SIGUI!!!");
         }
         
-
+        
         // EXERCICI SUSPÉS/APROBAT
-
+        
         nota = 8.5
-
+        
         if(nota < 5 ){
             console.log("HAS SUSPÉS, TRY AGAIN");
         } else if(nota < 6.5) {
@@ -51,31 +52,113 @@
         } else {
             console.log("MATRICULA CRAK!!! ENHORABONA")
         }
-
+        
         // EJERCICIOS INTEGER
+        
+        // var num = parseFloat(prompt("Introdueix el numero que proposes:"));
+        
+        
+        // if(num < 0) document.write("<p>THIS NUMBER IS NEGATIVE</p>"); else if(num > 0) document.write("<p>THIS NUMBER IS POSITIVE</p>"); else document.write("<p>THIS NUMBER IS 0 LITERALLY </p>");
+        
+        // if(num % 2 == 0) document.write("<p>THIS NUMBER IS EVEN</p>"); else document.write("<p>THIS NUMBER IS ODD KEKW</p>");
+        
+        // if(num % 5 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 5</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 5 KEKW</p>");
+        
+        // if(num % 10 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 10</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 10 KEKW</p>");
+        
+        // if(num < 100) document.write("<p>THIS NUMBER IS SMALLER THAN 100</p>"); else if(num > 100) document.write("<p>THIS NUMBER IS LARGER THAN 100 KEKW</p>"); else document.write("<p>THIS NUMBER IS LITERALLY 100 KEKW</p>");
+        
+        // EJERCICIOS COLORES
+        
+        console.log("%cThis is a color testing","color:blue")
+        console.log("%cThis is a color testing","color:blue;font-family:Calibri;font-size:2em;font-style:italic;")
+        console.log("%cThis is a color testing","color:yellow; background-color:red;padding:20px;")
+        console.log("%cThis is a color testing", "background-color: black; color: red; padding: .5em .7em; font-size: 2em");
+        console.log("This is a color testing","color:blue")
+        
+        
+        // SWITCH
+        
+        var color = "vermell"
+        
+        switch(color) {
+            case "vermell":
+            console.log("El foc és vermell")
+        }
+        
+        var dia = new Date();
+        
+        var dia2 = Date();
+        
+        // console.log([dia,dia2])
+        
+        num = (dia.getDay())
+        console.log(dia)
+        
+        switch(num) {
+            case 1:
+            console.log("És dilluns");
+            break;
+            case 2:
+            console.log("És dimarts");
+            break;
+            case 3:
+            console.log("És dimecres");
+            break;
+            case 4:
+            console.log("És dijous");
+            break;
+            case 5:
+            console.log("És divendres");
+            break;
+            case 6:
+            console.log("És dissabte");
+            break;
+            case 7:
+            console.log("És diumenge");
+            break;
+        }
+        
+        // FUNCTIONS
+        
+        // num = (dia.getDay())
+        // console.log(dia)
+        
+        function numtoday(num) {
+            let day;
+            
+            switch (num) {
+                case 1:
+                day = ("És dilluns");
+                break;
+                case 2:
+                day = ("És dimarts");
+                break;
+                case 3:
+                day = ("És dimecres");
+                break;
+                case 4:
+                day = ("És dijous");
+                break;
+                case 5:
+                day = ("És divendres");
+                break;
+                case 6:
+                day = ("És dissabte");
+                break;
+                case 7:
+                day = ("És diumenge");
+                break;
+                default:
+            }
 
-        var num = parseFloat(prompt("Introdueix el numero que proposes:"));
+            return day;
+        }
 
-
-        if(num < 0) document.write("<p>THIS NUMBER IS NEGATIVE</p>"); else if(num > 0) document.write("<p>THIS NUMBER IS POSITIVE</p>"); else document.write("<p>THIS NUMBER IS 0 LITERALLY </p>");
-
-        if(num % 2 == 0) document.write("<p>THIS NUMBER IS EVEN</p>"); else document.write("<p>THIS NUMBER IS ODD KEKW</p>");
-
-        if(num % 5 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 5</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 5 KEKW</p>");
-
-        if(num % 10 == 0) document.write("<p>THIS NUMBER IS MULTIPLE OF 10</p>"); else document.write("<p>THIS NUMBER IS NOT MULTIPLE OF 10 KEKW</p>");
-
-        if(num < 100) document.write("<p>THIS NUMBER IS SMALLER THAN 100</p>"); else if(num > 100) document.write("<p>THIS NUMBER IS LARGER THAN 100 KEKW</p>"); else document.write("<p>THIS NUMBER IS LITERALLY 100 KEKW</p>");
-    
-    // EJERCICIOS COLORES
-
-    console.log("%cThis is a color testing","color:blue")
-    console.log("%cThis is a color testing","color:blue;font-family:Calibri;font-size:2em;font-style:italic;")
-    console.log("%cThis is a color testing","color:yellow; background-color:red;padding:20px;")
-    console.log("This is a color testing","color:blue")
-
-
-    
+        console.log(numtoday(3))
     </script>
+    
+    <h1>Check the console ! </h1>
+    <p><i class="fas fa-comments-dollar"></i></p>
 </body>
 </html>
