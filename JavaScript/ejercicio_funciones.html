@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // FUNCIONS:
+        
+        // tot el que estigui en paréntesis, amb aquesta esturctura:
+        
+        // function name(params) {}
+        
+        C_a_F_console(35);
+        console.log(C_a_F_return(35));
+        
+        console.log('-----------------------------------------------');
+        
+        console.log(saludo("Óscar","dimarts","Brunito"));
+        saludar("Óscar","dimarts","Brunito");
+        
+        console.log('-----------------------------------------------');
+        
+        console.time('ex1') 
+        console.log(convert_temp(20,"C"))
+        console.timeEnd('ex1') 
+        console.time('ex2') 
+        console.log(convert_temp(20,"F"))
+        console.timeEnd('ex2') 
+        
+        
+        // DEFINICION DE FUNCIONES
+        
+        var x,y,sim;
+        
+        function calculadora(x,y,sim) {
+            
+            let result;
+            if (sym == "+") {
+                result = x+y;
+                console.log(`${x} + ${y} són ${result}`);
+            }
+
+            else if (sym == "-") {
+                result = x-y;
+                console.log(`${x} - ${y} són ${result}`);
+            }
+
+            else if (sym == "*") {
+                result = x*y;
+                console.log(`${x} * ${y} són ${result}`);
+            }
+
+            else if (sym == "/") {
+                result = x/y;
+                console.log(`${x} / ${y} són ${result}`);
+            }
+
+            else if (sym == "**") {
+                result = x**y;
+                console.log(`${x} ** ${y} són ${result}`);
+            }
+
+            else if (sym == "%") {
+                result = x%y;
+                console.log(`${x} % ${y} són ${result}`);
+            }
+
+            else {
+                return("Please introduce a valid symbol")
+            }
+        }
+        
+        calculadora(1,1,"+")
+        
+        function C_a_F_console(C) {
+            let temp_F = (C*1.8)+32;
+            console.log(`La temperatura és de: ${temp_F}ºF.`);
+        }
+        
+        function C_a_F_return(C) {
+            let temp_F = (C*1.8)+32;
+            return(`La temperatura és de: ${temp_F}ºF.`);
+        }
+        
+        
+        function saludo(nom,dia,mascota) {
+            return `Una abraçada a ${nom}, que estima molt la seva mascota ${mascota}. Avui és ${dia}, per cert. :)`;
+        }
+        
+        function saludar(nom,dia,mascota) {
+            console.log(`Una abraçada a ${nom}, que estima molt la seva mascota ${mascota}. Avui és ${dia}, per cert. :)`);
+        }
+        
+        
+        function convert_temp(temp,mode) {
+            
+            let tempi = temp
+            
+            if (mode == "C") {
+                let temp_F = ((temp * 9/5)+32).toFixed(2);
+                return(`${tempi}ºC són ${temp_F}ºF.`);
+                
+            } else if (mode == "F") {
+                let temp_C = ((temp - 32) * 5/9).toFixed(2);
+                return(`${tempi}ºF són ${temp_C}ºC.`);
+                
+            } else {
+                return("Please intoduce a mode between \"F\" for F to C or \"C\" for C to F")
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
