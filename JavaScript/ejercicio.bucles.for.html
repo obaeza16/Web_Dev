@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loops</title>
+</head>
+<body>
+    <script>
+        
+        for (let i = 0; i <= 10; i++) {
+            // aquí el teu codi (ha de mostrar a la consola la taula de multiplicar del 3)
+            console.log("3 multiplicat per " + i + " és " + i*3);
+        }
+        
+        
+        // bucle de 0 a 100 que avise con un alert() en el 50 y en el 100
+        
+        for (let i = 0; i <= 100; i++) {
+            if (i == 50) alert("We have arrived to 50")
+            else if (i == 100) alert("We have arrived to 100")
+        }
+        
+        // Bucle que nomes mostri el numeros parells del 0 al 10
+        
+        for (let i = 0; i <= 10; i++) {
+            if (i % 2 == 0) console.log(i);           
+            // else if (i % 2 != 0) console.log(i);
+        }
+        
+        // Recorre números muestra el seleccionado (con un prompt) de manera diferente (con CSS) en la consola
+        var num = prompt("selecciona un número del 1 al 10:");
+        var css = "color: red; font-size: 40px; background-color: yellow; padding : 10px;";
+        
+        for (let i = 0; i <= 10; i++) {
+            if (i == num) console.log("%c%s",css,i);
+            else console.log(i)
+        }
+        
+        console.log('%c\uD83D\uDE09 Giant Rainbow Text!', 
+        'font-weight:bold; font-size:50px;color:red; ' +
+        'text-shadow:3px 3px 0 red,6px 6px 0 orange,9px 9px 0 yellow, ' +
+        '12px 12px 0 green,15px 15px 0 blue,18px 18px 0 indigo,21px 21px 0 violet');
+        
+        console.log("-------------------------");
+        // Totes les taules separades, del 1 al 9:
+        for (let i = 0; i <= 10; i++) {
+            for (let index = 0; index <= 10; index++) {
+                console.log(`${i} multiplicat per ${index} és: ${i*index}`);
+            }
+            console.log("-------------------------");
+        }
+        
+    </script>
+</body>
+</html>
