@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Things</title>
+</head>
+<body>
+    <script>
+        var nombre = "Óscar Baeza Francisoud"
+        
+        console.log(nombre.length)
+        
+        console.log(nombre.substring(12))
+        
+        console.log(nombre[12])
+        
+        console.log(nombre.substring(6,11))
+        
+        // ---------------------------------------
+        
+        // Exercici Noms i Cognoms. S'introdueix string de tres paraules i les torna per separat amb la primera lletra en majuscules
+        
+        var nom1, nom2, nom3
+        var nom = prompt("Introdueix el nom i cognoms separats per un espai:");
+
+        // nom = nom.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase()); // Para capitalizar primera letra
+        
+        var old = nom.split(" ");
+        nom1 = (old[0])
+        nom2 = (old[1])
+        nom3 = (old[2])   
+        
+        nom1 = capitalize(nom1)
+        nom2 = capitalize(nom2)
+        nom3 = capitalize(nom3)
+        
+        console.log(`Nom: ${nom1}, Primer cognom: ${nom2}, Segon cognom: ${nom3}`);
+        
+        
+
+        function capitalize(s) {
+            return s.charAt(0).toUpperCase() + s.slice(1)
+        }
+    </script>
+</body>
+</html>
