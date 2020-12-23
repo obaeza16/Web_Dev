@@ -1,63 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While Loops</title>
-</head>
-<body>
-    
-    <script>
-        
-        var i = 0;
-        console.log("Bucle while");
-        while (i<10) {  
-            i ++;
-            console.log("While" + i);
-        }
-        
-        console.log("-------------------------");
-        console.log("-------------------------");
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>While Loops</title>
+	</head>
+	<body>
+		<script>
+			var i = 0;
+			console.log("Bucle while");
+			while (i < 10) {
+				i++;
+				console.log("While" + i);
+			}
 
-        // recorre números y muestra el seleccionado (con un prompt) de manera diferente (con CSS) en la consola
-        
-        var num = prompt("selecciona un número del 1 al 10:");
-        var css = "color: red; font-size: 40px; background-color: yellow; padding : 10px;";
-        
-        var index = 0;
-        while (index <= 10) {
-            if (index == num) console.log("%c%s",css,index);
-            else console.log(index);
-            index ++;
-        }
+			console.log("-------------------------");
+			console.log("-------------------------");
 
-        console.log("-------------------------");
-        console.log("-------------------------");
+			// recorre números y muestra el seleccionado (con un prompt) de manera diferente (con CSS) en la consola
 
-        // Tablas de multiplicar separadas (del 1 al 9)
-        
-        var tabla = 0;
-        while (tabla <= 10) {
-            var numero = 0;
-            while (numero <= 10) {
-                console.log(`${tabla} multiplicado por ${numero} és: ${tabla*numero}`);
-                numero ++;
-            }
-            tabla ++;
-            console.log("-------------------------");
-        }            
-        console.log("-------------------------");
-        console.log("-------------------------");
+			var num = prompt("selecciona un número del 1 al 10:");
+			var css =
+				"color: red; font-size: 40px; background-color: yellow; padding : 10px;";
 
-        // muestra los números pares del 0 al 20
-        
-        pares = 0;
-        while (pares <= 20) {
-            if (pares % 2 == 0) console.log(pares);
-            pares ++;
-        }
-        
-    </script>
-    
-</body>
+			var index = 0;
+			while (index <= 10) {
+				if (index == num) console.log("%c%s", css, index);
+				else console.log(index);
+				index++;
+			}
+
+			console.log("-------------------------");
+			console.log("-------------------------");
+
+			// Tablas de multiplicar separadas (del 1 al 9)
+
+			var tabla = 0;
+			while (tabla <= 10) {
+				var numero = 0;
+				while (numero <= 10) {
+					console.log(
+						`${tabla} multiplicado por ${numero} és: ${tabla * numero}`
+					);
+					numero++;
+				}
+				tabla++;
+				console.log("-------------------------");
+			}
+			console.log("-------------------------");
+			console.log("-------------------------");
+
+			// muestra los números pares del 0 al 20
+
+			pares = 0;
+			while (pares <= 20) {
+				if (pares % 2 == 0) console.log(pares);
+				pares++;
+			}
+
+			console.log("-------------------------");
+			console.log("-------------------------");
+
+			// calcular potències (sense usar ** ni Math.pow())
+
+			var a = 3;
+			var b = 5;
+
+			console.log(`${a} elevat a ${b} és ${potencia(a, b)}`);
+
+			// definiu aquí la funció
+
+			function potencia(base, exponente) {
+				var total = 1;
+				let i = 1;
+				while (i <= exponente) {
+					total *= base;
+					i++;
+				}
+				return total;
+			}
+
+			// calcular factorial (N!)
+
+			var c = 7;
+
+			console.log(`${c} factorial (${c}!) és ${factorial(c)}`);
+
+			// definiu aquí la funció
+
+			function factorial(num) {
+				var factor = 1;
+				let i = 1;
+				while (i <= num) {
+					factor *= i;
+					i++;
+				}
+				return factor;
+			}
+
+			function oscar_guapo(a) {}
+		</script>
+	</body>
 </html>
