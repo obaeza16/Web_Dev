@@ -148,14 +148,15 @@
 			function poligon(costat, costats) {
 				if (costats == 3) {
 					per = 3 * costat;
-					are =
+					are = (Math.sqrt(3) / 4) * costat ** 2;
 				} else if (costats == 4) {
 					per = 4 * costat;
 					are = costat ** 2;
 				} else {
 					per = costat * costats;
-					are =
 				}
+				console.log(``);
+				return;
 			}
 
 			poligon(costat, costats);
@@ -166,6 +167,43 @@
 			// amb tota la informació per pintar-la en un console.log()
 
 			// TODO: defineix la funció botiga()
+			function botiga() {
+				let item = prompt("Quin ítem vols? Samarreta, pantaló o barret?");
+				tallas = ["S", "M", "L", "XL"];
+				tipo = ["Copa", "Pirata", "Gorra", "Llana"];
+
+				if (item == "Samarreta" || item == "Pantaló") {
+					let color = prompt(`Escull quin color de ${item} vols:`);
+					let talla = prompt(`Escull quina talla de ${item} desitges:`);
+
+					if (tallas.includes(talla)) {
+						console.log(`Has seleccionat la talla ${talla}`);
+						return `Has demanat un ${item} color ${color}, talla ${talla}`;
+					} else {
+						console.log("Siusplau intodueix una talla vàlida: (S, M, L, XL)");
+					}
+				} else if (item == "Barret") {
+					let tipus = prompt("Escull quin tipus de barret vols:");
+					let talla = prompt(`Escull quina talla de ${item} desitges:`);
+
+					if (tallas.includes(talla)) {
+						console.log(`Has seleccionat la talla ${talla}`);
+					} else {
+						console.log("Siusplau intodueix una talla vàlida: (S, M, L, XL)");
+					}
+
+					if (tipo.includes(tipus)) {
+						console.log(`Has seleccionat el tipus ${tipus}`);
+						return `Has demanat un ${item} tipus ${tipus}, talla ${talla}`;
+					} else {
+						console.log(
+							"Siusplau intodueix un tipus vàlid: (copa, pirata, gorra, llana)"
+						);
+					}
+				} else {
+					return `Introdueix un ítem vàlid! Samarreta, pantaló o barret.`;
+				}
+			}
 
 			var carrito = botiga();
 
