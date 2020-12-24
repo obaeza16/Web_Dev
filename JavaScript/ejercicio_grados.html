@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        temp = 0;
-        
-        
-        temp = (temp*1.8)+32;
-        console.log("La temperatura és de: " + temp +"ºF.");
-        
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			temp = 0;
 
-        document.write("<h1>This title was written from a JS function named document.write()</h1>")
+			temp = temp * 1.8 + 32;
+			console.log("La temperatura és de: " + temp + "ºF.");
 
-        // window.alert("hola!")
+			document.write(
+				"<h1>This title was written from a JS function named document.write()</h1>"
+			);
 
-        // print()
-        // OUTPUTS: console.log(), innerHTML, document.write(), window.alert() i window.print()
+			// window.alert("hola!")
 
-        dies = 3;
-        // el teu codi aquí
-        segons = (dies*86400);
-        console.log("Hi ha " + segons + " segons en " + dies + " dies");
-        
-        euros = 7;
-        // el teu codi aquí
-        dolares = (euros*1.21)
-        console.log(euros + " euros són " + dolares + " dòlars");
-        
-        precio = 100;
-        // el teu codi aquí
-        con_iva = (precio*1.21)
-        console.log("El que costa " + precio + " euros sense IVA, costa " + con_iva + " amb IVA (del  21%)");
+			// print()
+			// OUTPUTS: console.log(), innerHTML, document.write(), window.alert() i window.print()
 
-    </script>
+			dies = 3;
+			// el teu codi aquí
+			segons = dies * 86400;
+			console.log("Hi ha " + segons + " segons en " + dies + " dies");
 
-    <script src="./prueba1.js"></script>
-</body>
+			euros = 7;
+			// el teu codi aquí
+			dolares = euros * 1.21;
+			console.log(euros + " euros són " + dolares + " dòlars");
+
+			precio = 100;
+			// el teu codi aquí
+			con_iva = precio * 1.21;
+			console.log(
+				"El que costa " +
+					precio +
+					" euros sense IVA, costa " +
+					con_iva +
+					" amb IVA (del  21%)"
+			);
+		</script>
+
+		<script src="./prueba1.js"></script>
+	</body>
 </html>

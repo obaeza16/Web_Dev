@@ -1,69 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+	<body>
+		<script>
+			var array1 = ["Oscar", "Omar", "Sergi", "Roger"];
+			console.log(array1.toString());
+			var alumne1 = array1[2];
+			console.log(alumne1);
+			console.log(array1.slice(-1)[0]);
+			array1.push("Ruben");
+			array1.unshift("Zareth");
+			console.log(array1.toString());
 
-    <body>
-        <script>
+			elMeuSegonArray = ["Bruno", "Grisáceo", "Pikachu", "Alsik", "Black"];
+			console.log(array1.concat(elMeuSegonArray));
 
-            var array1 = [ "Oscar", "Omar", "Sergi", "Roger" ];
-            console.log( array1.toString() );
-            var alumne1 = array1[ 2 ];
-            console.log( alumne1 );
-            console.log( array1.slice( -1 )[ 0 ] );
-            array1.push( "Ruben" )
-            array1.unshift( "Zareth" );
-            console.log( array1.toString() );
+			elMeuSegonArray.sort();
+			console.log(elMeuSegonArray);
+			elMeuSegonArray.reverse();
+			console.log(elMeuSegonArray);
 
-            elMeuSegonArray = [ "Bruno", "Grisáceo", "Pikachu", "Alsik", "Black" ]
-            console.log( array1.concat( elMeuSegonArray ) );
+			// ITERACIONES en array
 
-            elMeuSegonArray.sort();
-            console.log( elMeuSegonArray );
-            elMeuSegonArray.reverse();
-            console.log( elMeuSegonArray );
+			total = 0;
+			arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			for (number of arr) {
+				total += number;
+			}
+			console.log(total);
+			console.log(arr);
 
+			// Lista del prompt
+			// Separo palabras
+			// Las meto en array
+			// Las muestro como lista con guiones
 
-            // ITERACIONES en array
+			var lista = prompt("Introduce tu lista separada por ',':");
+			lista = lista.split(",");
 
-            total = 0;
-            arr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-            for ( number of arr )
-            {
-                total += number;
+			for (i = 0; i < lista.length; i++) {
+				lista[i] = lista[i].trim();
+			}
+			lista.sort();
 
-            }
-            console.log( total );
-            console.log( arr );
-
-
-            // Lista del prompt
-            // Separo palabras
-            // Las meto en array
-            // Las muestro como lista con guiones
-
-            var lista = prompt( "Introduce tu lista separada por ',':" );
-            lista = lista.split( "," );
-
-            for ( i = 0; i < lista.length; i++ )
-            {
-                lista[ i ] = lista[ i ].trim();
-            }
-            lista.sort();
-
-
-            console.log( "Tienes que comprar:" );
-            for ( element of lista )
-            {
-                console.log( "- " + element );
-            }
-
-
-        </script>
-    </body>
-
+			console.log("Tienes que comprar:");
+			for (element of lista) {
+				console.log("- " + element);
+			}
+		</script>
+	</body>
 </html>

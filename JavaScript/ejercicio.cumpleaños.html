@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cumpleaños</title>
+	</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cumpleaños</title>
-    </head>
+	<body>
+		<script>
+			var mesos30 = [4, 6, 9, 11];
 
-    <body>
-        <script>
+			var year = 1900 + parseInt(Math.random() * 121);
 
-            var mesos30 = [ 4, 6, 9, 11 ]
+			var month = 1 + parseInt(Math.random() * 12);
 
-            var year = 1900 + parseInt( Math.random() * 121 );
+			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+				if (month == 2) var day = random(1, 29);
+				if (mesos30.includes(month)) var day = random(1, 30);
+				else var day = random(1, 31);
+			} else {
+				if (month == 2) var day = random(1, 28);
+				if (mesos30.includes(month)) var day = random(1, 30);
+				else var day = random(1, 31);
+			}
 
-            var month = 1 + parseInt( Math.random() * 12 );
+			if (month == 2 && year == 1997 && day == 16) {
+				console.log(`Felicidades!!! Este es el cumpleaños de mi creador`);
+			}
 
-            if ( ( ( year % 4 == 0 ) && ( year % 100 != 0 ) ) || ( year % 400 == 0 ) )
-            {
-                if ( month == 2 ) var day = random( 1, 29 );
-                if ( mesos30.includes( month ) ) var day = random( 1, 30 );
-                else var day = random( 1, 31 );
-            }
+			meses = [
+				"enero",
+				"febrero",
+				"marzo",
+				"abril",
+				"mayo",
+				"junio",
+				"julio",
+				"agosto",
+				"septiembre",
+				"octubre",
+				"noviembre",
+				"diciembre",
+			];
 
-            else
-            {
-                if ( month == 2 ) var day = random( 1, 28 );
-                if ( mesos30.includes( month ) ) var day = random( 1, 30 );
-                else var day = random( 1, 31 );
-            }
+			console.log(
+				`Tu cumpleaños es el día ${day} de ${meses[month - 1]} del año ${year}`
+			);
 
-            if ( ( month == 2 ) && ( year == 1997 ) && ( day == 16 ) )
-            {
-                console.log( `Felicidades!!! Este es el cumpleaños de mi creador` );
-            }
+			function random(min, max) {
+				return min + parseInt(Math.random() * (max - min + 1));
+			}
+		</script>
 
-            meses = [ "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" ]
-
-            console.log( `Tu cumpleaños es el día ${ day } de ${ meses[ month - 1 ] } del año ${ year }` );
-
-
-            function random( min, max )
-            {
-                return min + parseInt( Math.random() * ( max - min + 1 ) );
-            }
-
-
-        </script>
-
-        <!-- <script src="./busqueda.cumple.js"></script> -->
-    </body>
-
+		<!-- <script src="./busqueda.cumple.js"></script> -->
+	</body>
 </html>
