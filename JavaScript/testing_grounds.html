@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var array = ["primer", "segon", "tercer", "quart", "cinquè"];
+
+			function moure(arr, num) {
+				for (let i = 0; i < num; i++) {
+					arr.unshift(arr.splice(-1)[0]);
+				}
+				return arr;
+			}
+
+			console.log(moure(array, 2)); // ha de mostrar ["quart", "cinquè", "primer", "segon", "tercer"]
+		</script>
+	</body>
+</html>

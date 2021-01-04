@@ -355,13 +355,24 @@
 
 			// TODO: defineix la funció convertirEnEnter()
 
-			function convertirEnEnter(string) {
-				return parseInt(string);
+			function convertirEnEnter(str) {
+				let enter = "";
+				for (let i = 0; i < str.length; i++) {
+					if (!isNaN(str[i])) {
+						enter += str[i];
+					} else if (enter != "" && isNaN(str[i])) {
+						return enter;
+					}
+				}
+				return parseFloat(enter);
 			}
 
-			// console.log(convertirEnEnter("hola89234")); // ha de tornar 89234
-			// console.log(convertirEnEnter("43.35465adeu")); // ha de tornar 43
-			// console.log(convertirEnEnter("amor45.9odi")); // ha de tornar 45
+			console.log(convertirEnEnter("hola89234")); // ha de tornar 89234
+			console.log(convertirEnEnter("43.35465adeu")); // ha de tornar 43
+			console.log(convertirEnEnter("amor45.9odi")); // ha de tornar 45
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 15: recrea la funció parseFloat() de manera que agafi els números encara que hi hagi lletres abans
 			// i accepti com a separador decimal els símbols ",", "." i "'"
@@ -589,20 +600,28 @@
 			// exercici 23: fes un contador que mostri a la consola els números de l'1 al número que introdueixis com a paràmentre
 			// (fins a 1000 com a màxim)  PISTA: usa la paraula clau "break"
 
-			// var max = prompt("Fins quin número vols contar (1-1000)?");
+			var max = prompt("Fins quin número vols contar (1-1000)?");
 
 			// TODO defineix aquí la funció contar()
 
 			function contar(num) {
-				for (let i = 0; i <= num; i++) {
-					console.log(i);
+				if (num > 1000) {
+					console.log("Introdueix un número més petit o igual que 1000");
+				} else {
+					for (let i = 1; i <= num; i++) {
+						if (i > num) {
+							break;
+						} else {
+							console.log(i);
+						}
+					}
 				}
 			}
 
 			console.log("-------------------------");
 			console.log("-------------------------");
 
-			// contar(max); // això ha de mostrar a la consola els números de l'1 al número introduit
+			contar(max); // això ha de mostrar a la consola els números de l'1 al número introduit
 
 			// exercici 24: fes un buscador de números primers. Li fixarem un límit (p.e. 100) i agafarà cada número i el dividirà
 			// per tots els anteriors; si alguna de les divisions dona zero, llavors no és primer; si cap dona zero, l'escriurà a la
@@ -641,7 +660,6 @@
 					} else if (parans.includes(k.toString()[2])) {
 						console.log(k);
 					}
-					continue;
 				}
 			}
 
@@ -663,7 +681,9 @@
 
 			var lista = [];
 			do {
-				item = prompt("Introduce tu ítem de la compra:");
+				item = prompt(
+					"Introdueix el teu ítem de la compra: (s'atura amb STOP)"
+				);
 				if (item != "STOP") lista.push(item);
 			} while (item != "STOP");
 
@@ -689,13 +709,16 @@
 				"diumenge",
 			];
 
-			// TODO aquí el codi
+			var dia = new Date();
+
+			num = dia.getDay();
+			console.log(`Avui és ${dies[num - 1]}`);
 
 			// exercici 28: replicar split(). Defineix una funció que separi una cadena de caràcters amb el separador escollit
 
 			var cadena = "blaucacavermellcacagroccacamarrócacaverd";
 
-			// TODO defineix aquó la funció separar()
+			// TODO defineix aquí la funció separar()
 
 			// console.log(separar(cadena, "caca")); // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
 
@@ -705,12 +728,33 @@
 
 			// TODO defineix aquí la funció moure()
 
-			// console.log(moure(array, 2)); // ha de mostrar ["quart", "cinquè", "primer", "segon", "tercer"]
+			function moure(arr, num) {
+				for (let i = 0; i < num; i++) {
+					arr.unshift(arr.splice(-1)[0]);
+				}
+				return arr;
+			}
+
+			console.log(moure(array, 2)); // ha de mostrar ["quart", "cinquè", "primer", "segon", "tercer"]
 
 			// exercici 30: adapta l'exercici de la llista de la compra (ex. 26) perquè fiqui els elements en un array i
 			// els ordeni alfabèticament
 
 			// TODO aquí el codi
+
+			var lista = [];
+			do {
+				item = prompt(
+					"Introdueix el teu ítem de la compra: (s'atura amb STOP)"
+				);
+				if (item != "STOP") lista.push(item);
+			} while (item != "STOP");
+
+			lista.sort();
+			console.log("Tienes que comprar:");
+			for (element of lista) {
+				console.log("- " + element);
+			}
 
 			// exercici 31: paradoxa de l'aniversari. Genera N dates d'aniversari aleatòries (1-365) en un array i comprova
 			// si hi ha alguna repetida. Fes això per N = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 i mostra a la consola per quins
@@ -725,14 +769,25 @@
 			//// PISTA: useu Date()
 
 			var persona = {
-				// TODO aquí les propietats de l'objecte
+				name: "Elena",
+				any: 1997,
+				edat: "",
+				calcularEdat: function edat() {
+					var year = new Date();
+					persona.edat = parseFloat(year.getFullYear() - this.any);
+					return year.getFullYear() - this.any;
+				},
 			};
 
-			// persona.calcularEdat();
+			persona.calcularEdat();
 
 			// TODO console.log() que digui "La Maria va nèixer el 1995 i té 25 anys" agafant les propietats de l'objecte
 
-			// exercici 32: crea un objecte que contingui una paraula i el mètode separar() (de l'exercici 27) de tal manera
+			console.log(
+				`La ${persona.name} va va nèixer el ${persona.any} i té ${persona.edat} anys`
+			);
+
+			// exercici 33: crea un objecte que contingui una paraula i el mètode separar() (de l'exercici 27) de tal manera
 			// que poguem usar-lo amb el codi següent
 
 			// var frase = { string = "blaucacavermellcacagroccacamarrócacaverd",
@@ -742,7 +797,7 @@
 
 			// console.log(fraseSeparada);     // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
 
-			// exercici 33: adapta l'exercici de la llista de la compra (ex. 26 i 29) perquè fiqui els elements en un objecte
+			// exercici 34: adapta l'exercici de la llista de la compra (ex. 26 i 29) perquè fiqui els elements en un objecte
 			// separats per seccions (carnisseria, fruita i verdura, làctics, forn de pa) i ordenats alfabèticament. El console.log
 			// haurà de mostrar els productes classificats per seccions:           Llista de la compra:
 			//                                                                        - Carnisseria
@@ -756,7 +811,7 @@
 
 			// TODO: aqui el codi
 
-			// exercici 34: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array
+			// exercici 35: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array
 			// d'objectes amb els noms de les columnes com a propietats
 			//// PISTA: necessitareu ajuda. Demaneu-la
 

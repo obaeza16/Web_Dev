@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Apuntes JavaScript</title>
+		<link rel="shortcut icon" href="./JS-Favicon-HD1.png" type="image/x-icon" />
+		<link rel="stylesheet" href="apuntes.css" />
+	</head>
+
+	<body>
+		<div>
+			<p></p>
+		</div>
+		<div class="header">
+			<h1 id="start">Apuntes sobre JavaScript de Óscar Baeza</h1>
+		</div>
+
+		<div class="index">
+			<h2 id="index">Índice</h2>
+			<ol>
+				<li><a href="#recurses">Recursos</a></li>
+				<li><a href="#estructure">Estructura básica de un HTML</a></li>
+				<li><a href="#output">Outputs de JS</a></li>
+				<li><a href="#statements">Statements</a></li>
+				<li><a href="#keywords">Keywords</a></li>
+				<li><a href="#syntax">Sintaxis</a></li>
+			</ol>
+		</div>
+
+		<div>
+			<h2 id="recurses">Recursos Web</h2>
+
+			<a href="https://javascript.info/">Tutorial Online JavaScript moderno</a>
+		</div>
+
+		<div>
+			<h2 id="estructure">Estructura básica de un script de JavaScript</h2>
+
+			<p>
+				Si lo estoy escribiendo en el HTML directamente, lo voy a encapsular en
+				las etiquetas &lt;script&gt; y &lt;/script&gt;.
+			</p>
+			<p>
+				Si lo estoy escribiendo en un archivo .js separado, lo voy a linkear a
+				mi HTML mediante un link de src dentro las tags &lt;script&gt; y
+				&lt;/script&gt;. En estos .js externos no deben haber estas tags de
+				script. Se pueden adjuntar diversos scripts externos, siempre en tags
+				diferentes.
+			</p>
+			<p>El separar el código de JS tiene algunas ventajas:</p>
+			<ol>
+				<li>Separa en documentos diferentes HTML y código</li>
+				<li>Más fácil de mantener los documentos si se encuentran separados</li>
+				<li>Páginas de JS en caché pueden acelerar la carga de ciertas webs</li>
+			</ol>
+			<p>Comentario en JS a continuación: // comentario</p>
+			<a href="#start">Ir al Inicio</a>
+		</div>
+
+		<div>
+			<h2 id="output">Output</h2>
+
+			<p>Hay diversas formas de hacer output de un script de JS.</p>
+			<ol>
+				<li>Escribiendo en elementos HTML, usando innerHTML</li>
+				<li>Escribiendo en el output del HTML con document.write()</li>
+				<li>Escribiendo en una alert box con window.alert()</li>
+				<li>Escribiendo a la consola del navegador con console.log()</li>
+			</ol>
+			<a href="#start">Ir al Inicio</a>
+		</div>
+
+		<div>
+			<h2 id="statements">Statements</h2>
+
+			<p>
+				El ; (punto y coma) separa statements en JS. Los statements en una línea
+				están permitidos siempre que se separen con ;. Esta terminción no és
+				obligatoria pero si muy altamente recomendada.
+			</p>
+			<p>
+				JS ignora los espacios en blanco, así que puedes anadirlos para hacer
+				más comprensible el código. Es recomendable ponerlos alrededor de
+				operaciones (= + - * /).
+			</p>
+			<p>El largo recomendado de línea és de 80 caracteres.</p>
+			<a href="#start">Ir al Inicio</a>
+		</div>
+
+		<div>
+			<h2 id="keywords">Keywords</h2>
+
+			<p><span class="bold">break:</span> Terminates a switch or a loop</p>
+			<p>
+				<span class="bold">continue:</span> Jumps out of a loop and starts at
+				the top
+			</p>
+			<p>
+				<span class="bold">debugger:</span> Stops the execution of JavaScript,
+				and calls (if available) the debugging function
+			</p>
+			<p>
+				<span class="bold">do ... while:</span> Executes a block of statements,
+				and repeats the block, while a condition is true
+			</p>
+			<p>
+				<span class="bold">for:</span> Marks a block of statements to be
+				executed, as long as a condition is true
+			</p>
+			<p><span class="bold">function:</span> Declares a function</p>
+			<p>
+				<span class="bold">if ... else:</span> Marks a block of statements to be
+				executed, depending on a condition
+			</p>
+			<p><span class="bold">return:</span> Exits a function</p>
+			<p>
+				<span class="bold">switch:</span> Marks a block of statements to be
+				executed, depending on different cases
+			</p>
+			<p>
+				<span class="bold">try ... catch:</span> Implements error handling to a
+				block of statements
+			</p>
+			<p><span class="bold">var:</span> Declares a variable</p>
+			<a href="#start">Ir al Inicio</a>
+		</div>
+
+		<div>
+			<h2 id="syntax">Sintaxis</h2>
+
+			<p>
+				Hay dos tipos de variables, las fijas llamadas "literales" y las
+				variables llamadas "variables".
+			</p>
+			<p>
+				Los números se escriben con o sin decimales, las strings son texto
+				delimitado por "" o ''.
+			</p>
+			<p>
+				Las variables se utilizan para guardar valores de datos. JS usa el
+				keyword "var" para declarar una variable. Un signo de igual (=) assigna
+				valor a las variables.
+			</p>
+			<p>
+				JS es sensitivo a las mayúsculas y minúsculas, por lo que no es lo mismo
+				"lastName" que "lastname". Los programadores ponen la primera letra en
+				minúscula y todas las que irían después en mayúscula: firstName,
+				lastName, masterCard, interCity.
+			</p>
+			<p>Todas las variables deben estar identificadas con un nombre único.</p>
+			<a href="#start">Ir al Inicio</a>
+		</div>
+
+		<div>
+			<h2 id="operators">Operadores</h2>
+
+			<p>
+				<a href="https://www.w3schools.com/js/js_operators.asp"
+					>Operadores en W3 Schools</a
+				>
+			</p>
+		</div>
+
+		<div>
+			<h2 id="functions">Funciones</h2>
+
+			<p>
+				<a href="https://www.w3schools.com/js/js_functions.asp"
+					>Funciones en W3 Schools</a
+				>
+			</p>
+		</div>
+
+		<div>
+			<h2 id="strings">Métodos de strings</h2>
+
+			<p>
+				<a href="https://www.w3schools.com/js/js_string_methods.asp"
+					>Métodos de strings en W3 Schools</a
+				>
+			</p>
+		</div>
+
+		<div>
+			<h2 id="numbers">Métodos de números</h2>
+
+			<p>
+				<a href="https://www.w3schools.com/js/js_numbers_methods.asp"
+					>Métodos numéricos en W3 Schools</a
+				>
+			</p>
+		</div>
+
+		<div>
+			<h2 id="arrays">Métodos de arrays</h2>
+
+			<p>
+				<a href="https://www.w3schools.com/js/js_array_methods.asp"
+					>Métodos de arrays en W3 Schools</a
+				>
+			</p>
+		</div>
+	</body>
+</html>
