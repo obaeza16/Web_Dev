@@ -157,6 +157,7 @@
 			}
 
 			cercle(radi, mode);
+			cercle(radi, "A");
 
 			console.log("-------------------------");
 			console.log("-------------------------");
@@ -250,6 +251,7 @@
 			// exercici 11: defineix una funció calculadora que agafi com a paràmentres una operació i un o dos números
 			// (que poden ser sencers, decimals o fraccions) i faci la operació (+, -, *, /, potència, arrels quadrades i qúbiques)
 			// TODO: defineix la funció calculadora() (reutilitza la que vam fer a classe fa uns dies)
+
 			function calculadora(x, y = 1, sym) {
 				x = parseFloat(x);
 				y = parseFloat(y);
@@ -425,9 +427,17 @@
 			var text =
 				"En un lugar de La Mancha de cuyo nombre no quiero acordarme. Què tal, Manel?   Patata";
 
-			// var paraules = separarParaules(text);
+			var paraules = separarParaules(text);
+			console.log(paraules);
 
 			// TODO: defineix la funció separarParaules()
+
+			function separarParaules(text) {
+				parauletes = text
+					.replace(/[.,\/#!?$%\^&\*;:{}=\-_`~()]/g, "")
+					.replace(/\s{2,}/g, " ");
+				return parauletes;
+			}
 
 			console.log("-------------------------");
 			console.log("-------------------------");
@@ -438,6 +448,23 @@
 			// console.log(paraulaRandom(text));
 
 			// TODO defineix la funció paraulaRandom()
+
+			function paraulaRandom(text) {
+				text = separarParaules(text);
+				let newArray = [];
+
+				while (text.indexOf(" ") != -1) {
+					newArray.push(text.slice(0, text.indexOf(" ")));
+					text = text.slice(text.indexOf(" ") + " ".length);
+				}
+				const randomIndex = Math.floor(Math.random() * newArray.length);
+				return newArray[randomIndex];
+			}
+
+			console.log(paraulaRandom(text));
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 20: crea una funció que agafi una data DD/MM per prompt() i et retorni el teu signe de l'horòscop i una
 			// predicció del que et passarà durant el dia
@@ -532,13 +559,13 @@
 					"Has demostrado fuerza de voluntad para conseguir tus metas, te irá muy bien. Tu economía va bien y lo quieres disfrutar, cómprate algo que te interesa. Si tienes ganas de afrontar nuevos proyectos en el trabajo, debes poner más de tu parte. Si ahorras un poco, podrás afrontar bien todos los gastos extra que vienen. Podrías llevarte una sorpresa agradable con alguien del signo de Tauro. Un buen amigo te dará un consejo o sugerencia muy acertada, préstale atención. No dependas demasiado de la opinión de los demás, la seguridad está en ti. Tienes demasiadas cosas en la cabeza y te conviene empezar a centrarte. Gozarás de buena salud y de muy buen humor, te lo pasarás muy bien hoy. Quieres cambiar algunas cosas de tu vida y si te lo propones, lo conseguirás. Necesitas ser un poco egoísta y cuidar más de ti, te estás dejando últimamente.",
 					"Se retrasa un dinero que esperas , pero dentro de poco lograrás cobrarlo. Podrían hacerte una oferta que cambie para bien tu situación laboral. Tendrás que estar al pie del cañón en el trabajo si quieres que todo vaya bien. Tienes muchas ganas de salir y de frecuentar ambientes distintos, te divertirás. Es posible que retomes una amistad que no veías hace tiempo y te anime. En el amor, vas a dedicar más tiempo a tu pareja y las relaciones mejorarán. Alguien podría irrumpir en tu vida pronto y manifestar sus sentimientos. Necesitas más atenciones y cuidados, no dejes de lado tu estado físico. Estás bien de ánimo y vas a dedicar más tiempo a relajarte y divertirte. Estás con un poco de agobio, pero es más mental que físico, trata de calmarte. Necesitarás una buena dosis de descanso y de ocio para recuperar el humor.",
 					"Debes ser valiente y atreverte a dar un paso hacia un trabajo nuevo. Laboralmente te va a resultar muy productivo, lo estás haciendo muy bien. No te obsesiones en tus quehaceres, si vas con calma todo saldrá mucho mejor. Dudarás en el terreno profesional, pero al final lo resolverás adecuadamente. No te dejes llevar por la indecisión en el amor, mantente firme y todo saldrá bien. Si tienes pareja podrías enterarte de cosas que desconocías sobre ella. Tienes que racionalizar tu situación y no obcecarte en las emociones. Con algunos paseos que des mejorarás la circulación y la resistencia. Ya va siendo hora de que le des a tu organismo los cuidados que necesita. Vas a disfrutar de los momentos de tranquilidad que estabas esperando. Tu energía está en un punto muy alto, tienes ganas de hacer cosas nuevas.  ",
-					"Tendrás la cabeza despejada y aprenderás cualquier cosa nueva con facilidad Sagitario. En el dinero te va bien, pero hay cierta tendencia al descontrol, evítalo. Necesitas renovarte o encontrar algo nuevo que te motive en el trabajo. Tendrás muchas satisfacciones durante esta época en la economía, te animarás. Es posible que encuentres una nueva historia entre la gente que conoces. Este es un buen momento para reforzar los vínculos con la gente que tratas habitualmente. No te dejes llevar por proyectos de ciertas personas que no conducen a nada. Aprovecha el tiempo libre que tengas para salir, harás nuevas amistades. Debes cambiar la actitud con la que te tomas las cosas, así mejorará tu ánimo. Vas a tratar de tener una actitud alegre y positiva, y eso te ayudará mucho. Podrías tener alguna molestia física este día, intenta descansar y relajarte. ",
+					"Tendrás la cabeza despejada y aprenderás cualquier cosa nueva con facilidad. En el dinero te va bien, pero hay cierta tendencia al descontrol, evítalo. Necesitas renovarte o encontrar algo nuevo que te motive en el trabajo. Tendrás muchas satisfacciones durante esta época en la economía, te animarás. Es posible que encuentres una nueva historia entre la gente que conoces. Este es un buen momento para reforzar los vínculos con la gente que tratas habitualmente. No te dejes llevar por proyectos de ciertas personas que no conducen a nada. Aprovecha el tiempo libre que tengas para salir, harás nuevas amistades. Debes cambiar la actitud con la que te tomas las cosas, así mejorará tu ánimo. Vas a tratar de tener una actitud alegre y positiva, y eso te ayudará mucho. Podrías tener alguna molestia física este día, intenta descansar y relajarte. ",
 				];
 
 				console.log(
 					`Has nacido bajo el signo de ${horo}, y este es tu horóscopo del día:`
 				);
-				const randomIndex = Math.round(Math.random() * messages.length);
+				const randomIndex = Math.floor(Math.random() * messages.length);
 				console.log(messages[randomIndex]);
 				return messages[randomIndex];
 			}
@@ -714,13 +741,29 @@
 			num = dia.getDay();
 			console.log(`Avui és ${dies[num - 1]}`);
 
+			console.log("-------------------------");
+			console.log("-------------------------");
+
 			// exercici 28: replicar split(). Defineix una funció que separi una cadena de caràcters amb el separador escollit
 
 			var cadena = "blaucacavermellcacagroccacamarrócacaverd";
 
 			// TODO defineix aquí la funció separar()
 
-			// console.log(separar(cadena, "caca")); // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
+			function separar(cadena, separador) {
+				let newArray = [];
+
+				while (cadena.indexOf(separador) != -1) {
+					newArray.push(cadena.slice(0, cadena.indexOf(separador)));
+					cadena = cadena.slice(cadena.indexOf(separador) + separador.length);
+				}
+				return newArray;
+			}
+
+			console.log(separar(cadena, "caca")); // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 29: defineix una funció que agafi els elements d'un array i els mogui N elements cap a la dreta
 
@@ -736,6 +779,9 @@
 			}
 
 			console.log(moure(array, 2)); // ha de mostrar ["quart", "cinquè", "primer", "segon", "tercer"]
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 30: adapta l'exercici de la llista de la compra (ex. 26) perquè fiqui els elements en un array i
 			// els ordeni alfabèticament
@@ -756,11 +802,43 @@
 				console.log("- " + element);
 			}
 
+			console.log("-------------------------");
+			console.log("-------------------------");
+
 			// exercici 31: paradoxa de l'aniversari. Genera N dates d'aniversari aleatòries (1-365) en un array i comprova
 			// si hi ha alguna repetida. Fes això per N = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 i mostra a la consola per quins
 			// hi ha hagut coincidències d'aniversari
 
 			// TODO aquí el codi
+
+			function random(min, max) {
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+
+			function paradoxaAniversari(N) {
+				ar = [];
+				for (let index = 0; index < N; index++) {
+					var randomnum = random(0, 365);
+					ar.push(randomnum);
+				}
+
+				let sorted_arr = ar.slice().sort();
+				let results = [];
+				for (let i = 0; i < sorted_arr.length - 1; i++) {
+					if (sorted_arr[i + 1] == sorted_arr[i]) {
+						results.push(sorted_arr[i]);
+					}
+				}
+				return results;
+			}
+
+			para = paradoxaAniversari(50);
+			console.log(
+				`Hi ha ${para.length} aniversaris repetits, sent aquests en els dies seguents: ${para}.`
+			);
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			//* ------------------------------ Objectes -------------------------------------
 
@@ -787,15 +865,27 @@
 				`La ${persona.name} va va nèixer el ${persona.any} i té ${persona.edat} anys`
 			);
 
+			console.log("-------------------------");
+			console.log("-------------------------");
+
 			// exercici 33: crea un objecte que contingui una paraula i el mètode separar() (de l'exercici 27) de tal manera
 			// que poguem usar-lo amb el codi següent
 
-			// var frase = { string = "blaucacavermellcacagroccacamarrócacaverd",
+			var frase = {
+				string: "blaucacavermellcacagroccacamarrócacaverd",
+				separar_frase: function (separador) {
+					return separar(this.string, separador);
+				},
+			};
+
 			// TODO aquí el mètode de l'objecte
 
-			// var fraseSeparada = frase.separar("caca");
+			var fraseSeparada = frase.separar_frase("caca");
 
-			// console.log(fraseSeparada);     // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
+			console.log(fraseSeparada); // ha de mostrar ["blau", "vermell", "groc", "marró", "verd"]
+
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 34: adapta l'exercici de la llista de la compra (ex. 26 i 29) perquè fiqui els elements en un objecte
 			// separats per seccions (carnisseria, fruita i verdura, làctics, forn de pa) i ordenats alfabèticament. El console.log
@@ -814,6 +904,8 @@
 			// exercici 35: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array
 			// d'objectes amb els noms de les columnes com a propietats
 			//// PISTA: necessitareu ajuda. Demaneu-la
+
+			// https://docs.google.com/document/d/11brCk7bmmL_rlawzeBgP6q4Y1yOw9yIK1hufpBpUq78/edit
 
 			var csv = `Year,Make,Model,Description,Price\n
 						1997,Ford,E350,ac abs moon,3000.00\n
