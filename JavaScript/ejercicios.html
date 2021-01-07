@@ -121,12 +121,23 @@
 
 			var talla = prompt("Quina talla de samarreta vols adquirir?"); // TODO: editar el missatge del prompt()
 			tallas = ["S", "M", "L", "XL"];
+			if (talla) {
+				talla = talla.toUpperCase();
+			} else {
+				console.log(
+					`%c${talla} és buida. Siusplau intodueix una talla entre S, M, L, XL.`,
+					"color:red;font-weight:bold;"
+				);
+			}
 
 			// TODO: estructura condicional que digui per la consola la talla escollida
 			if (tallas.includes(talla)) {
 				console.log(`Has seleccionat la talla ${talla}`);
 			} else {
-				console.log("Siusplau intodueix una talla vàlida: (S, M, L, XL)");
+				console.log(
+					`%c${talla} no és una talla válida. Siusplau intodueix una entre S, M, L, XL.`,
+					"color:red;font-weight:bold;"
+				);
 			}
 
 			console.log("-------------------------");
@@ -135,8 +146,7 @@
 			// exercici 8: defineix una funció amb modes que pugui calcular l'area o el perímetre d'un cercle i et faci console.log()
 			// de la cosa calculada
 
-			var radi = 5;
-			var mode = "P"; // "P" pel perímentre o "A" per l'àrea
+			var radi = 5; // "P" pel perímentre o "A" per l'àrea
 
 			// TODO: defineix la funció cercle amb dos modes
 			function cercle(r, m) {
@@ -156,7 +166,7 @@
 				);
 			}
 
-			cercle(radi, mode);
+			cercle(radi, "P");
 			cercle(radi, "A");
 
 			console.log("-------------------------");
@@ -169,12 +179,9 @@
 
 			// TODO: defineix la funció poligon()
 			function poligon(costat, costats) {
-				if (costats == 3) {
-					per = 3 * costat;
-					are = (Math.sqrt(3) / 4) * costat ** 2;
-				} else if (costats == 4) {
-					per = 4 * costat;
-					are = costat ** 2;
+				if (costats < 3) {
+					per = costat * 2;
+					are = 0;
 				} else {
 					per = costat * costats;
 					apo = costat / (2 * Math.tan(Math.PI / costats));
@@ -932,5 +939,6 @@
 				"-------------------- FI DELS EXERCICIS --------------------"
 			);
 		</script>
+		<h1>Aquests son els exercicis del 1 al 33 de JavaScript de Óscar Baeza</h1>
 	</body>
 </html>
