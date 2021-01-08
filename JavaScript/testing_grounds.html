@@ -7,59 +7,22 @@
 	</head>
 	<body>
 		<script>
-			// exercici 35: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array
-			// d'objectes amb els noms de les columnes com a propietats
-			//// PISTA: necessitareu ajuda. Demaneu-la
+			var lletres = "abcdef amazin!!!! wowooo rer";
 
-			// https://docs.google.com/document/d/11brCk7bmmL_rlawzeBgP6q4Y1yOw9yIK1hufpBpUq78/edit
-			// TODO gestionar el csv perquè acabi sent una cosa com la de sota
+			console.log(lletraRandom(lletres)); // torna una lletra entre la a i la f
 
-			// var cotxes = [ { Year = 1997,
-			//                  Make = "Ford",
-			//                  Model = "E350",
-			//                  Description = "ac, abs, moon",
-			//                  Price = 3000.00
-			//                 },
-			//                { Year = 1997,
-			//                  Make = "Ford",
-			//                  Model = "E350",
-			//                  Description = "",
-			//                  Price = 3000.00
-			//                 } ];
+			// TODO defineix la funció lletraRandom()
 
-			// TODO aquí el codi
-			var csv = `Year,Make,Model,Description,Price\n
-						1997,Ford,E350,ac abs moon,3000.00\n
-						1999,Chevy,Venture "Extended Edition",,4900.00\n
-						1999,Chevy,Venture "Extended Edition XL",,5000.00\n
-						1996,Jeep,Grand Cherokee,MUST SELL! air moon-roof loaded,4799.00`;
+			function lletraRandom(word) {
+				do {
+					var letter = word[Math.floor(Math.random() * word.length)];
+				} while (letter.toUpperCase() == letter.toLowerCase());
 
-			function CSVtoArray(text) {
-				// var re_valid = /^\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*(?:,\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*)*$/;
-				var re_value = /(?!\s*$)\s*(?:'([^'\\]*(?:\\[\S\s][^'\\]*)*)'|"([^"\\]*(?:\\[\S\s][^"\\]*)*)"|([^,'"\s\\]*(?:\s+[^,'"\s\\]+)*))\s*(?:,|$)/g;
-
-				// Return NULL if input string is not well formed CSV string.
-				// if (!re_valid.test(text)) return null;
-
-				var a = []; // Initialize array to receive values.
-				text.replace(
-					re_value, // "Walk" the string using replace with callback.
-					function (m0, m1, m2, m3) {
-						// Remove backslash from \' in single quoted values.
-						if (m1 !== undefined) a.push(m1.replace(/\\'/g, "'"));
-						// Remove backslash from \" in double quoted values.
-						else if (m2 !== undefined) a.push(m2.replace(/\\"/g, '"'));
-						else if (m3 !== undefined) a.push(m3);
-						return "hahaha"; // Return empty string.
-					}
-				);
-
-				// Handle special case of empty last value.
-				if (/,\s*$/.test(text)) a.push("wowowo");
-				return a;
+				return letter;
 			}
 
-			console.log(CSVtoArray(csv));
+			console.log("-------------------------");
+			console.log("-------------------------");
 		</script>
 	</body>
 </html>

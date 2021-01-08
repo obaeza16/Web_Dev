@@ -258,6 +258,7 @@
 			// exercici 11: defineix una funció calculadora que agafi com a paràmentres una operació i un o dos números
 			// (que poden ser sencers, decimals o fraccions) i faci la operació (+, -, *, /, potència, arrels quadrades i qúbiques)
 			// TODO: defineix la funció calculadora() (reutilitza la que vam fer a classe fa uns dies)
+			// TODO: asegurar el input de simbolos y numeros
 
 			function calculadora(x, y = 1, sym) {
 				x = parseFloat(x);
@@ -313,11 +314,11 @@
 			// TODO: defineix la funció triangleRectangle()
 
 			function triangleRectangle(a, b, c) {
-				if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
-					return true;
-				} else {
-					return false;
-				}
+				return (
+					a * a == b * b + c * c ||
+					b * b == a * a + c * c ||
+					c * c == a * a + b * b
+				);
 			}
 
 			console.log("-------------------------");
@@ -331,7 +332,7 @@
 			// TODO: defineix la funció calculaHipotenusa()
 
 			function calculaHipotenusa(a, b) {
-				return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+				return Math.sqrt(a * a + b * b);
 			}
 
 			// TODO: defineix la funció calculaAngles()
@@ -365,12 +366,27 @@
 			// TODO: defineix la funció convertirEnEnter()
 
 			function convertirEnEnter(str) {
+				i = 0;
+				num = "";
+
+				while (isNaN(str[i])) {
+					i++;
+				}
+
+				while (/[0-9]/.test(str[i])) {
+					num += str[i];
+					i++;
+				}
+				return parseFloat(num);
+			}
+
+			function convertirEnEnter(str) {
 				let enter = "";
 				for (let i = 0; i < str.length; i++) {
 					if (!isNaN(str[i])) {
 						enter += str[i];
 					} else if (enter != "" && isNaN(str[i])) {
-						return enter;
+						return parseFloat(enter);
 					}
 				}
 				return parseFloat(enter);
@@ -389,9 +405,27 @@
 
 			// TODO: defineix la funció convertirEnDecimal()
 
-			// console.log(convertirEnDecimal("hola89'234")); // ha de tornar 89.234
-			// console.log(convertirEnDecimal("43'35adeu")); // ha de tornar 43.35
-			// console.log(convertirEnDecimal("amor45.9odi")); // ha de tornar 45.9
+			function convertirEnDecimal(str) {
+				let enter = "";
+				let comes = ["'", ",", "."];
+				let yaTengoComa = false;
+
+				for (let i = 0; i < str.length; i++) {
+					if (!isNaN(str[i])) {
+						enter += str[i];
+					} else if (enter != "" && comes.includes(str[i]) && !yaTengoComa) {
+						num += ".";
+						yaTengoComa = true;
+					} else if (enter != "" && isNaN(str[i])) {
+						break;
+					}
+				}
+				return enter;
+			}
+
+			console.log(convertirEnDecimal("hola89'234")); // ha de tornar 89.234
+			console.log(convertirEnDecimal("43'35adeu")); // ha de tornar 43.35
+			console.log(convertirEnDecimal("amor45.9odi")); // ha de tornar 45.9
 
 			// exercici 16: recrea la funció "valor absolut", que torna el mateix número si és positiu i el mateix número
 			// canviat de signe si és negatiu (2 -> 2; -3.4 -> 3.4). No s'hi val usar Math.abs()
@@ -414,15 +448,18 @@
 			// exercici 17: crea una funció que agafi un string i que torni una lletra aleatoria (sense contar espais i signes
 			// de puntuació)
 
-			var lletres = "abcdef";
+			var lletres = "abcdef amazin!!!! wowooo rer";
 
 			console.log(lletraRandom(lletres)); // torna una lletra entre la a i la f
 
 			// TODO defineix la funció lletraRandom()
 
-			function lletraRandom(letters) {
-				let max = letters.length - 1;
-				return letters[Math.floor(Math.random() * (max - 1 + 1) + 1)];
+			function lletraRandom(word) {
+				do {
+					var letter = word[Math.floor(Math.random() * word.length)];
+				} while (letter.toUpperCase() == letter.toLowerCase());
+
+				return letter;
 			}
 
 			console.log("-------------------------");
@@ -452,7 +489,7 @@
 			// exercici 19: crea una funció que agafi un string i que torni una paraula aleatòria continguda en ella (podeu cridar
 			// la funció separarParaules() dins d'aquesta funció)
 
-			// console.log(paraulaRandom(text));
+			console.log(paraulaRandom(text));
 
 			// TODO defineix la funció paraulaRandom()
 
@@ -462,13 +499,10 @@
 
 				while (text.indexOf(" ") != -1) {
 					newArray.push(text.slice(0, text.indexOf(" ")));
-					text = text.slice(text.indexOf(" ") + " ".length);
+					text = text.slice(text.indexOf(" ") + 1);
 				}
-				const randomIndex = Math.floor(Math.random() * newArray.length);
-				return newArray[randomIndex];
+				return newArray[Math.floor(Math.random() * newArray.length)];
 			}
-
-			console.log(paraulaRandom(text));
 
 			console.log("-------------------------");
 			console.log("-------------------------");
