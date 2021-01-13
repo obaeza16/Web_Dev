@@ -1,28 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Testing Grounds</title>
-	</head>
-	<body>
-		<script>
-			var lletres = "abcdef amazin!!!! wowooo rer";
 
-			console.log(lletraRandom(lletres)); // torna una lletra entre la a i la f
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Testing Grounds</title>
+    </head>
 
-			// TODO defineix la funció lletraRandom()
+    <body>
+        <script>
 
-			function lletraRandom(word) {
-				do {
-					var letter = word[Math.floor(Math.random() * word.length)];
-				} while (letter.toUpperCase() == letter.toLowerCase());
+            var csv = `Year,Make,Model,Description,Price\n
+						1997,Ford,E350,ac abs moon,3000.00\n
+						1999,Chevy,Venture "Extended Edition",,4900.00\n
+						1999,Chevy,Venture "Extended Edition XL",,5000.00\n
+                        1996,Jeep,Grand Cherokee,MUST SELL! air moon-roof loaded,4799.00\n
+                        2077,Rayfield,Aerondight S9 "Guinevere",For many; the name Rayfield is synonymous with wealth – and for good reason. The price of the Rayfield Aerondight exceeds the GDP of many island nations. And it’s worth noting this British-made ultra-luxury; ultra-performance masterpiece is worth every penny of it. The pedigree engine under its hood puts this car on equal footing with professional racing vehicles; and the interior feels like a 5-star penthouse suite. But if that’s not enough to get you excited; the Aerodight doesn’t have a single window. With the help of a CrystalDome; the vehicle’s surroundings are displayed in real-time inside the cabin; ensuring complete driver privacy and stunning appearance., 225000.00`;
 
-				return letter;
-			}
 
-			console.log("-------------------------");
-			console.log("-------------------------");
-		</script>
-	</body>
+            function tranformCSV( csv )
+            {
+                let linies = csv.split( '\n' )
+                let resultat = []
+                let titols = linies[ 0 ].split( ',' )
+
+                for ( let i = 1; i < linies.length; i++ )
+                {
+
+
+                    if ( !linies[ i ] )
+                        continue
+                    let obj = {}
+                    let currentline = linies[ i ].split( ',' )
+
+
+
+                    for ( let j = 0; j < titols.length; j++ )
+                    {
+                        obj[ titols[ j ] ] = currentline[ j ]
+
+                    }
+                    resultat.push( obj )
+                }
+
+
+
+                return resultat;
+
+            }
+
+            csv = tranformCSV( csv )
+
+            function toObject( arr )
+            {
+                var rv = {};
+                for ( var i = 0; i < arr.length; ++i )
+                    if ( arr[ i ] !== undefined ) rv[ i ] = arr[ i ];
+                return rv;
+            }
+
+            csv = toObject( csv );
+
+            function convertIntObj( obj )
+            {
+                const res = {}
+                for ( const key in obj )
+                {
+                    res[ key ] = {};
+                    for ( const prop in obj[ key ] )
+                    {
+                        const parsed = parseInt( obj[ key ][ prop ], 10 );
+                        res[ key ][ prop ] = isNaN( parsed ) ? obj[ key ][ prop ] : parsed;
+                    }
+                }
+                return res;
+            }
+
+            csv = convertIntObj( csv );
+
+
+            console.log( csv )
+
+            console.log(
+                "-------------------- FI DELS EXERCICIS --------------------"
+            );
+        </script>
+    </body>
+
 </html>

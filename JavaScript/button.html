@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <input type="text" name="" id="info">
+        <button id="btn">Mostrar info</button>
+        <button id="color">Canvia el color</button>
+
+        <script>
+
+
+
+            var button = document.querySelector( "#btn" )
+            button.addEventListener( "click", horoscop )
+
+            var color = document.querySelector( "#color" )
+            // TODO: añadirboton para cambiar el color de fondo
+
+            function horoscop( text )
+            {
+                var text = document.querySelector( "#info" ).value
+                const date = text.split( "/" );
+                day = date[ 0 ];
+                month = date[ 1 ];
+                if ( month == 1 )
+                {
+                    if ( day <= 20 )
+                    {
+                        horo = "Capricornio";
+                    } else
+                    {
+                        horo = "Acuario";
+                    }
+                } else if ( month == 2 )
+                {
+                    if ( day <= 19 )
+                    {
+                        horo = "Acuario";
+                    } else
+                    {
+                        horo = "Piscis";
+                    }
+                } else if ( month == 3 )
+                {
+                    if ( day <= 21 )
+                    {
+                        horo = "Piscis";
+                    } else
+                    {
+                        horo = "Aries";
+                    }
+                } else if ( month == 4 )
+                {
+                    if ( day < 20 )
+                    {
+                        horo = "Aries";
+                    } else
+                    {
+                        horo = "Tauro";
+                    }
+                } else if ( month == 5 )
+                {
+                    if ( day <= 21 )
+                    {
+                        horo = "Tauro";
+                    } else
+                    {
+                        horo = "Géminis";
+                    }
+                } else if ( month == 6 )
+                {
+                    if ( day <= 21 )
+                    {
+                        horo = "Géminis";
+                    } else
+                    {
+                        horo = "Cáncer";
+                    }
+                } else if ( month == 7 )
+                {
+                    if ( day <= 22 )
+                    {
+                        horo = "Cáncer";
+                    } else
+                    {
+                        horo = "Leo";
+                    }
+                } else if ( month == 8 )
+                {
+                    if ( day <= 22 )
+                    {
+                        horo = "Leo";
+                    } else
+                    {
+                        horo = "Virgo";
+                    }
+                } else if ( month == 9 )
+                {
+                    if ( day <= 22 )
+                    {
+                        horo = "Virgo";
+                    } else
+                    {
+                        horo = "Libra";
+                    }
+                } else if ( month == 10 )
+                {
+                    if ( day <= 22 )
+                    {
+                        horo = "Libra";
+                    } else
+                    {
+                        horo = "Escorpio";
+                    }
+                } else if ( month == 11 )
+                {
+                    if ( day <= 22 )
+                    {
+                        horo = "Escorpio";
+                    } else
+                    {
+                        horo = "Sagitario";
+                    }
+                } else if ( month == 12 )
+                {
+                    if ( day <= 21 )
+                    {
+                        horo = "Sagitario";
+                    } else
+                    {
+                        horo = "Capricornio";
+                    }
+                }
+
+                const messages = [
+                    "Vas a tener un momento económico espléndido y con suerte, aprovéchalo. Tu trabajo es rutinario y lo estás llevando mal, pero va a mejorar mucho. Los negocios que te propongan en estos días te van a ir relativamente bien. Deberías dedicar más tiempo a reflexionar antes de tomar decisiones en temas de amor. Tienes que ser consciente de tus propias limitaciones y no excederte tanto. Se acortarán las distancias con algunos amigos, te parecerán más cercanos. Necesitarás buenos consejos para salir adelante, pero sabes dónde encontrarlos. Te sientes con fuerzas para todo y querrás hacer demasiadas cosas, contrólate. Vas a dedicarte más tiempo y te sentirás y verás mejor. Vas a hacer más ejercicio en esta temporada y te sentará estupendamente. Te sentirás alegre y optimista, además, tu salud va a ser bastante buena, disfruta el momento.  ",
+                    "En el trabajo hay muchas cosas que no te gustan, pero no tienes por qué aguantar. Te llegarán noticias sobre un dinero que estabas esperando, te animarás. Tendrás que hacerte cargo de unos gastos, pero no serán mucho problema. Puedes tener novedades positivas por tus progresos en referencia a tus jefes. Tendrás momentos de calma, pero también de diversión, todo en su justa medida. Intenta centrarte en el presente, que es lo importante, y no divagar tanto. Tus hijos, si los tienes, te pueden dar sorpresas agradables este día. Estás alegre y con mucho ánimo, contagiarás energía positiva a la gente de alrededor. No tendrás toda la vitalidad que quisieras, pero pronto te recuperarás. Si organizas tu forma de vida de forma equilibrada mejorará tu salud en general. Es una buena ocasión para cambiar aspectos de tu vida que no te convienen. ",
+                    "Tienes tendencia a gastar el dinero demasiado alegremente , ten cuidado. Tendrás la suerte de cara en todo lo relacionado con el trabajo, te irá bien. Puedes tener un ingreso inesperado que te vendrá fenomenal, estás de suerte. La economía te va a ir bien, procura ahorrar ahora todo lo que puedas. La familia te hará pasar momentos muy divertidos y llenos de anécdotas. En el amor, si tienes pareja, tendrás la oportunidad de recuperar lo mejor de la relación. Si sales con los amigos te despejarás mucho, te sentará muy bien ahora. La falta de tiempo te puede hacer descuidar asuntos importantes, evítalo. Debes intentar dormir más de siete horas, mejorará tu estado de ánimo. Cuando lleguen las tensiones intenta relajarte y que los nervios no te dominen. Pasas por un buen momento para encauzar tu energía hacia donde quieras. ",
+                    "Estás administrando regular tu dinero , y así no te puede dar para todo. Si has abierto un negocio hace poco, tendrás que tener paciencia, pero terminará saliendo adelante. Te van a proponer que vuelvas a un antiguo trabajo y no es buena idea. Tienes una buena racha para viajar, divertirte y conocer nuevas formas de vida. Vas a aparcar un poco tus asuntos de amor y te dedicarás a otras cosas. Dejarás atrás los miedos y te lanzarás a la conquista de lo que quieres. Aprovecha este periodo para tomar la iniciativa con alguien que te gusta. Vas a entrar en una etapa positiva de lucidez y de desarrollo intelectual. Recuerda los consejos que te dio el médico y trata de ponerlos en práctica. A poco que te cuides, tu estado de salud será excelente, estás en buena racha. Te vendría bien descansar un poco más, pero por lo demás te irá bien. ",
+                    "Has demostrado fuerza de voluntad para conseguir tus metas, te irá muy bien. Tu economía va bien y lo quieres disfrutar, cómprate algo que te interesa. Si tienes ganas de afrontar nuevos proyectos en el trabajo, debes poner más de tu parte. Si ahorras un poco, podrás afrontar bien todos los gastos extra que vienen. Podrías llevarte una sorpresa agradable con alguien del signo de Tauro. Un buen amigo te dará un consejo o sugerencia muy acertada, préstale atención. No dependas demasiado de la opinión de los demás, la seguridad está en ti. Tienes demasiadas cosas en la cabeza y te conviene empezar a centrarte. Gozarás de buena salud y de muy buen humor, te lo pasarás muy bien hoy. Quieres cambiar algunas cosas de tu vida y si te lo propones, lo conseguirás. Necesitas ser un poco egoísta y cuidar más de ti, te estás dejando últimamente.",
+                    "Se retrasa un dinero que esperas , pero dentro de poco lograrás cobrarlo. Podrían hacerte una oferta que cambie para bien tu situación laboral. Tendrás que estar al pie del cañón en el trabajo si quieres que todo vaya bien. Tienes muchas ganas de salir y de frecuentar ambientes distintos, te divertirás. Es posible que retomes una amistad que no veías hace tiempo y te anime. En el amor, vas a dedicar más tiempo a tu pareja y las relaciones mejorarán. Alguien podría irrumpir en tu vida pronto y manifestar sus sentimientos. Necesitas más atenciones y cuidados, no dejes de lado tu estado físico. Estás bien de ánimo y vas a dedicar más tiempo a relajarte y divertirte. Estás con un poco de agobio, pero es más mental que físico, trata de calmarte. Necesitarás una buena dosis de descanso y de ocio para recuperar el humor.",
+                    "Debes ser valiente y atreverte a dar un paso hacia un trabajo nuevo. Laboralmente te va a resultar muy productivo, lo estás haciendo muy bien. No te obsesiones en tus quehaceres, si vas con calma todo saldrá mucho mejor. Dudarás en el terreno profesional, pero al final lo resolverás adecuadamente. No te dejes llevar por la indecisión en el amor, mantente firme y todo saldrá bien. Si tienes pareja podrías enterarte de cosas que desconocías sobre ella. Tienes que racionalizar tu situación y no obcecarte en las emociones. Con algunos paseos que des mejorarás la circulación y la resistencia. Ya va siendo hora de que le des a tu organismo los cuidados que necesita. Vas a disfrutar de los momentos de tranquilidad que estabas esperando. Tu energía está en un punto muy alto, tienes ganas de hacer cosas nuevas.  ",
+                    "Tendrás la cabeza despejada y aprenderás cualquier cosa nueva con facilidad. En el dinero te va bien, pero hay cierta tendencia al descontrol, evítalo. Necesitas renovarte o encontrar algo nuevo que te motive en el trabajo. Tendrás muchas satisfacciones durante esta época en la economía, te animarás. Es posible que encuentres una nueva historia entre la gente que conoces. Este es un buen momento para reforzar los vínculos con la gente que tratas habitualmente. No te dejes llevar por proyectos de ciertas personas que no conducen a nada. Aprovecha el tiempo libre que tengas para salir, harás nuevas amistades. Debes cambiar la actitud con la que te tomas las cosas, así mejorará tu ánimo. Vas a tratar de tener una actitud alegre y positiva, y eso te ayudará mucho. Podrías tener alguna molestia física este día, intenta descansar y relajarte. ",
+                ];
+
+                console.log(
+                    `Has nacido bajo el signo de ${ horo }, y este es tu horóscopo del día:`
+                );
+                const randomIndex = Math.floor( Math.random() * messages.length );
+                console.log( messages[ randomIndex ] );
+                return messages[ randomIndex ];
+            }
+        </script>
+    </body>
+
+</html>
