@@ -414,7 +414,7 @@
 					if (!isNaN(str[i])) {
 						enter += str[i];
 					} else if (enter != "" && comes.includes(str[i]) && !yaTengoComa) {
-						num += ".";
+						enter += ".";
 						yaTengoComa = true;
 					} else if (enter != "" && isNaN(str[i])) {
 						break;
@@ -903,7 +903,7 @@
 			// TODO console.log() que digui "La Maria va nèixer el 1995 i té 25 anys" agafant les propietats de l'objecte
 
 			console.log(
-				`La ${persona.name} va va nèixer el ${persona.any} i té ${persona.edat} anys`
+				`La ${persona.name} va nèixer el ${persona.any} i té ${persona.edat} anys`
 			);
 
 			console.log("-------------------------");
@@ -974,5 +974,6 @@
 			);
 		</script>
 		<h1>Aquests son els exercicis del 1 al 33 de JavaScript de Óscar Baeza</h1>
+		<h2>El 34 i 35 no li vaig fer push i estan al ordinador de BIT :(</h2>
 	</body>
 </html>
