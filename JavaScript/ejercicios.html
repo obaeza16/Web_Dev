@@ -644,19 +644,18 @@
 						`%c ${index} hola!`,
 						"color:white;background-color:black;"
 					);
-				} else if (index % 3 == 0 || index % 5 == 0) {
-					if (index % 3 == 0) {
-						console.log(
-							`%c ${index} adéu!`,
-							"color:white;background-color:black;"
-						);
-					}
-					if (index % 5 == 0) {
-						console.log(
-							`%c ${index} què tal?`,
-							"color:white;background-color:black;"
-						);
-					}
+				}
+				if (index % 3 == 0) {
+					console.log(
+						`%c ${index} adéu!`,
+						"color:white;background-color:black;"
+					);
+				}
+				if (index % 5 == 0) {
+					console.log(
+						`%c ${index} què tal?`,
+						"color:white;background-color:black;"
+					);
 				} else {
 					console.log(`%c ${index}`, "color:white;background-color:black;");
 				}
@@ -686,10 +685,12 @@
 				}
 			}
 
+			contar(max);
+
 			console.log("-------------------------");
 			console.log("-------------------------");
 
-			contar(max); // això ha de mostrar a la consola els números de l'1 al número introduit
+			// això ha de mostrar a la consola els números de l'1 al número introduit
 
 			// exercici 24: fes un buscador de números primers. Li fixarem un límit (p.e. 100) i agafarà cada número i el dividirà
 			// per tots els anteriors; si alguna de les divisions dona zero, llavors no és primer; si cap dona zero, l'escriurà a la
@@ -697,20 +698,27 @@
 
 			// TODO el codi aquí
 
-			function isPrime(num) {
-				if (num < 2) return false;
-				for (var i = 2; i < num; i++) {
-					if (num % i == 0) return false;
+			function isPrime(lim) {
+				var num = 0;
+				for (let i = 2; i < lim + 1; i++) {
+					var primer = true;
+					for (let j = 2; j < i; j++) {
+						if (i % j == 0) {
+							primer = false;
+						}
+					}
+					if (primer) {
+						console.log(`${i} és un número primer`);
+						num++;
+					}
 				}
-				return true;
+				console.log(`S'han trobat ${num} números primers entre el 0 i ${lim}.`);
 			}
 
-			console.log("-------------------------");
-			console.log("-------------------------");
+			isPrime(100);
 
-			// for (var i = 0; i < 100; i++) {
-			// 	if (isPrime(i)) console.log(i);
-			// }
+			console.log("-------------------------");
+			console.log("-------------------------");
 
 			// exercici 25: fes un contador que només mostri els números que tinguin un dígit contingut a la string predefinida fins a 100
 			// PISTA: usa la paraula clau "continue"
@@ -721,12 +729,11 @@
 
 			function mostrarDigits(parans) {
 				for (let k = 0; k < 100; k++) {
-					if (parans.includes(k.toString()[0])) {
-						console.log(k);
-					} else if (parans.includes(k.toString()[1])) {
-						console.log(k);
-					} else if (parans.includes(k.toString()[2])) {
-						console.log(k);
+					for (let i = 0; i < parans.length; i++) {
+						if (parans.includes(k[i])) {
+							console.log(k);
+							break;
+						}
 					}
 				}
 			}
@@ -814,10 +821,17 @@
 
 			function moure(arr, num) {
 				for (let i = 0; i < num; i++) {
-					arr.unshift(arr.splice(-1)[0]);
+					arr.unshift(arr.splice(-1)[0]); // se puede utilizar .concat en vez de unshift
 				}
 				return arr;
 			}
+
+			// function moureCorregit(arr, num) {
+			// 	for (let j = 0; j < num; j++) {
+			// 		arr.unshift(arr.pop());
+			// 	}
+			// 	return arr;
+			// }
 
 			console.log(moure(array, 2)); // ha de mostrar ["quart", "cinquè", "primer", "segon", "tercer"]
 

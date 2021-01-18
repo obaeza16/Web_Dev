@@ -24,6 +24,12 @@
 		<div class="form">
 			<input type="text" name="" id="" />
 			<button id="log">Mostrar per la consola</button>
+
+			<button id="omar">Ves a la pagina del Omar</button>
+			<button id="page">Go to this other page</button>
+
+			<button class="num" data-num="9">9</button>
+			<button data-ops="plus" class="ops">+</button>
 		</div>
 
 		<script>
@@ -35,6 +41,19 @@
 
 			var divInner = document.querySelector(".form").innerHTML;
 			console.log(divInner);
+
+			var botoOmar = document.querySelector("#omar");
+			var botoPage = document.querySelector("#page");
+
+			botoOmar.addEventListener("click", () => {
+				var local = location.href; //location.href torna la ubicació de la pàgina
+				console.log(local);
+			});
+
+			botoPage.addEventListener("click", () => {
+				var destination = "http://www.google.cat";
+				location.href = destination;
+			});
 		</script>
 	</body>
 </html>
