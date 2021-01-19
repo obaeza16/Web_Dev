@@ -98,7 +98,7 @@
             // exercici 6: defineix dues funcions afegirDiners() i gastarDiners() que sumi/resti a una variable externa el valor
             // indicat al paràmetre i mostri a la consola la quantitat actual de diners
 
-<<<<<<< HEAD
+
             var diners = 0;
 
             // TODO: definició de afegirDiners() i gastarDiners()
@@ -1098,9 +1098,8 @@
                         "Introdueix el teu ítem de la compra amb una lletra per classificar-lo: (s'atura amb STOP)"
                     );
 
-                    prom = prom.split( " " )
-                    var item = prom[ 0 ]
-                    var clas = prom[ 1 ]
+                    var item = prom.slice( 0, prompt.lastIndexOf( " " ) )
+                    var clas = prom.slice( item.lastIndexOf( " " ) + 1 )
                     if ( clas )
                     {
                         clas = clas.toUpperCase()
@@ -1166,9 +1165,9 @@
             // https://docs.google.com/document/d/11brCk7bmmL_rlawzeBgP6q4Y1yOw9yIK1hufpBpUq78/edit
 
             var csv = `Year,Make,Model,Description,Price\n
-						1997,Ford,E350,ac abs moon,3000.00\n
-						1999,Chevy,Venture "Extended Edition",,4900.00\n
-						1999,Chevy,Venture "Extended Edition XL",,5000.00\n
+                        1997,Ford,E350,ac abs moon,3000.00\n
+                        1999,Chevy,Venture "Extended Edition",,4900.00\n
+                        1999,Chevy,Venture "Extended Edition XL",,5000.00\n
                         1996,Jeep,Grand Cherokee,MUST SELL! air moon-roof loaded,4799.00\n
                         2077,Rayfield,Aerondight S9 "Guinevere",For many, the name Rayfield is synonymous with wealth – and for good reason. The price of the Rayfield Aerondight exceeds the GDP of many island nations. And it’s worth noting this British-made ultra-luxury, ultra-performance masterpiece is worth every penny of it. The pedigree engine under its hood puts this car on equal footing with professional racing vehicles, and the interior feels like a 5-star penthouse suite. But if that’s not enough to get you excited, the Aerodight doesn’t have a single window. With the help of a CrystalDome, the vehicle’s surroundings are displayed in real-time inside the cabin, ensuring complete driver privacy and stunning appearance.,225.000`;
 
