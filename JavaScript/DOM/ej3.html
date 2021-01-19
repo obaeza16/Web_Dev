@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej3</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h2><a href="">Exercici 3</a>: Fes que un botó agafi el teu nom d'un
+            input de
+            text i et saludi escrivint el teu nom al costat del botó (en el
+            HTML).</h2>
+        <br>
+
+        <div id="first">
+            <input type="text" name="" id="text">
+            <button id="butt">Put text below this button</button>
+            <p id="newText"></p>
+        </div>
+
+        <script>
+            var button2 = document.querySelector( "#butt" )
+            var text = document.querySelector( "#text" )
+            var newText = document.querySelector( "#newText" )
+
+            button2.addEventListener( "click", () => { newText.innerHTML += text.value } )
+        </script>
+    </body>
+
+</html>

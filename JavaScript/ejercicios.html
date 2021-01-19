@@ -994,7 +994,7 @@
                     ar.push( randomnum );
                 }
 
-                let sorted_arr = ar.slice().sort();
+                let sorted_arr = ar.slice().sort( ( a, b ) => a - b ); // para ordenar numéricamente
                 let results = [];
                 for ( let i = 0; i < sorted_arr.length - 1; i++ )
                 {

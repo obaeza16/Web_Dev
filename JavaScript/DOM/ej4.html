@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej4</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            input {
+                margin: .4rem;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2><a href="">Exercici 4</a>: Fes que un botó agafi el teu nom d'un
+            input de
+            text i et saludi escrivint el teu nom al costat del botó (en el
+            HTML)
+            precedit del pronom que hagis escollit en un input radio (selecció
+            única).
+        </h2><br>
+
+        <div id="first">
+            <form>
+                <p>
+                    <input type="radio" id="he" name="drone" value="he">
+                    <label for="he">He/Him</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="she" name="drone" value="she">
+                    <label for="she">She/Her</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="they" name="drone" value="they">
+                    <label for="they">They/Them</label>
+                </p>
+            </form>
+
+            <input type="text" name="" id="text">
+            <button id="butt">Put text below this button</button>
+            <p id="newText"></p>
+        </div>
+
+        <script>
+            var button2 = document.querySelector( "#butt" )
+            var text = document.querySelector( "#text" )
+            var newText = document.querySelector( "#newText" )
+
+            button2.addEventListener( "click", () =>
+            {
+                var valor = document.querySelector( 'input[name="drone"]:checked' ).value
+                newText.innerHTML += valor + " " + text.value
+            } )
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej8</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            input {
+                margin: .4rem;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2><a href="">Exercici 8</a>: Fes que un botó agafi una temperatura en
+            graus
+            Celsius d'un input de text i la converteixi en graus Fahrenheit.
+        </h2>
+        <br>
+
+
+
+        <input type="text" name="" id="text" placeholder="ºC">
+        <button id="butt">Convert to Fahrenheit</button>
+        <p id="newText"></p>
+
+
+        <script>
+            var text = document.querySelector( "#text" )
+            var button2 = document.querySelector( "#butt" )
+            var newText = document.querySelector( "#newText" )
+
+            button2.addEventListener( "click", () =>
+            {
+                newText.innerHTML += C_a_F( text.value )
+            } )
+
+            function C_a_F( C )
+            {
+                let temp_F = C * 1.8 + 32;
+                console.log( `La temperatura de ${ C }ºC en ºF és de: ${ temp_F }.` );
+                return ( `La temperatura de ${ C }ºC en ºF és de: ${ temp_F }.` )
+            }
+        </script>
+    </body>
+
+</html>

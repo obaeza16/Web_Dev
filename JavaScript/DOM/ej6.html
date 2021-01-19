@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej6</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            input {
+                margin: .4rem;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h2><a href="">Exercici 6</a>: Fes que un botó agafi el teu nom d'un
+            input de
+            text i et saludi escrivint el teu nom al costat del botó (en el
+            HTML) amb el
+            color que hagis seleccionat en un input select.</h2>
+        <br>
+
+
+
+        <select name="color" id="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        <input type="text" name="" id="text">
+        <button id="butt">Put text below this button</button>
+        <p id="newText"></p>
+
+
+        <script>
+            var color = document.querySelector( "#color" )
+            var button2 = document.querySelector( "#butt" )
+            var text = document.querySelector( "#text" )
+            var newText = document.querySelector( "#newText" )
+
+            button2.addEventListener( "click", () =>
+            {
+                newText.innerHTML += text.value
+                newText.style.color = color.value
+            } )
+        </script>
+    </body>
+
+</html>

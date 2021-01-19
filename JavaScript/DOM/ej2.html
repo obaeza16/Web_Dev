@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej2</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h2><a href="">Exercici 2</a>: Fes que un botó agafi el teu nom d'un
+            input de
+            text i et saludi per la consola dient el teu nom.</h2><br>
+
+        <div id="first">
+            <input type="text" name="" id="text">
+            <button id="butt">Pass text to console</button>
+        </div>
+
+        <script>
+            var button2 = document.querySelector( "#butt" )
+            var text = document.querySelector( "#text" )
+            // var button = document.querySelector( "#butt" ).innerHTML
+
+            button2.addEventListener( "click", () => { console.log( text.value ); } )
+                    // button.addEventListener( "click", () => { console.log( button ); } )
+        </script>
+    </body>
+
+</html>
