@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+		<style>
+			h2 {
+				text-align: center;
+			}
+
+			.form {
+				margin: auto;
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Ejercicios Acceso al DOM</h2>
+
+		<div class="form">
+			<input type="text" name="" id="" />
+			<button id="log">Mostrar per la consola</button>
+
+			<button id="omar">Ves a la pagina del Omar</button>
+			<button id="page">Go to this other page</button>
+
+			<button class="num" data-num="9">9</button>
+			<button data-ops="plus" class="ops">+</button>
+		</div>
+
+		<script>
+			var button = document.querySelector("#log").innerHTML;
+			console.log(button);
+
+			var div = document.querySelector(".form");
+			console.log(div);
+
+			var divInner = document.querySelector(".form").innerHTML;
+			console.log(divInner);
+
+			var botoOmar = document.querySelector("#omar");
+			var botoPage = document.querySelector("#page");
+
+			botoOmar.addEventListener("click", () => {
+				var local = location.href; //location.href torna la ubicació de la pàgina
+				console.log(local);
+			});
+
+			botoPage.addEventListener("click", () => {
+				var destination = "http://www.google.cat";
+				location.href = destination;
+			});
+		</script>
+	</body>
+</html>
