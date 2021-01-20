@@ -6,12 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ej9</title>
         <link rel="stylesheet" href="style.css">
-        <style>
-            input {
-                margin: .4rem;
-            }
-
-        </style>
     </head>
 
     <body>
@@ -39,7 +33,7 @@
         </select>
 
 
-        <button id="trans">Transforma!</button>
+        <button id="Trans">Transforma!</button>
 
         <p id="resultat"></p>
 
@@ -51,66 +45,72 @@
     <script>
 
         var inici = document.querySelector( "#tipinici" );
-
         var numero = document.querySelector( "#text" );
-
         var final = document.querySelector( "#tipfinal" );
-
         var res = document.querySelector( "#resultat" );
-
-        var button = document.querySelector( "#trans" );
-
+        var button = document.querySelector( "#Trans" );
 
 
-        button.addEventListener( "click", res.innerHTML += transformador( numero, inici, final ) );
+        button.addEventListener( "click", transform );
 
-        function transformador( numero, inici, final )
+
+        function transform()
         {
-            numero = parseInt( numero )
-            if ( inici.value == "Fahrenheit" && final.value == "Celsius" )
-            {
-                result = ( numero - 32 ) * 5 / 9;
-                return result
-
-            } else if ( inici.value == "Celsius" && final.value == "Fahrenheit" )
-            {
-                result = numero * 9 / 5 + 32;
-                return result
-
-            } else if ( inici.value == "Kelvin" && final.value == "Celsius" )
-            {
-                result = numero - 273.15;
-                return result
-            } else if ( inici.value == "Celsius" && final.value == "Kelvin" )
-            {
-                result = numero + 273.15;
-                return result
-
-            } else if ( inici.value == "Kelvin" && final.value == "Fahrenheit" )
-            {
-                result = ( 9 * ( numero - 273.15 ) / 5 ) + 32;
-                return result
-            } else if ( inici.value == "Fahrenheit" && final.value == "Kelvin" )
-            {
-                result = ( 5 * ( numero - 32 ) / 9 ) + 273.15;
-                return result
-            } else if ( inici.value == "Fahrenheit" && final.value == "Fahrenheit" )
-            {
-                return numero
-
-            } else if ( inici.value == "Kelvin" && final.value == "Kelvin" )
-            {
-                return numero
-
-            } else if ( inici.value == "Celsius" && final.value == "Celsius" )
-            {
-                return numero
-            }
+            console.log( res )
+            res.innerHTML = transformador( numero.value, inici.value, final.value );
         }
 
+        function transformador( numero, i, f )
+        {
+            numero = parseInt( numero );
+
+            if ( i == "Fahrenheit" && f == "Celsius" )
+            {
+                result = ( numero - 32 ) * 5 / 9;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Celsius" && f == "Fahrenheit" )
+            {
+                result = numero * 9 / 5 + 32;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Kelvin" && f == "Celsius" )
+            {
+                result = numero - 273.15;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Celsius" && f == "Kelvin" )
+            {
+                result = numero + 273.15;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Kelvin" && f == "Fahrenheit" )
+            {
+                result = ( numero - 273.15 ) * 1.8000 + 32.00;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Fahrenheit" && f == "Kelvin" )
+            {
+
+                result = ( ( numero - 32 ) / 1.8000 ) + 273.15;
+                return result.toFixed( 2 )
+
+            } else if ( i == "Fahrenheit" && f == "Fahrenheit" )
+            {
+                result = numero
+                return result.toFixed( 2 )
+
+            } else if ( i == "Kelvin" && f == "Kelvin" )
+            {
+                result = numero
+                return result.toFixed( 2 )
+
+            } else if ( i == "Celsius" && f == "Celsius" )
+            {
+                result = numero
+                return result.toFixed( 2 )
+            }
+        }
     </script>
-
-
-
 
 </html>

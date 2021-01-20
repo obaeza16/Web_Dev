@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ej12</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            div {
+                width: 1024px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h2>
+            <a href="">Exercici 12</a>: Llista de la compra simple. Igual
+            que la que
+            funcionava amb prompts però amb imput de text
+        </h2>
+
+
+        <input type="text" id="item"
+            placeholder="Introduiex elements per comprar:"
+            style="text-align: center; justify-content: center;">
+
+
+        <button id="compra">Fes llista!</button>
+
+        <div id="resultat"></div>
+
+    </body>
+
+    <script>
+
+        var item = document.querySelector( "#item" );
+        var res = document.querySelector( "#resultat" );
+        var button = document.querySelector( "#compra" );
+
+
+        button.addEventListener( "click", compra );
+
+
+        var lista = []
+        function compra()
+        {
+
+            res.innerHTML = res.innerHTML + "<p> - " + item.value + "</p>";
+        }
+
+        function printCompra( lista )
+        {
+            for ( element of lista )
+            {
+                console.log( "- " + element );
+            }
+        }
+    </script>
+
+</html>
