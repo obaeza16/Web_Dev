@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/400552c813.js" crossorigin="anonymous"></script>
+    
+</head>
+
+
+
+<body>
+    
+    <h2>Llista de la compra simple. Igual que la que funcionava amb prompts però amb imput de text</h2>
+    
+    <div id="container">
+        <form action="#">
+            <label for="afegir">La meva llista de la compra</label>
+            <input type="text" name="afegir" id="afegir">
+            <input type="button" value="Afegir a la lista!">
+        </form> 
+        
+        <p>Has de comprar:</p>
+        
+        <ul id="list"></ul>
+        
+    </div>
+    
+</body>
+
+<script>
+    
+    botEnviar = document.querySelector('[type="button"]');
+    Item = document.querySelector('[type="text"]');
+    list = document.getElementById("list");
+    
+    botEnviar.addEventListener("click",afegir);
+    
+    function afegir(e){ 
+        var lista = document.createElement("li");
+        lista.innerHTML = Item.value;
+        list.appendChild(lista);
+        Item.value = "";
+    }
+    
+    
+</script>
+
+</body>
+</html>

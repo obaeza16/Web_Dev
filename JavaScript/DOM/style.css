@@ -1,23 +1,22 @@
-            h2 {
-                width: 100%;
-                max-width: 550px;
-                text-align: center;
-                margin: auto;
-                padding: 20px;
-			}
+h2 {
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	padding: 20px;
+}
 
-			.form {
-				margin: auto;
-				width: 300px;
-				display: flex;
-				flex-direction: column;
-				gap: 5px;
-            }
+.form {
+	margin: auto;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
 
-            div {
-                margin: auto;
-				width: 300px;
-				display: flex;
-				flex-direction: column;
-                gap: 5px;
-            }
+div {
+	margin: auto;
+	width: 550px;
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+}

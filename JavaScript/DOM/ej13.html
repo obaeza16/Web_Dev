@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ej13</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			p {
+				margin: auto;
+				width: 550px;
+				display: flex;
+				padding: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>
+			<a href="">Exercici 13</a>: Fes un selector de propietats d'una caixa
+			(nom, material, mida i missatge) amb input text i selects que al clicar un
+			botó escrigui al HTML "Omar ha pedido una caja de sushi tamaño grande (con
+			mucho wasabi)".
+		</h2>
+
+		<div>
+			<input
+				type="text"
+				id="nom"
+				placeholder="Nombre del solicitante"
+				style="text-align: center; justify-content: center"
+			/>
+			<select name="material" id="material">
+				<option value="sushi">sushi</option>
+				<option value="peras">peras</option>
+				<option value="pollo">pollo</option>
+				<option value="dildos">dildos</option>
+			</select>
+			<select name="size" id="size">
+				<option value="grande">Grande</option>
+				<option value="pequeña">Pequeña</option>
+				<option value="mediana">Mediana</option>
+			</select>
+			<select name="comment" id="comment">
+				<option value="con mucho wasabi">con mucho wasabi</option>
+				<option value="con poco tomate">con poco tomate</option>
+				<option value="con una cerveza">con una cerveza</option>
+				<option value="con una coca">con una coca</option>
+			</select>
+
+			<button id="pedido">Pedir!</button>
+		</div>
+
+		<p id="resultado"></p>
+
+		<script>
+			var nombre = document.querySelector("#nom");
+			var material = document.querySelector("#material");
+			var size = document.querySelector("#size");
+			var comment = document.querySelector("#comment");
+			var button = document.querySelector("#pedido");
+
+			button.addEventListener("click", calcul);
+
+			function calcul() {
+				resultado.innerHTML = pedir(
+					nombre.value,
+					material.value,
+					size.value,
+					comment.value
+				);
+			}
+
+			function pedir(nombre, material, size, comment) {
+				return `${nombre} ha pedido una caja de ${material} tamaño ${size}, ${comment}.`;
+			}
+			// var nombre, material, size, comment;
+			// nombre = "Ester";
+			// material = "sushi";
+			// size = "gigante";
+			// comment = "Salmó a tope!";
+
+			// console.log(
+			// 	`${nombre} ha pedido una caja de ${material} tamaño ${size}, ${comment}`
+			// );
+		</script>
+	</body>
+</html>
