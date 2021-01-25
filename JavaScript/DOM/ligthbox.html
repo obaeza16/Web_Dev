@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/40cbc17b5a.js"
+			crossorigin="anonymous"
+		></script>
+		<title>LightBox</title>
+		<style>
+			/* The Modal (background) */
+			.modal {
+				display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				z-index: 1; /* Sit on top */
+				left: 0;
+				top: 0;
+				width: 100%; /* Full width */
+				height: 100%; /* Full height */
+				overflow: auto; /* Enable scroll if needed */
+				background-color: rgb(0, 0, 0); /* Fallback color */
+				background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+			}
+
+			/* Modal Content/Box */
+			.modal-content {
+				background-color: #fefefe;
+				margin: 15% auto; /* 15% from the top and centered */
+				padding: 20px;
+				border: 5px solid rgb(253, 152, 0);
+				width: 80%; /* Could be more or less, depending on screen size */
+				animation-name: animatetop;
+				animation-duration: 0.8s;
+			}
+
+			/* Add Animation */
+			@keyframes animatetop {
+				from {
+					top: -300px;
+					opacity: 0;
+				}
+				to {
+					top: 0;
+					opacity: 1;
+				}
+			}
+
+			/* The Close Button */
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>This is a light box</h1>
+
+		<div>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat id non,
+				sequi, assumenda cum nihil ratione quis aperiam voluptas, iste inventore
+				sunt sint? Harum sequi natus mollitia iste voluptatum dolorum quod
+				temporibus culpa. Similique, accusantium porro? Animi perferendis ut
+				dolores quos asperiores quam ipsa iusto? Eos, adipisci aliquam! Veniam
+				corporis ex distinctio error! Natus consequatur recusandae sint, nemo
+				neque, repudiandae, perferendis atque voluptatem maiores cumque libero.
+				Molestiae eveniet totam, mollitia quibusdam iste atque nulla omnis
+				officiis iure esse nesciunt magnam similique distinctio autem dolores
+				odio voluptatibus fugiat vel praesentium facilis ipsum voluptas
+				recusandae. Quasi quaerat sapiente repudiandae atque illum commodi
+				repellendus officia earum magnam autem. Ratione eaque perspiciatis
+				voluptatibus ut excepturi nostrum totam! Accusamus, blanditiis id neque
+				ad vero dolore repudiandae error velit necessitatibus molestiae eum
+				tenetur obcaecati amet et laboriosam recusandae omnis provident
+				praesentium ut itaque nostrum. Asperiores consequatur iusto illo nihil
+				officia consequuntur, libero corrupti atque beatae sed voluptatibus eum
+				alias et officiis at aliquid laudantium commodi cupiditate incidunt
+				autem cum quod possimus. Facere, reiciendis. Provident, ipsa
+				repellendus. Aut quidem dolor impedit libero animi quam nisi iusto
+				doloribus perspiciatis placeat. Quam eaque ipsam quasi porro tempore
+				dolorum consequuntur non accusamus, autem ad assumenda deleniti
+				perspiciatis accusantium. Provident, voluptatum! Odio reiciendis,
+				debitis officia odit quae deleniti iste, aspernatur dolor dignissimos
+				eveniet autem modi quasi, qui error cupiditate repudiandae iure est
+				facere! Beatae, sequi id. Est, nihil exercitationem et qui dignissimos
+				iste, esse beatae perspiciatis maiores aperiam similique dolores officia
+				quis nam assumenda aliquid vero. Sequi tempore adipisci quod dolor odio
+				corrupti quo minima eveniet earum ipsa reprehenderit fuga ut nam
+				delectus, nesciunt illum odit molestias veniam, vel, iusto repellat
+				doloremque? Aliquam alias sit necessitatibus, voluptatum impedit eos
+				aliquid! Nesciunt numquam illo quia unde nostrum neque tempora fuga enim
+				iure necessitatibus! Ratione beatae illum at sed quidem nihil
+				cupiditate? Voluptatibus maxime accusamus ipsam porro! Et, cumque vitae
+				hic molestiae obcaecati illum magni nulla nam minima dicta debitis,
+				voluptate sapiente. Odit cumque esse deserunt voluptas? Deleniti
+				pariatur, ut cupiditate impedit architecto quam laboriosam enim magni
+				dicta voluptatibus excepturi adipisci dolore possimus facilis hic
+				recusandae earum facere soluta consectetur sit iusto ducimus sequi
+				molestias totam? Sint facere dolorem ratione, sunt voluptatem deleniti
+				autem qui officia veniam provident, quo ducimus aspernatur molestias
+				nobis architecto voluptates labore fugiat, aliquid voluptate. Labore
+				deserunt similique exercitationem. Laborum similique deleniti ad
+				quisquam. Ipsum reiciendis consequuntur obcaecati autem. Eligendi
+				voluptate, deserunt aperiam reiciendis praesentium nemo, accusamus quam
+				atque voluptatibus iure nisi quo ipsum. Earum perspiciatis repudiandae
+				tempore. Adipisci consequatur praesentium eaque quas at debitis, ducimus
+				fuga et vero quaerat, sapiente voluptatibus suscipit. Facere, voluptates
+				repellat? Sequi, facilis itaque. Soluta debitis, tenetur reprehenderit
+				quaerat ad impedit a earum rerum, quibusdam tempore repellendus pariatur
+				exercitationem aut quisquam nihil nobis voluptatibus natus libero odit
+				maiores recusandae dignissimos totam. Fuga voluptate tempora rem quia
+				sequi delectus cumque aperiam! Delectus dolore ipsum doloremque rerum
+				cupiditate omnis rem veritatis error? Dicta, ullam harum illum pariatur
+				neque nisi animi, unde quia fugit eum nesciunt repellendus mollitia sed
+				ducimus perspiciatis necessitatibus temporibus laudantium. Magnam eum
+				eaque ratione praesentium sint nihil non? Hic delectus alias fuga.
+				Assumenda itaque sunt velit omnis nemo voluptas ipsam magnam quia,
+				accusantium quo adipisci minus aliquid id, asperiores voluptatem vitae
+				tempora exercitationem maiores quod sequi quas accusamus esse!
+				Voluptatum pariatur sed odit assumenda impedit ab incidunt nihil
+				placeat, ducimus obcaecati praesentium quis quo ullam et, commodi
+				reiciendis laborum dignissimos at blanditiis! Provident, delectus
+				quaerat earum voluptates praesentium pariatur accusantium eligendi
+				officiis voluptas maxime ducimus suscipit reprehenderit? Asperiores
+				laudantium, laborum assumenda harum, illo est alias nam ducimus id hic
+				aspernatur numquam repellat labore tempora distinctio molestias
+				deleniti. Omnis veniam quaerat in eius perspiciatis totam consequuntur
+				repellendus eveniet laudantium possimus maxime iure quam, labore nulla
+				odit illum facere libero distinctio suscipit architecto sapiente modi
+				incidunt reiciendis quidem. Soluta ducimus, quas nisi omnis assumenda
+				amet minus expedita aliquam maxime quis, eligendi vero aspernatur
+				beatae, dignissimos placeat voluptates nihil rem tenetur vitae dolores
+				distinctio saepe explicabo? Rerum cupiditate mollitia fugiat. Explicabo
+				hic tempore nostrum placeat nam temporibus repudiandae alias qui beatae.
+				Accusantium dolorum quae non id quaerat molestiae harum expedita libero
+				nemo asperiores culpa voluptates deleniti eius quam assumenda provident,
+				voluptas omnis consequuntur quia ipsam architecto autem quidem eum!
+				Fugit in iusto pariatur nam quam recusandae nesciunt vitae, nulla
+				perferendis a est unde! Libero, ab harum, minima non ea, asperiores
+				vitae aspernatur sunt deserunt odit amet quis commodi saepe ut quas.
+				Sapiente deleniti laborum quasi hic repellendus assumenda maxime sunt
+				modi, similique, voluptates perferendis aliquam nostrum voluptas animi
+				minus fugit. Itaque nisi numquam doloribus commodi? Ipsam, quisquam eos.
+				Facilis repudiandae corrupti maiores tenetur doloribus deleniti ducimus
+				a? Similique eos voluptatem porro ea labore doloremque voluptates
+				officiis, eaque quia numquam magni dolores ducimus omnis nisi possimus
+				culpa. Libero totam quidem odit suscipit iusto atque obcaecati, iste
+				sunt ullam sapiente omnis esse quam, alias error ex quo nulla aperiam
+				minus magnam. Dolorem ab impedit nisi culpa, quidem odit. At voluptatum
+				cum aut! Delectus ratione nemo distinctio iure mollitia natus dicta
+				libero vero ea magni aperiam id, accusantium ipsa obcaecati commodi
+				possimus similique, placeat laborum. Hic, veniam ad. Soluta dolores
+				earum rerum dolore distinctio, repellat neque delectus quidem. Ducimus
+				iste cupiditate ab reiciendis nulla fugit beatae qui, aliquid quam
+				dolorum maiores officiis dignissimos ad? Adipisci libero numquam
+				officiis suscipit quod excepturi labore, dolores, modi reiciendis enim
+				exercitationem odit neque est maxime nemo ab perspiciatis eligendi
+				voluptate. Ut laboriosam amet quo veritatis, nemo voluptatum ex fuga
+				tenetur et exercitationem aperiam consequatur? Vel quaerat eos natus
+				labore sunt earum ipsum dignissimos facere adipisci numquam recusandae
+				molestiae repellendus tenetur dolorum rem rerum dolor autem, dolorem ut,
+				incidunt praesentium ipsam! Quibusdam tempora fugit perferendis
+				exercitationem dolores minus temporibus sequi vitae, repudiandae
+				deserunt iste error maiores delectus! Delectus minima alias natus ipsum
+				est similique doloremque ex incidunt repellat voluptas debitis
+				consectetur optio consequuntur sapiente quia odit accusamus ducimus quis
+				deleniti distinctio, quo, repudiandae eveniet. Odit molestiae voluptatum
+				dignissimos quae, voluptatem sint quam praesentium tenetur quibusdam
+				veritatis beatae omnis blanditiis obcaecati dolores. Sunt illo
+				necessitatibus amet eligendi laudantium nulla inventore, consequatur
+				expedita reiciendis odio vero!
+			</p>
+
+			<button id="open">Open Light Box</button>
+		</div>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<h2>Amaazing Modal Box</h2>
+				<span class="close">&times;</span>
+				<p>This is a light box, made by Óscar Baeza Francisoud</p>
+			</div>
+		</div>
+
+		<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("open");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on the button, open the modal
+			btn.onclick = function () {
+				modal.style.display = "block";
+			};
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			};
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			};
+		</script>
+	</body>
+</html>

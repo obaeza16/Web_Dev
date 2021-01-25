@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="data"></p>
+
+		<textarea name="" id="input" cols="30" rows="10"></textarea>
+
+		<div id="output"></div>
+	</body>
+
+	<script>
+		var input = document.querySelector("#input");
+		var output = document.querySelector("#output");
+
+		var timer = setInterval(() => {
+			output.innerHTML = input.value;
+		}, 2000);
+
+		var data = document.querySelector("#data");
+
+		i = 0;
+		var timer2 = setInterval(() => {
+			data.innerHTML = "Data:" + new Date();
+			i++;
+
+			if (i == 10) clearInterval(timer2);
+		}, 1000);
+
+		// clearInterval(timer2);
+
+		var end = new Date("16/01/2022 0:00"); // fecha final del contador
+		var timer;
+
+		// calcular los milisegundos que hay en segundos, minutos, horas y dias
+
+		function showRemaining() {
+			var now = new Date();
+			var dif = end - now;
+
+			if (dif == 0) {
+				// para crono
+				clearInterval(timer);
+			}
+		}
+	</script>
+</html>

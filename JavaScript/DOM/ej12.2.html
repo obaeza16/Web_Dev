@@ -26,6 +26,16 @@
 			style="text-align: center; justify-content: center"
 		/>
 
+		<label for="section"
+			>Selecciona de quina secció vols comprar aquest producte:</label
+		>
+		<select name="section" id="section" form="section">
+			<option value="C">Carnisseria</option>
+			<option value="V">Fruita i Verdura</option>
+			<option value="L">Làctics</option>
+			<option value="F">Forn</option>
+		</select>
+
 		<button id="compra">Fes llista!</button>
 		<button id="sort">Ordena alfabéticament!</button>
 
@@ -34,25 +44,88 @@
 
 	<script>
 		var item = document.querySelector("#item");
+		var clas = document.querySelector("#section");
 		var res = document.querySelector("#resultat");
 		var button = document.querySelector("#compra");
 		var button2 = document.querySelector("#sort");
 
-		button.addEventListener("click", compra);
-		button2.addEventListener("click", sorting);
+		button.addEventListener("click", () => {
+			compra();
+			mostrar();
+		});
+		button2.addEventListener("click", () => {
+			sorting();
+			mostrar();
+		});
 
+		var llistaCompra = {
+			carnisseria: [],
+			fruita: [],
+			làctics: [],
+			forn: [],
+			noms: {
+				carnisseria: "Carnisseria",
+				fruita: "Fruita i Verdura",
+				làctics: "Làctics",
+				forn: "Forn de pa",
+			},
+		};
 		var lista = [];
+
 		function compra() {
-			lista.push(item.value);
-			res.innerHTML = res.innerHTML + "<p> - " + item.value + "</p>";
+			if (clas.value) {
+				clas.value = clas.value.toUpperCase();
+			}
+
+			if (clas.value == "C") {
+				llistaCompra.carnisseria.push(item.value);
+			} else if (clas.value == "V") {
+				llistaCompra.fruita.push(item.value);
+			} else if (clas.value == "L") {
+				llistaCompra.làctics.push(item.value);
+			} else if (clas.value == "F") {
+				llistaCompra.forn.push(item.value);
+			}
+
+			// res.innerHTML = res.innerHTML + "<p> - " + item.value + "</p>";
 		}
 
 		function sorting() {
-			lista.sort();
+			llistaCompra.carnisseria.sort();
+			llistaCompra.fruita.sort();
+			llistaCompra.làctics.sort();
+			llistaCompra.forn.sort();
 			res.innerHTML = "";
-			for (const element of lista) {
-				res.innerHTML = res.innerHTML + "<p> - " + element + "</p>";
+		}
+
+		function mostrar() {
+			var mostra = "";
+			mostra = "Tienes que comprar:<ul>";
+			mostra += "<li>" + llistaCompra.noms.carnisseria + "<ul>";
+			for (element of llistaCompra.carnisseria) {
+				mostra += "<li>" + element + "</li>";
 			}
+			mostra += "</ul></li>";
+
+			mostra += "<li>" + llistaCompra.noms.fruita + "<ul>";
+			for (element of llistaCompra.fruita) {
+				mostra += "<li>" + element + "</li>";
+			}
+			mostra += "</ul></li>";
+
+			mostra += "<li>" + llistaCompra.noms.làctics + "<ul>";
+			for (element of llistaCompra.làctics) {
+				mostra += "<li>" + element + "</li>";
+			}
+			mostra += "</ul></li>";
+
+			mostra += "<li>" + llistaCompra.noms.forn + "<ul>";
+			for (element of llistaCompra.forn) {
+				mostra += "<li>" + element + "</li>";
+			}
+			mostra += "</ul></li>";
+
+			res.innerHTML = "<p>" + mostra + "</p>";
 		}
 	</script>
 </html>
