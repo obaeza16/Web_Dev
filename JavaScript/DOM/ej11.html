@@ -105,51 +105,51 @@
 
     <script>
 
-        var operacio = document.querySelector( "#operacio" );
-        var num1 = document.querySelector( "#num1" );
-        var num2 = document.querySelector( "#num2" )
-        var res = document.querySelector( "#resultat" );
-        var button = document.querySelector( "#calc" );
+        // var operacio = document.querySelector( "#operacio" );
+        // var num1 = document.querySelector( "#num1" );
+        // var num2 = document.querySelector( "#num2" )
+        // var res = document.querySelector( "#resultat" );
+        // var button = document.querySelector( "#calc" );
 
 
-        button.addEventListener( "click", calcul );
+        // button.addEventListener( "click", calcul );
 
 
-        function calcul()
-        {
-            res.innerHTML = calculadora( num1.value, num2.value, operacio.value );
-        }
+        // function calcul()
+        // {
+        //     res.innerHTML = calculadora( num1.value, num2.value, operacio.value );
+        // }
 
-        function calculadora( x, y, sym )
-        {
+        // function calculadora( x, y, sym )
+        // {
 
-            x = parseFloat( x );
-            y = parseFloat( y );
+        //     x = parseFloat( x );
+        //     y = parseFloat( y );
 
-            if ( sym == "+" )
-            {
-                return `${ x } + ${ y } són ${ ( x + y ).toFixed( 2 ) }`;
-            } else if ( sym == "-" )
-            {
-                return `${ x } - ${ y } són ${ ( x - y ).toFixed( 2 ) }`;
-            } else if ( sym == "*" )
-            {
-                return `${ x } * ${ y } són ${ ( x * y ).toFixed( 2 ) }`;
-            } else if ( sym == "/" )
-            {
-                result = x / y;
-                return `${ x } / ${ y } són ${ ( x / y ).toFixed( 2 ) }`;
-            } else if ( sym == "**" )
-            {
-                return `${ x } ** ${ y } són ${ ( x ** y ).toFixed( 2 ) }`;
-            } else if ( sym == "%" )
-            {
-                return `${ x } % ${ y } són ${ ( x % y ).toFixed( 2 ) }`;
-            } else
-            {
-                return "Please introduce a valid symbol", "color:red, ";
-            }
-        }
+        //     if ( sym == "+" )
+        //     {
+        //         return `${ x } + ${ y } són ${ ( x + y ).toFixed( 2 ) }`;
+        //     } else if ( sym == "-" )
+        //     {
+        //         return `${ x } - ${ y } són ${ ( x - y ).toFixed( 2 ) }`;
+        //     } else if ( sym == "*" )
+        //     {
+        //         return `${ x } * ${ y } són ${ ( x * y ).toFixed( 2 ) }`;
+        //     } else if ( sym == "/" )
+        //     {
+        //         result = x / y;
+        //         return `${ x } / ${ y } són ${ ( x / y ).toFixed( 2 ) }`;
+        //     } else if ( sym == "**" )
+        //     {
+        //         return `${ x } ** ${ y } són ${ ( x ** y ).toFixed( 2 ) }`;
+        //     } else if ( sym == "%" )
+        //     {
+        //         return `${ x } % ${ y } són ${ ( x % y ).toFixed( 2 ) }`;
+        //     } else
+        //     {
+        //         return "Please introduce a valid symbol", "color:red, ";
+        //     }
+        // }
     </script>
 
 </html>

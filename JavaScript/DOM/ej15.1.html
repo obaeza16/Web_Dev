@@ -35,23 +35,21 @@
 			.filter {
 				float: left;
 				color: #ffffff;
-				width: 100px;
 				line-height: 100px;
 				text-align: center;
-				margin: 2px;
-				display: none; /* Hidden by default */
+				margin: 10px 0px;
+				width: 0px;
+				transition: 1s;
 			}
 
 			/* The "show" class is added to the filtered elements */
 			.show {
-				display: block;
-			}
-
-			.notShow {
-				display: none;
+				width: 25px;
+				margin: 10px;
 			}
 
 			.btn {
+				margin: 10px;
 				border: none;
 				outline: none;
 				padding: 12px 16px;
@@ -74,75 +72,68 @@
 
 	<body>
 		<h2>
-			<a href="">Exercici 15</a>: Filtre. Fes un filtre de elements que et
-			mostri els d'un color concret (blau, verd, groc, vermell), tots els
-			elements o cap element afegint o treient la classe "show".
+			<a href="">Exercici 15.1</a>: Filtre guai. Fes un filtre de elements que
+			et mostri els d'un color concret (blau, verd, groc, vermell), tots els
+			elements o cap element amb una animació que faci que els elements que
+			sobren desapareguin d'alguna manera.
 		</h2>
+		<br />
 
 		<div id="cuadros" class="container">
+			<div class="filter vermell show"></div>
 			<div class="filter blau show"></div>
-			<div class="filter blau show"></div>
-			<div class="filter blau show"></div>
-			<div class="filter blau show"></div>
-			<div class="filter blau show"></div>
-			<div class="filter verd show"></div>
-			<div class="filter verd show"></div>
-			<div class="filter verd show"></div>
-			<div class="filter verd show"></div>
-			<div class="filter verd show"></div>
-			<div class="filter groc show"></div>
-			<div class="filter groc show"></div>
-			<div class="filter groc show"></div>
-			<div class="filter groc show"></div>
 			<div class="filter groc show"></div>
 			<div class="filter vermell show"></div>
+			<div class="filter groc show"></div>
+			<div class="filter blau show"></div>
+			<div class="filter groc show"></div>
+			<div class="filter blau show"></div>
+			<div class="filter verd show"></div>
+			<div class="filter blau show"></div>
+			<div class="filter verd show"></div>
+			<div class="filter groc show"></div>
 			<div class="filter vermell show"></div>
+			<div class="filter blau show"></div>
+			<div class="filter verd show"></div>
+			<div class="filter groc show"></div>
+			<div class="filter verd show"></div>
 			<div class="filter vermell show"></div>
-			<div class="filter vermell show"></div>
+			<div class="filter verd show"></div>
 			<div class="filter vermell show"></div>
 		</div>
 
-		<!-- <button id="showGreen" class="btn">Show Only Green</button>
-		<button id="showBlue" class="btn">Show Only Blue</button>
-		<button id="showYellow" class="btn">Show Only Yellow</button>
-		<button id="showRed" class="btn">Show Only Red</button> -->
-
 		<div id="myBtnContainer">
-			<button class="btn active" onclick="filterSelection('all')">
-				Show all
-			</button>
+			<button class="btn active" onclick="showAll()">Show all</button>
 			<button class="btn" onclick="hideAll()">Hide All</button>
-			<button class="btn" onclick="filterSelection('blau')">Blau</button>
-			<button class="btn" onclick="filterSelection('verd')">Verd</button>
-			<button class="btn" onclick="filterSelection('groc')">Groc</button>
-			<button class="btn" onclick="filterSelection('vermell')">Vermell</button>
+			<button class="btn" onclick="toggleClasses('blau')">Blau</button>
+			<button class="btn" onclick="toggleClasses('verd')">Verd</button>
+			<button class="btn" onclick="toggleClasses('groc')">Groc</button>
+			<button class="btn" onclick="toggleClasses('vermell')">Vermell</button>
 		</div>
 
 		<script>
-			// var blue = document.querySelector("#blau");
-			// var green = document.querySelector("#verd");
-			// var yellow = document.querySelector("#groc");
-			// var red = document.querySelector("#vermell");
+			var elements = document.querySelectorAll(".filter");
 
-			// var buttonGreen = document.querySelector("#showGreen");
-			// var buttonBlue = document.querySelector("#showBlue");
-			// var buttonYellow = document.querySelector("#showYellow");
-			// var buttonRed = document.querySelector("#showRed");
-
-			// buttonBlue.addEventListener("click", () => show);
-			// buttonGreen.addEventListener("click", () => show);
-			// buttonYellow.addEventListener("click", () => show);
-			// buttonRed.addEventListener("click", () => show);
+			function toggleClasses(color) {
+				elements.forEach((element) => {
+					if (element.classList.contains(color)) {
+						element.classList.add("show");
+					} else {
+						element.classList.remove("show");
+					}
+				});
+			}
 
 			function hideAll() {
-				showed = document.getElementsByClassName("show");
-				console.log(showed);
-				for (var i = 0; i < showed.length; i++) {
-					w3AddClass(showed[i], "notShow");
-				}
+				elements.forEach((element) => element.classList.remove("show"));
+			}
+
+			function showAll() {
+				elements.forEach((element) => element.classList.add("show"));
 			}
 
 			// Desde aquí de W3Schools
+
 			filterSelection("all");
 			function filterSelection(c) {
 				var x, i;
@@ -152,7 +143,7 @@
 				for (i = 0; i < x.length; i++) {
 					w3RemoveClass(x[i], "show");
 					w3RemoveClass(x[i], "notShow");
-					if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+					if (x[i].classList.toggle("show") > -1) w3AddClass(x[i], "show");
 				}
 			}
 
@@ -191,6 +182,21 @@
 					this.className += " active";
 				});
 			}
+
+			// var blue = document.querySelector("#blau");
+			// var green = document.querySelector("#verd");
+			// var yellow = document.querySelector("#groc");
+			// var red = document.querySelector("#vermell");
+
+			// var buttonGreen = document.querySelector("#showGreen");
+			// var buttonBlue = document.querySelector("#showBlue");
+			// var buttonYellow = document.querySelector("#showYellow");
+			// var buttonRed = document.querySelector("#showRed");
+
+			// buttonBlue.addEventListener("click", () => show);
+			// buttonGreen.addEventListener("click", () => show);
+			// buttonYellow.addEventListener("click", () => show);
+			// buttonRed.addEventListener("click", () => show);
 		</script>
 	</body>
 </html>

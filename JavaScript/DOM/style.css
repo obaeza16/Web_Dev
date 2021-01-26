@@ -10,14 +10,16 @@ h2 {
 	width: 300px;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	/* gap: 5px; */
 }
 
 div {
-	margin: auto;
-	width: 550px;
-	display: flex;
-	flex-direction: row;
-	gap: 5px;
-	padding: 25px;
+	margin: 10px;
+	max-width: 550px;
+	/* display: flex;
+	flex-direction: row; */
+	height: 40px;
+	/* gap: 5px;
+	padding: 25px; */
+	/* box-sizing: border-box; */
 }
