@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>parallax</title>
+		<style>
+			body {
+				background: url("./three.png") fixed;
+				background-size: 80px;
+			}
+
+			.cont {
+				position: relative;
+				top: 3000px;
+				background-color: white;
+				text-align: justify;
+				height: auto;
+				padding: 20px;
+			}
+
+			#one {
+				background: url("./one.png") 50px 0px;
+				background-size: 150px;
+				top: 0px;
+				height: 3000px;
+				width: 100%;
+				position: fixed;
+			}
+			#two {
+				background-image: url("./two.png");
+				background-size: 200px;
+				top: 0px;
+				height: 3000px;
+				width: 100%;
+				position: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one"></div>
+		<div id="two"></div>
+
+		<div class="cont">
+			Final
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab doloremque
+				dolore mollitia ipsam asperiores dolorem repellat quo cum facilis
+				laudantium. Delectus autem assumenda nulla doloribus? Tempore ea
+				officiis asperiores aspernatur odio reprehenderit a doloremque mollitia
+				deserunt! Delectus magni sint hic omnis a? Unde at quae commodi
+				assumenda labore inventore deserunt hic recusandae explicabo modi
+				tenetur exercitationem, quos dolores, sint pariatur illum maiores
+				dolorem sapiente nisi itaque! A esse cumque quae aut et quod provident.
+				Perferendis ratione tempora ipsam dolorem iste eaque nostrum ab nisi
+				voluptatem magnam? Ipsam error saepe corrupti dolorum veritatis
+				voluptatibus illum quis voluptatum veniam earum vitae nostrum natus vel
+				et, tempore eveniet quibusdam esse sunt neque blanditiis culpa molestias
+				necessitatibus, minima voluptate. Tempora rem laborum soluta quos
+				quibusdam quaerat impedit tenetur nostrum sint. Esse quaerat molestiae
+				quibusdam consequuntur. Iste nam eius id rem necessitatibus quibusdam
+				sunt eum minima explicabo, quisquam velit fugiat esse eligendi ipsa vel
+				quasi exercitationem! Eum quidem tempora ratione deserunt non blanditiis
+				sunt unde voluptatibus, dolor quae nihil tenetur architecto aliquam
+				asperiores amet commodi exercitationem sapiente, iusto culpa, rerum
+				aspernatur. Possimus, in eum neque sequi necessitatibus expedita ipsum
+				maxime. Tenetur illum placeat iure ab sit fuga, veritatis tempora nihil
+				recusandae, consequatur doloribus quibusdam officia?
+			</p>
+		</div>
+
+		<div class="cont" style="top: 5000px"><p>a</p></div>
+
+		<script>
+			var one = document.querySelector("#one");
+			var two = document.querySelector("#two");
+
+			window.addEventListener("scroll", () => {
+				one.style.top = -window.scrollY * 0.5 + "px";
+				two.style.top = -window.scrollY * 0.7 + "px";
+			});
+		</script>
+	</body>
+</html>
