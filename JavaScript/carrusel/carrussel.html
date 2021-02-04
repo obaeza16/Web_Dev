@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image slider</title>
+
+		<style>
+			h2 {
+				text-align: center;
+			}
+
+			.cont {
+				max-width: 1000px;
+				margin: auto;
+			}
+
+			#slider1,
+			#slider2 {
+				width: 300px;
+				height: 300px;
+				overflow: hidden;
+				margin: auto;
+			}
+
+			#slider1content,
+			#slider2content {
+				height: 300px;
+				width: 900px;
+				transition: 1s;
+			}
+
+			#slider1content img,
+			#slider2content img {
+				width: 300px;
+				height: 300px;
+				object-fit: cover;
+			}
+
+			button {
+				width: 100px;
+			}
+
+			.buttons {
+				text-align: center;
+				width: fit-content;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cont">
+			<h2>Slider 1</h2>
+			<div id="slider1">
+				<div id="slider1content">
+					<img src="http://placekitten.com/300/300" alt="" /><img
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img src="http://placekitten.com/300/300" alt="" />
+				</div>
+			</div>
+			<br />
+			<div class="buttons">
+				<button id="previous">Previous</button><button id="next">Next</button>
+			</div>
+			<br />
+			<br />
+			<br />
+			<h2>Slider 2</h2>
+			<div id="slider2">
+				<div id="slider2content">
+					<img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/>
+				</div>
+			</div>
+			<br />
+			<div class="buttons">
+				<button id="previous2">Previous</button><button id="next2">Next</button>
+			</div>
+			<br />
+			<br />
+			<br />
+			<h2>Slider 3</h2>
+			<div id="slider3">
+				<div id="slider3content">
+					<img
+						class="sliderImg3"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg3"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img
+						class="sliderImg3"
+						src="http://placekitten.com/300/300"
+						alt=""
+					/>
+				</div>
+			</div>
+			<br />
+			<div class="buttons">
+				<button id="previous3">Previous</button><button id="next3">Next</button>
+			</div>
+			<br />
+			<br />
+			<br />
+			<h2>Slider 4</h2>
+			<div id="slider4">
+				<div id="slider4content">
+					<img src="http://placekitten.com/300/300" alt="" /><img
+						src="http://placekitten.com/300/300"
+						alt=""
+					/><img src="http://placekitten.com/300/300" alt="" />
+				</div>
+			</div>
+			<br />
+			<div class="buttons">
+				<button id="previous">Previous</button><button id="next">Next</button>
+			</div>
+		</div>
+
+		<script>
+			var next = document.querySelector("#next");
+			var prev = document.querySelector("#previous");
+			var slider = document.querySelector("#slider1content");
+
+			next.addEventListener("click", () => moveSlider(1));
+			prev.addEventListener("click", () => moveSlider(-1));
+
+			var imgActiva = 0;
+
+			function moveSlider(direction) {
+				imgActiva = imgActiva + direction; //cambia la imagen activa
+
+				//comprueba si estamos al principio o al final
+				if (imgActiva > 2) imgActiva = 0;
+				else if (imgActiva < 0) imgActiva = 2;
+
+				//fija el margen para que se vea la imagen correcta
+				slider.style.marginLeft = `${-300 * imgActiva}px`;
+			}
+
+			// setInterval(() => moveSlider(1), 3000);
+
+			// --------------------  SLIDER 2 --------------------
+			var next2 = document.querySelector("#next2");
+			var prev2 = document.querySelector("#previous2");
+
+			var slider2 = document.querySelector("#slider2content");
+			var sliderImg = document.querySelectorAll(".sliderImg");
+
+			next2.addEventListener("click", () => moveSlider2(1));
+			prev2.addEventListener("click", () => moveSlider2(-1));
+
+			var imgActiva2 = 0;
+			var numImg = sliderImg.length;
+			slider2.style.width = numImg * 300 + "px";
+
+			function moveSlider2(direction) {
+				imgActiva2 = imgActiva2 + direction; //cambia la imagen activa
+
+				//comprueba si estamos al principio o al final
+				if (imgActiva2 > numImg - 1) imgActiva2 = 0;
+				else if (imgActiva2 < 0) imgActiva2 = numImg - 1;
+
+				//fija el margen para que se vea la imagen correcta
+				slider2.style.marginLeft = `${-300 * imgActiva2}px`;
+			}
+
+			// TODO: copiar de singulars2020 los tres últimos sliders!
+		</script>
+	</body>
+</html>
