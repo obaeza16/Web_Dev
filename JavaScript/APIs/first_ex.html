@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>API first try</title>
+	</head>
+	<body>
+		<h3>Planetas</h3>
+		<div class="planets"></div>
+		<br />
+		<h3>Población</h3>
+
+		<div class="population"></div>
+	</body>
+
+	<script>
+		var planets = document.querySelector(".planets");
+		var pop = document.querySelector(".population");
+
+		fetch("https://swapi.dev/api/planets/")
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				var resultats = res.results;
+				console.log(resultats);
+
+				for (planet of resultats) {
+					// If population unknown, then we say so , if we have population we calculate the poblational density
+					if (planet.population == "unknown") {
+						planets.innerHTML += `<li>${planet.name} té un diàmetre de ${planet.diameter}, amb una població desconeguda.</li>`;
+					} else {
+						radius = planet.diameter / 2;
+						surface = 4 * Math.PI * Math.pow(radius, 2);
+						planets.innerHTML += `<li>${planet.name} té un diàmetre de ${
+							planet.diameter
+						} km i una població de ${
+							planet.population
+						} habitants, amb una densitat de ${
+							planet.population / surface
+						} habitants per km3.  </li>`;
+					}
+				}
+			});
+	</script>
+</html>
