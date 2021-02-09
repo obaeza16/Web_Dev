@@ -10,36 +10,101 @@
 		<h3>Planetas</h3>
 		<div class="planets"></div>
 		<br />
-		<h3>Población</h3>
-
-		<div class="population"></div>
+		<h3>Sorted by Diameter</h3>
+		<br />
+		<div class="sorted"></div>
+		<br />
+		<h3>All Planets</h3>
+		<div class="allPlanets"></div>
+		<h3>Pokemons</h3>
+		<div class="pokemons"></div>
 	</body>
 
 	<script>
+		// WORK WITH STAR WARS API
 		var planets = document.querySelector(".planets");
-		var pop = document.querySelector(".population");
+		var sortedDoc = document.querySelector(".sorted");
+		var allPlanets = document.querySelector(".allPlanets");
 
 		fetch("https://swapi.dev/api/planets/")
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res);
 				var resultats = res.results;
 
-				for (planet of resultats) {
-					// If population unknown, then we say so , if we have population we calculate the poblational density
-					if (planet.population == "unknown") {
-						planets.innerHTML += `<li>${planet.name} té un diàmetre de ${planet.diameter}, amb una població desconeguda.</li>`;
-					} else {
-						radius = planet.diameter / 2;
-						surface = 4 * Math.PI * Math.pow(radius, 2);
-						planets.innerHTML += `<li>${planet.name} té un diàmetre de ${
-							planet.diameter
-						} km i una població de ${
-							planet.population
-						} habitants, amb una densitat de ${
-							planet.population / surface
-						} habitants per km3.  </li>`;
+				populationDensity(resultats, planets);
+
+				// To sort by diameter
+				resSorted = resultats.sort(compare);
+
+				populationDensity(resSorted, sortedDoc);
+				console.log(resSorted);
+			});
+
+		function compare(a, b) {
+			if (parseInt(a.diameter) < parseInt(b.diameter)) {
+				return -1;
+			}
+			if (parseInt(a.diameter) > parseInt(b.diameter)) {
+				return 1;
+			}
+			return 0;
+		}
+
+		function populationDensity(array, docLocation) {
+			for (planet of array) {
+				// If population unknown, then we say so , if we have population we calculate the poblational density
+				if (planet.population == "unknown" || planet.diameter == "unknown") {
+					docLocation.innerHTML += `<li>${planet.name} té un diàmetre desconegut, amb una població desconeguda.</li>`;
+				} else {
+					radius = planet.diameter / 2;
+					surface = 4 * Math.PI * Math.pow(radius, 2);
+					docLocation.innerHTML += `<li>${planet.name} té un diàmetre de ${
+						planet.diameter
+					} km i una població de ${
+						planet.population
+					} habitants, amb una densitat de ${
+						planet.population / surface
+					} habitants per km3.  </li>`;
+				}
+			}
+		}
+
+		// FETCH AND DO FETCH ON THE NEXT PAGE
+		var arrPlanetas = [];
+		function paginaAPI(url, array) {
+			fetch(url)
+				.then((res) => res.json())
+				.then((res) => {
+					nextURL = res.next;
+					planetas = res.results;
+
+					for (planeta of planetas) {
+						arrPlanetas.push(planeta);
 					}
+
+					if (nextURL) paginaAPI(nextURL, []);
+					else {
+						for (const planet of arrPlanetas) {
+							allPlanets.innerHTML += `<li>${planet.name}</li>`;
+						}
+						// populationDensity(arrPlanetas, allPlanets);
+					}
+				});
+		}
+
+		paginaAPI("https://swapi.dev/api/planets/", []);
+
+		// WORK WITH POKEMON API
+
+		var pokedex = document.querySelector(".pokemons");
+
+		fetch("https://pokeapi.co/api/v2/pokedex/6")
+			.then((res) => res.json())
+			.then((res) => {
+				var pokemons = res.pokemon_entries; // array amb la info dels pokemons
+
+				for (pokemon of pokemons) {
+					pokedex.innerHTML += `<li>${pokemon.pokemon_species.name}</li>`;
 				}
 			});
 	</script>
