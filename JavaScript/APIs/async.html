@@ -25,26 +25,53 @@
 
     <script>
         // WORK WITH STAR WARS API
-        var planets = document.querySelector( ".planets" );
+        var planetsDoc = document.querySelector( ".planets" );
         var sortedDoc = document.querySelector( ".sorted" );
         var allPlanets = document.querySelector( ".allPlanets" );
         var resi = document.querySelector( ".residents" )
 
+        async function planetFetch( url )
+        {
+            fetch( url )
+                .then( ( res ) => res.json() )
+                .then( ( res ) =>
+                {
+                    var resultats = res.results;
+
+                    populationDensity( resultats, planets );
+
+                    // To sort by diameter
+                    resSorted = resultats.sort( compare );
+
+                    populationDensity( resSorted, sortedDoc );
+
+                    // TODO:
+                    //To sort by density
+
+                } );
+        }
 
         // CORREGIDO POR OMAR
-
 
         async function residents( url )
         {
             var planets = await fetch( url )
             planets = await planets.json()
 
+            // populationDensity( planets.results, planets );
 
+            // To sort by diameter
+            resSorted = planets.results.sort( compare );
+
+            populationDensity( resSorted, sortedDoc );
+
+            var all = ""
             var contingut = ""
             var persones = ""
             // recorro els planetes
             for ( var planet of planets.results )
             {
+                all += `<li>${ planet.name }</li>`;
                 if ( planet.residents )
                 {
                     for ( var resident of planet.residents )
@@ -61,6 +88,7 @@
                     contingut += `<li>${ planet.name } (no famous residents)</li>`
                 }
 
+                planetsDoc.innerHTML = all
                 resi.innerHTML = contingut
             }
 
@@ -91,11 +119,10 @@
                 if ( planet.population == "unknown" && planet.diameter == "unknown" )
                 {
                     docLocation.innerHTML += `<li>${ planet.name } té un diàmetre desconegut, amb una població desconeguda.</li>`;
-                } if ( planet.diameter == "unknown" )
+                } else if ( planet.diameter == "unknown" && planet.population )
                 {
                     docLocation.innerHTML += `<li>${ planet.name } té un diàmetre desconegut, amb una població de ${ planet.population } desconeguda.</li>`;
-                }
-                if ( planet.population == "unknown" )
+                } else if ( planet.population == "unknown" && planet.diameter )
                 {
                     docLocation.innerHTML += `<li>${ planet.name } té un diàmetre de ${ planet.diameter } km, amb una població desconeguda.</li>`;
                 }
@@ -135,6 +162,7 @@
                         {
                             // allPlanets.innerHTML += `<li>${ planet.name }</li>`;
                         }
+                        arrPlanetas = arrPlanetas.sort( compare )
                         populationDensity( arrPlanetas, allPlanets );
                     }
                 } );
