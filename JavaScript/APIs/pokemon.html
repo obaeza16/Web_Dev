@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon API</title>
+    </head>
+
+    <body>
+        <h3>Pokemons</h3>
+        <div class="pokemons"></div>
+    </body>
+    <script>
+        // WORK WITH POKEMON API
+
+        var pokedex = document.querySelector( ".pokemons" );
+
+        fetch( "https://pokeapi.co/api/v2/pokedex/6" )
+            .then( ( res ) => res.json() )
+            .then( ( res ) =>
+            {
+                var pokemons = res.pokemon_entries; // array amb la info dels pokemons
+
+                for ( pokemon of pokemons )
+                {
+                    pokedex.innerHTML += `<li>${ pokemon.pokemon_species.name }</li>`;
+                }
+            } );
+    </script>
+
+</html>

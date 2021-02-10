@@ -5,12 +5,15 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>API first try</title>
+        <title>ASYNC testing</title>
     </head>
 
     <body>
         <h3>Planetas</h3>
         <div class="planets"></div>
+        <br />
+        <h3>Residents</h3>
+        <div class="residents"></div>
         <br>
         <h3>Sorted by Diameter</h3>
         <br />
@@ -18,8 +21,6 @@
         <br />
         <h3>All Planets</h3>
         <div class="allPlanets"></div>
-        <h3>Pokemons</h3>
-        <div class="pokemons"></div>
     </body>
 
     <script>
@@ -27,31 +28,47 @@
         var planets = document.querySelector( ".planets" );
         var sortedDoc = document.querySelector( ".sorted" );
         var allPlanets = document.querySelector( ".allPlanets" );
+        var resi = document.querySelector( ".residents" )
 
 
-        async function planetFetch( url )
+        // CORREGIDO POR OMAR
+
+
+        async function residents( url )
         {
-            fetch( url )
-                .then( ( res ) => res.json() )
-                .then( ( res ) =>
+            var planets = await fetch( url )
+            planets = await planets.json()
+
+
+            var contingut = ""
+            var persones = ""
+            // recorro els planetes
+            for ( var planet of planets.results )
+            {
+                if ( planet.residents )
                 {
-                    var resultats = res.results;
+                    for ( var resident of planet.residents )
+                    {
+                        var persona = await fetch( resident )
+                        persona = await persona.json()
+                        persones += `${ persona.name }, `
+                    }
 
-                    populationDensity( resultats, planets );
+                    contingut += `<li>${ planet.name } is home to ${ persones.slice( 0, persones.length - 2 ) }.</li>`
+                    persones = ""
+                } else
+                {
+                    contingut += `<li>${ planet.name } (no famous residents)</li>`
+                }
 
-                    // To sort by diameter
-                    resSorted = resultats.sort( compare );
+                resi.innerHTML = contingut
+            }
 
-                    populationDensity( resSorted, sortedDoc );
+        };
 
-                    // TODO:
-                    //To sort by density
-
-                } );
-        }
 
         url = "https://swapi.dev/api/planets/"
-        planetFetch( url )
+        residents( url )
 
         function compare( a, b )
         {
@@ -116,30 +133,14 @@
                     {
                         for ( const planet of arrPlanetas )
                         {
-                            allPlanets.innerHTML += `<li>${ planet.name }</li>`;
+                            // allPlanets.innerHTML += `<li>${ planet.name }</li>`;
                         }
-                        // populationDensity(arrPlanetas, allPlanets);
+                        populationDensity( arrPlanetas, allPlanets );
                     }
                 } );
         }
 
         paginaAPI( "https://swapi.dev/api/planets/", [] );
-
-        // WORK WITH POKEMON API
-
-        var pokedex = document.querySelector( ".pokemons" );
-
-        fetch( "https://pokeapi.co/api/v2/pokedex/6" )
-            .then( ( res ) => res.json() )
-            .then( ( res ) =>
-            {
-                var pokemons = res.pokemon_entries; // array amb la info dels pokemons
-
-                for ( pokemon of pokemons )
-                {
-                    pokedex.innerHTML += `<li>${ pokemon.pokemon_species.name }</li>`;
-                }
-            } );
     </script>
 
 </html>
