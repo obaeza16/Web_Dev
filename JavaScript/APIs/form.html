@@ -1,83 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form</title>
+		<style>
+			label {
+				padding: 5px;
+			}
+		</style>
+	</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Form</title>
-        <style>
-            label {
-                pad: 4px;
-            }
+	<body>
+		<label for="user">Username:</label>
+		<br />
+		<input type="text" id="who" name="who" />
+		<br />
+		<label for="text">Text:</label>
+		<br />
+		<input type="text" id="what" name="what" />
+		<br />
+		<button type="button" id="send">Send to Firebase of Omar</button>
+		<button type="button" id="see">See missages in Firebase of Omar</button>
+		<div class="mensajes"></div>
+	</body>
 
-        </style>
-    </head>
+	<script>
+		var qui = document.querySelector("#who");
+		var que = document.querySelector("#what");
 
-    <body>
-        <label for="user">Username:</label>
-        <br>
-        <input type="text" id="who" name="who">
-        <br>
-        <label for="text">Text:</label>
-        <br>
-        <input type="text" id="what" name="what">
-        <br>
-        <button type="button" id="send">Send to Firebase of Omar</button>
-        <button type="button" id="see">See missages in Firebase of
-            Omar</button>
-        <div class="mensajes"></div>
-    </body>
+		var sendIt = document.querySelector("#send");
+		var seeIt = document.querySelector("#see");
 
-    <script>
-        var qui = document.querySelector( "#who" )
-        var que = document.querySelector( "#what" )
+		var miss = document.querySelector(".mensajes");
+		const database = "https://singulars-2020-default-rtdb.firebaseio.com/";
 
-        var sendIt = document.querySelector( "#send" )
-        var seeIt = document.querySelector( "#see" )
+		sendIt.addEventListener("click", () =>
+			POST((where = "missatges.json"), (who = qui.value), (what = que.value))
+		);
 
-        var miss = document.querySelector( ".mensajes" )
-        const database = "https://singulars-2020-default-rtdb.firebaseio.com/";
+		seeIt.addEventListener("click", () =>
+			FETCH((where = "missatges.json"), (escriure = miss))
+		);
 
-        sendIt.addEventListener( "click", () => POST( where = "missatges.json", who = qui.value, what = que.value ) )
-        console.log( database + "missatges.json", qui.value, que.value, miss );
-        seeIt.addEventListener( "click", () => FETCH( where = "missatges.json", escriure = miss ) )
+		// POST TO FIREBASE
+		function POST(where, who, what) {
+			if (!who || !what)
+				return console.log("El missatge o l'usuari no és válid");
+			fetch(database + where, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					user: who,
+					message: what,
+				}),
+			}).then((res) => res.json());
+		}
 
-
-        // POST TO FIREBASE
-        function POST( where, who, what )
-        {
-            fetch( database + where, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify( {
-                    user: who,
-                    message: what,
-                } ),
-            } )
-                .then( ( res ) => res.json() )
-                .then( ( res ) => console.log( res ) );
-        }
-
-
-        // FETCH FROM FIREBASE
-        function FETCH( where, escriure )
-        {
-            fetch( database + where )
-                .then( ( res ) => res.json() )
-                .then( ( res ) =>
-                {
-                    var missatges = res
-                    escriure.innerHTML = ""
-                    for ( id in missatges )
-                    {
-                        escriure.innerHTML += `<li>${ missatges[ id ].user } és l'usuari, amb el missatge: ${ missatges[ id ].message }</li>`
-                    }
-                } )
-        }
-
-    </script>
-
+		// FETCH FROM FIREBASE
+		function FETCH(where, escriure) {
+			fetch(database + where)
+				.then((res) => res.json())
+				.then((res) => {
+					var missatges = res;
+					escriure.innerHTML = "";
+					for (id in missatges) {
+						escriure.innerHTML += `<li>${missatges[id].user} és l'usuari, amb el missatge: ${missatges[id].message}</li>`;
+					}
+				});
+		}
+	</script>
 </html>
