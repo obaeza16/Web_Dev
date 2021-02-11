@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form</title>
+		<style>
+			#wrap {
+				display: flex;
+				align-content: center;
+				flex-direction: column;
+				margin: auto;
+				width: 600px;
+			}
+			input,
+			label,
+			button {
+				margin: 3px 0px;
+				padding: 5px;
+			}
+
+			.mensajes li {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.mensajes li a {
+				text-align: right;
+				align-self: flex-end;
+				font-size: 0.8em;
+				color: brown;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<label for="user">Tienda:</label>
+			<br />
+			<input type="text" id="who" name="who" />
+			<br />
+			<label for="text">Ítem:</label>
+			<br />
+			<input type="text" id="what" name="what" />
+			<br />
+			<button type="button" id="send">Enviar a lista de la compra</button>
+			<button type="button" id="see">Ver lista de la compra</button>
+			<ul class="mensajes"></ul>
+		</div>
+	</body>
+
+	<script>
+		var qui = document.querySelector("#who");
+		var que = document.querySelector("#what");
+
+		var sendIt = document.querySelector("#send");
+		var seeIt = document.querySelector("#see");
+
+		var miss = document.querySelector(".mensajes");
+
+		var removeIt = document.querySelector(".mensajes li a");
+
+		const database =
+			"https://prueba-singulars2020-default-rtdb.europe-west1.firebasedatabase.app/";
+
+		getFromDatabase((where = "lista-compra.json"), (escriure = miss));
+
+		removeFromDatabase(
+			(where = "lista-compra/"),
+			(id = "-MTFvCcWXn3NMhM4TTCp")
+		);
+
+		// EVENTS OF BUTTONS
+		sendIt.addEventListener("click", () =>
+			sendToDatabase(
+				(where = "lista-compra.json"),
+				(who = qui.value),
+				(what = que.value)
+			)
+		);
+
+		seeIt.addEventListener("click", () =>
+			getFromDatabase((where = "lista-compra.json"), (escriure = miss))
+		);
+
+		// FUNCTIONS
+		// POST TO FIREBASE
+		function sendToDatabase(where, who, what) {
+			if (!who || !what)
+				return console.log("El missatge o l'usuari no és válid");
+			fetch(database + where, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					tienda: who,
+					ítem: what,
+				}),
+			}).then((res) => res.json());
+		}
+
+		// FETCH FROM FIREBASE
+		function getFromDatabase(where, escriure) {
+			fetch(database + where)
+				.then((res) => res.json())
+				.then((res) => {
+					var missatges = res;
+					escriure.innerHTML = "";
+					for (id in missatges) {
+						escriure.innerHTML += `<li data-id=${id}><p>Comprar en ${missatges[id].tienda} el ítem: ${missatges[id].ítem}</p><a href="">Delete Message</a></li>`;
+					}
+				});
+		}
+
+		// DELETE FROM FIREBASE
+		function removeFromDatabase(where, id) {
+			fetch(database + where + id + ".json", {
+				method: "DELETE",
+			})
+				.then((res) => res.json())
+				.then((res) => {
+					// console.log(res);
+				});
+		}
+	</script>
+</html>
