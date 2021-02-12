@@ -1,0 +1,35 @@
+body {
+	margin-top: 25px;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h1 {
+	display: flex;
+	margin: 35px auto;
+}
+#wrap {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	margin: auto;
+	width: 600px;
+}
+input,
+label,
+button {
+	margin: 5px 0px;
+	padding: 5px;
+}
+
+.mensajes li {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+}
+
+.mensajes li a {
+	text-align: right;
+	align-self: flex-end;
+	font-size: 0.8em;
+	color: brown;
+	text-decoration: none;
+}

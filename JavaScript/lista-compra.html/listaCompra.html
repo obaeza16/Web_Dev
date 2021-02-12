@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lista Compra</title>
+		<link rel="stylesheet" href="./listaCompra.css" />
+	</head>
+
+	<body>
+		<div id="wrap">
+			<h1>Lista Compra Baeza Francisoud</h1>
+			<label for="user">Tienda:</label>
+			<br />
+			<input type="text" id="who" name="who" />
+			<br />
+			<label for="text">Ítem:</label>
+			<br />
+			<input type="text" id="what" name="what" />
+			<br />
+			<button type="button" id="send">Enviar a lista de la compra</button>
+			<button type="button" id="see">Ver lista de la compra</button>
+			<button type="button" id="reset">
+				Borra la lista de la compra completa
+			</button>
+			<ul class="mensajes"></ul>
+		</div>
+	</body>
+
+	<script src="./listaCompra.js"></script>
+</html>
