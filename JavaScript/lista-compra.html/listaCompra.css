@@ -21,9 +21,15 @@ button {
 }
 
 .mensajes li {
+	margin: 5px 0px;
 	display: flex;
 	flex-direction: column;
 	max-width: 500px;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	padding: 5px;
+	border-radius: 20px;
 }
 
 .mensajes li a {
