@@ -24,6 +24,9 @@
 		max-width: 500px;
 		padding: 5px;
 	}
+	ul {
+		margin: auto;
+	}
 }
 
 /* MOBILE CSS */
