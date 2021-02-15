@@ -26,6 +26,22 @@
 			</button>
 			<ul class="mensajes"></ul>
 		</div>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<h2>Modifica el elemento seleccionado</h2>
+				<span class="close">&times;</span>
+				<label for="user">Tienda:</label>
+				<br />
+				<input type="text" id="who_edit" name="who_edit" />
+				<br />
+				<label for="text">Ítem:</label>
+				<br />
+				<input type="text" id="what_edit" name="what_edit" />
+				<br />
+				<button type="button" id="patch">Modifica la lista de la compra</button>
+			</div>
+		</div>
 	</body>
 
 	<script src="./listaCompra.js"></script>

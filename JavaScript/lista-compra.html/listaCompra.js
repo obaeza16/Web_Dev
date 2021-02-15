@@ -2,9 +2,13 @@
 var qui = document.querySelector("#who");
 var que = document.querySelector("#what");
 
+var qui_edit = document.querySelector("#who_edit");
+var que_edit = document.querySelector("#what_edit");
+
 var sendIt = document.querySelector("#send");
 var seeIt = document.querySelector("#see");
 var resetIt = document.querySelector("#reset");
+var patchIt = document.querySelector("#patch");
 
 var miss = document.querySelector(".mensajes");
 
@@ -14,11 +18,6 @@ const database =
 	"https://prueba-singulars2020-default-rtdb.europe-west1.firebasedatabase.app/";
 
 getFromDatabase((where = "lista-compra.json"), (escriure = miss));
-
-// removeFromDatabase(
-// 	(where = "lista-compra/"),
-// 	(id = "-MTFvCcWXn3NMhM4TTCp")
-// );
 
 // EVENTS OF BUTTONS
 sendIt.addEventListener("click", () =>
@@ -35,6 +34,15 @@ seeIt.addEventListener("click", () =>
 
 resetIt.addEventListener("click", () =>
 	resetDatabase((where = "lista-compra.json"), (escriure = miss))
+);
+
+patchIt.addEventListener("click", () =>
+	patchDatabase(
+		(where = "lista-compra/"),
+		(who = qui_edit.value),
+		(what = que_edit.value),
+		(id = id)
+	)
 );
 
 // FUNCTIONS
@@ -79,24 +87,12 @@ function getFromDatabase(where, escriure) {
 				sorted.sort((a, b) => a.tienda < b.tienda);
 			}
 			for (const element of sorted) {
-				escriure.innerHTML += `<li data-id='${element.id_key}'><p>Comprar en ${element.tienda} el ítem: ${element.item}</p><a class="deletes" href="">Delete Message</a></li>`;
+				escriure.innerHTML += `<li data-id='${element.id_key}'><p>Comprar en <span class="tienda">${element.tienda}</span> el ítem: <span class="item">${element.item}</span></p><a class="open" href="">Modificar elemento</a><a class="deletes" href="">Eliminar Elemento</a></li>`;
 			}
 			addListener();
 			if (escriure.innerHTML == "")
 				escriure.innerHTML += `<p>La lista de la compra está vacía</p>`;
 		});
-}
-
-// ADD LISENER
-function addListener() {
-	document.querySelectorAll(".deletes").forEach((element) =>
-		element.addEventListener("click", (event) => {
-			event.preventDefault();
-			let id = event.target.closest("li").dataset.id;
-			removeFromDatabase("lista-compra/", id);
-			event.target.closest("li").remove();
-		})
-	);
 }
 
 // DELETE FROM FIREBASE
@@ -123,7 +119,76 @@ function resetDatabase(where, escriure) {
 		});
 }
 
+// PATCH DATABASE
+function patchDatabase(where, who, what, id) {
+	fetch(database + where + id + ".json", {
+		method: "PATCH",
+		body: JSON.stringify({
+			tienda: capitalize(who),
+			item: capitalize(what),
+			temp: Date.now(),
+		}),
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			console.log(res);
+		});
+	document.querySelector(
+		`li[data-id="${id}"] span.item`
+	).innerHTML = capitalize(que_edit.value);
+
+	document.querySelector(
+		`li[data-id="${id}"] span.tienda`
+	).innerHTML = capitalize(qui_edit.value);
+}
+
+// ADD LISENER
+function addListener() {
+	document.querySelectorAll(".deletes").forEach((element) =>
+		element.addEventListener("click", (event) => {
+			event.preventDefault();
+			let id = event.target.closest("li").dataset.id;
+			removeFromDatabase("lista-compra/", id);
+			event.target.closest("li").remove();
+		})
+	);
+	document.querySelectorAll(".open").forEach((element) =>
+		element.addEventListener("click", (event) => {
+			event.preventDefault();
+			id = event.target.closest("li").dataset.id;
+
+			que_edit.value = document.querySelector(
+				`li[data-id="${id}"] span.item`
+			).innerHTML;
+			qui_edit.value = document.querySelector(
+				`li[data-id="${id}"] span.tienda`
+			).innerHTML;
+
+			modal.style.display = "block";
+		})
+	);
+}
+
 // CAPITALIZE FIRST LETTER
 function capitalize(s) {
 	return s && s[0].toUpperCase() + s.slice(1);
 }
+
+// LIGTHBOX
+// Get the modal
+var modal = document.querySelector("#myModal");
+
+// Get the <span> element that closes the modal
+var span = document.querySelector(".close");
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+	modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+};
