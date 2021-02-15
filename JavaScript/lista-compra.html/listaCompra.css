@@ -1,33 +1,69 @@
+@media only screen and (min-width: 768px) {
+	body {
+		margin-top: 25px;
+	}
+
+	h1 {
+		display: flex;
+		margin: 35px auto;
+	}
+
+	#wrap {
+		width: 600px;
+	}
+
+	input,
+	label,
+	button {
+		margin: 5px 0px;
+		padding: 5px;
+	}
+
+	.mensajes li {
+		margin: 5px 0px;
+		max-width: 500px;
+		padding: 5px;
+	}
+}
+
+/* MOBILE CSS */
 body {
-	margin-top: 25px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-h1 {
-	display: flex;
-	margin: 35px auto;
-}
+
 #wrap {
 	display: flex;
 	align-content: center;
 	flex-direction: column;
 	margin: auto;
-	width: 600px;
 }
-input,
-label,
+
+label {
+	padding: 5px 0px;
+}
+
 button {
-	margin: 5px 0px;
-	padding: 5px;
+	padding: 10px;
+	margin: 10px 0px;
+	border-radius: 8px;
+}
+
+button:first-of-type {
+	margin-top: 20px;
+}
+
+ul {
+	padding-left: 0px;
+	list-style: none;
 }
 
 .mensajes li {
-	margin: 5px 0px;
 	display: flex;
 	flex-direction: column;
-	max-width: 500px;
 	border: 2px solid rgb(253, 152, 0);
-	padding: 5px;
 	border-radius: 20px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .mensajes li a {
@@ -36,6 +72,7 @@ button {
 	font-size: 0.8em;
 	color: brown;
 	text-decoration: none;
+	padding: 5px;
 }
 
 /* LIGTHBOX */

@@ -86,12 +86,13 @@ function getFromDatabase(where, escriure) {
 				});
 				sorted.sort((a, b) => a.tienda < b.tienda);
 			}
+			// escribo todos los elementos con dos enlaces,para modificar el elemento y para eliminarlo
 			for (const element of sorted) {
 				escriure.innerHTML += `<li data-id='${element.id_key}'><p>Comprar en <span class="tienda">${element.tienda}</span> el ítem: <span class="item">${element.item}</span></p><a class="open" href="">Modificar elemento</a><a class="deletes" href="">Eliminar Elemento</a></li>`;
 			}
 			addListener();
 			if (escriure.innerHTML == "")
-				escriure.innerHTML += `<p>La lista de la compra está vacía</p>`;
+				escriure.innerHTML += `<p>La lista de la compra está vacía!</p>`;
 		});
 }
 
@@ -133,6 +134,7 @@ function patchDatabase(where, who, what, id) {
 		.then((res) => {
 			console.log(res);
 		});
+	// para poner el valor previo en buen formato en el ligthbox
 	document.querySelector(
 		`li[data-id="${id}"] span.item`
 	).innerHTML = capitalize(que_edit.value);
@@ -144,6 +146,7 @@ function patchDatabase(where, who, what, id) {
 
 // ADD LISENER
 function addListener() {
+	// agrego listeners a todos los enlaces para eliminar
 	document.querySelectorAll(".deletes").forEach((element) =>
 		element.addEventListener("click", (event) => {
 			event.preventDefault();
@@ -152,6 +155,7 @@ function addListener() {
 			event.target.closest("li").remove();
 		})
 	);
+	// agrego listener a todos los enlaces para modificar
 	document.querySelectorAll(".open").forEach((element) =>
 		element.addEventListener("click", (event) => {
 			event.preventDefault();
