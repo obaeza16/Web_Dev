@@ -84,8 +84,12 @@ function getFromDatabase(where, escriure) {
 					item: missatges[id].item,
 					id_key: id,
 				});
-				sorted.sort((a, b) => a.tienda < b.tienda);
 			}
+			sorted.sort((a, b) => {
+				if (a.tienda < b.tienda) return -1;
+				else if (a.tienda > b.tienda) return 1;
+				else return 0;
+			});
 			// escribo todos los elementos con dos enlaces,para modificar el elemento y para eliminarlo
 			for (const element of sorted) {
 				escriure.innerHTML += `<li data-id='${element.id_key}'><p>Comprar en <span class="tienda">${element.tienda}</span> el ítem: <span class="item">${element.item}</span></p><a class="open" href="">Modificar elemento</a><a class="deletes" href="">Eliminar Elemento</a></li>`;
