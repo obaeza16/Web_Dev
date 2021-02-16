@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Primer ejercicio Vue</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	</head>
+	<body>
+		<input type="text" id="nom" name="nom" placeholder="Nom" />
+		<input type="text" id="cognom" name="cognom" placeholder="Cognom" />
+		<input type="text" id="adreça" name="adreça" placeholder="Direcció" />
+		<input type="text" id="telefon" name="telefon" placeholder="Teléfon" />
+
+		<div id="app">
+			<button id="" v-on:click="pasarATarjeta" type="button" id="send">
+				Enviar a tarjeta
+			</button>
+
+			<span v-bind:title="loadedon">
+				<p>{{ v_nom }} {{v_cognom}} ({{v_telefon}})</p>
+				<p>{{v_adreça}}</p>
+			</span>
+		</div>
+	</body>
+
+	<script>
+		var inom = document.querySelector("#nom");
+		var icognom = document.querySelector("#cognom");
+		var iadreça = document.querySelector("#adreça");
+		var itelefon = document.querySelector("#telefon");
+
+		var app = new Vue({
+			el: "#app",
+			data: {
+				v_nom: "nom",
+				v_cognom: "cognom",
+				v_adreça: "adreça",
+				v_telefon: "telefon",
+				loadedon: "You loaded this page on " + new Date().toLocaleString(),
+			},
+			methods: {
+				pasarATarjeta: function () {
+					(this.v_nom = inom.value),
+						(this.v_cognom = icognom.value),
+						(this.v_adreça = iadreça.value),
+						(this.v_telefon = itelefon.value);
+				},
+			},
+		});
+	</script>
+</html>
