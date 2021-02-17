@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Lista Compra</title>
-		<link rel="stylesheet" href="./listaCompra.css" />
-	</head>
 
-	<!-- ########## -->
-	<!-- CAMBIOS HECHOS EN ESTE FILE SE DEBEN COPIAR A obaeza16.github.io -->
-	<!-- ########## -->
-	<body>
-		<div id="wrap">
-			<h1>Lista de la compra Familia Baeza Francisoud</h1>
-			<label for="user">Tienda:</label>
-			<br />
-			<input type="text" id="who" name="who" />
-			<br />
-			<label for="text">Ítem:</label>
-			<br />
-			<input type="text" id="what" name="what" />
-			<br />
-			<button type="button" id="send">Enviar a lista de la compra</button>
-			<button type="button" id="see">Ver lista de la compra</button>
-			<button type="button" id="reset">
-				Borra la lista de la compra completa
-			</button>
-			<ul class="mensajes"></ul>
-		</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista Compra</title>
+        <link rel="stylesheet" href="./listaCompra.css" />
+        <!-- <link rel="shortcut icon" href="./carrito-de-compras.svg"
+            type="image/x-icon"> -->
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="./favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="./favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="./favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="./favicon_io/site.webmanifest">
+    </head>
 
-		<div id="myModal" class="modal">
-			<div class="modal-content">
-				<h2>Modifica el elemento seleccionado</h2>
-				<span class="close">&times;</span>
-				<label for="user">Tienda:</label>
-				<br />
-				<input type="text" id="who_edit" name="who_edit" />
-				<br />
-				<label for="text">Ítem:</label>
-				<br />
-				<input type="text" id="what_edit" name="what_edit" />
-				<br />
-				<button type="button" id="patch">Modifica la lista de la compra</button>
-			</div>
-		</div>
-	</body>
+    <!-- ########## -->
+    <!-- CAMBIOS HECHOS EN ESTE FILE SE DEBEN COPIAR A obaeza16.github.io -->
+    <!-- ########## -->
 
-	<script src="./listaCompra.js"></script>
+    <body>
+        <div id="wrap">
+            <h1>Lista de la compra</h1>
+            <h1 style="margin-top: 0px;">Familia Baeza Francisoud</h1>
+            <label for="user">Tienda:</label>
+            <br />
+            <input type="text" id="who" name="who" />
+            <br />
+            <label for="text">Ítem:</label>
+            <br />
+            <input type="text" id="what" name="what" />
+            <br />
+            <button type="button" id="send">Enviar a lista de la compra</button>
+            <button type="button" id="see">Ver lista de la compra</button>
+            <button type="button" id="reset">
+                Borra la lista de la compra completa
+            </button>
+            <ul class="mensajes"></ul>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <h2>Modifica el elemento seleccionado</h2>
+                <span class="close">&times;</span>
+                <label for="user">Tienda:</label>
+                <br />
+                <input type="text" id="who_edit" name="who_edit" />
+                <br />
+                <label for="text">Ítem:</label>
+                <br />
+                <input type="text" id="what_edit" name="what_edit" />
+                <br />
+                <button type="button" id="patch">Modifica la lista de la
+                    compra</button>
+            </div>
+        </div>
+    </body>
+
+    <script src="./listaCompra.js"></script>
+
 </html>
