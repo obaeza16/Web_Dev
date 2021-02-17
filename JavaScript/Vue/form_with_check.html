@@ -6,10 +6,118 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <!-- see later: https://github.com/feross/WireSheep -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
 
     <body>
-
+        <div style="max-width: 300px; margin: auto; padding: 20px">
+            <div id="app">
+                <p v-if="errors.length">
+                    <b>Por favor, corrija el(los) siguiente(s) error(es):</b>
+                <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                </ul>
+                </p>
+                <input @change="" v-model="v_nom" type="text" id="nom"
+                    name="nom" placeholder="Nom" />
+                <input @change="checkApellido" v-model="v_cognom" type="text"
+                    id="cognom" name="cognom" placeholder="Cognom" />
+                <input @change="" v-model="v_adreça" type="text" id="adreça"
+                    name="adreça" placeholder="Direcció" />
+                <input @change="" v-model="v_telefon" type="number" min="0"
+                    id="telefon" name="telefon" placeholder="Teléfon" />
+                <input @change="checkEmail" v-model="v_email" type="text"
+                    id="email" name="email" placeholder="Email" />
+                <button id="tarj" v-on:click="pasarATarjeta" type="button">
+                    Enviar a tarjeta
+                </button>
+                <button id="cons" v-on:click="pasarAConsole" type="button">
+                    Enviar a Consola
+                </button>
+                <span v-bind:title="loadedon">
+                    <p>{{ v_nom }} {{v_cognom}} </p>
+                    <p>({{v_telefon}}) {{v_email}}</p>
+                    <p>{{v_adreça}}</p>
+                </span>
+            </div>
+        </div>
     </body>
+
+    <!-- TODO: definir funciones para chequear nombre, apellido, telefono -->
+
+    <script>
+        var app = new Vue( {
+            el: "#app",
+            data: {
+                errors: [],
+                v_nom: "",
+                v_cognom: "",
+                v_adreça: "",
+                v_telefon: "",
+                v_email: "",
+                loadedon: "You loaded this page on " + new Date().toLocaleString(),
+            },
+            methods: {
+                checkForm: function ( e )
+                {
+                    this.errors = [];
+
+                    // if ( !this.name )
+                    // {
+                    //     this.errors.push( "El nombre es obligatorio." );
+                    // }
+                    if ( !this.v_email )
+                    {
+                        this.errors.push( 'El correo electrónico es obligatorio.' );
+                    } else if ( !this.checkEmail( this.v_email ) )
+                    {
+                        this.errors.push( 'El correo electrónico debe ser válido.' );
+                    }
+
+                    if ( !this.errors.length )
+                    {
+                        return true;
+                    }
+
+                    e.preventDefault();
+                },
+                pasarATarjeta: function ()
+                {
+                    var inom = document.querySelector( "#nom" );
+                    var icognom = document.querySelector( "#cognom" );
+                    var iadreça = document.querySelector( "#adreça" );
+                    var itelefon = document.querySelector( "#telefon" );
+
+                    ( this.v_nom = inom.value ),
+                        ( this.v_cognom = icognom.value ),
+                        ( this.v_adreça = iadreça.value ),
+                        ( this.v_telefon = itelefon.value );
+                },
+                pasarAConsole: function ()
+                {
+                    console.log( this.v_nom, this.v_cognom, this.v_adreça, this.v_telefon, this.v_email );
+                },
+                checkApellido: function ( v_cognom )
+                {
+                    var str = v_cognom;
+                    var res = str.split( " " );
+                    if ( res.length < 2 )
+                    {
+                        return false;
+                    } else
+                    {
+                        return;
+                    }
+                },
+                checkEmail: function ( v_email )
+                {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    console.log( re.test( v_email ) );
+                    return re.test( v_email );
+                }
+            },
+        } );
+    </script>
 
 </html>
