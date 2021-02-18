@@ -19,6 +19,9 @@
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 					Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 			}
+			.away {
+				padding: 35px 0px;
+			}
 		</style>
 	</head>
 	<body>
@@ -45,7 +48,9 @@
 				voluptatum nam soluta maxime quos facere.
 			</p>
 
-			<p v-bind:class="{negreta:isNegreta,cursiva:isCursiva,roboto:isRoboto}">
+			<p
+				v-bind:class="{negreta:isNegreta,cursiva:isCursiva,roboto:isRoboto,away:isAway}"
+			>
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, in
 				eveniet dolores consectetur officiis doloribus libero possimus at rem
 				impedit fugiat eaque velit unde laudantium tenetur nihil reiciendis,
@@ -58,6 +63,7 @@
 			<button @click="toggleNegreta">Negreta</button>
 			<button @click="toggleCursiva">Cursiva</button>
 			<button @click="toggleRoboto">Roboto</button>
+			<button @click="toggleAway">Send away</button>
 		</div>
 
 		<script>
@@ -69,6 +75,7 @@
 					isNegreta: false,
 					isCursiva: false,
 					isRoboto: false,
+					isAway: false,
 				},
 				methods: {
 					toggleNegreta: function () {
@@ -79,6 +86,9 @@
 					},
 					toggleRoboto: function () {
 						this.isRoboto = !this.isRoboto;
+					},
+					toggleAway: function () {
+						this.isAway = !this.isAway;
 					},
 				},
 			});
