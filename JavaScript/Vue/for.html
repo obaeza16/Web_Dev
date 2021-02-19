@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>For in Vue</title>
+
+		<style>
+			.list_vue {
+				width: 75%;
+				margin: auto;
+				padding: 40px;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			}
+
+			.segundo {
+				padding-top: 20px;
+			}
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	</head>
+	<body>
+		<div class="list_vue">
+			<li v-for="item of llistaGuai">
+				Comprar en {{item.tienda}} el item: {{item.producte}}
+			</li>
+
+			<div class="segundo">
+				<li v-for="item of listaXupi" v-bind:style="item.style">
+					Suck my {{item.element}} in {{item.color}}
+				</li>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		var cosa = new Vue({
+			el: ".list_vue",
+			data: {
+				llistaGuai: [
+					{ tienda: "mercadona", producte: "aceite" },
+					{ tienda: "lidl", producte: "arroz" },
+					{ tienda: "puta", producte: "irene montero" },
+				],
+				listaXupi: [
+					{
+						element: "cucumber",
+						style: { color: "green", fontSize: "0.8em" },
+					},
+					{
+						element: "cucumber",
+						style: { color: "red", fontSize: "1.2em" },
+					},
+					{
+						element: "cucumber",
+						style: { color: "blue", fontSize: "1.5em" },
+					},
+					{
+						element: "cucumber",
+						style: { color: "brown", fontSize: "2em" },
+					},
+					{
+						element: "cucumber",
+						style: { color: "yellow", fontSize: "2.4em" },
+					},
+				],
+			},
+		});
+	</script>
+</html>
