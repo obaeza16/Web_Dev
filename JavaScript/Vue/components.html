@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Components VUE</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<hello-world></hello-world>
+			<helloworld2
+				text="amazing, this text is done by an attribute(named props)"
+			></helloworld2>
+
+			<list-element
+				v-for="el of llista"
+				v-bind:key="el.id"
+				v-bind:user="el.user"
+				v-bind:text="el.text"
+			></list-element>
+		</div>
+	</body>
+
+	<script>
+		Vue.component("hello-world", {
+			template: "<h3>{{hello}}</h3>",
+			data: function () {
+				return { hello: "Hello World" };
+			},
+		});
+
+		Vue.component("helloworld2", {
+			props: ["text"],
+			template: "<div><h3>{{hello}}</h3><p>{{text}}</p></div>",
+			data: function () {
+				return { hello: "Hello World" };
+			},
+		});
+
+		Vue.component("list-element", {
+			props: ["id", "user", "text"],
+			template: "<div>- {{user}} says: {{text}}</div>",
+			data: function () {
+				return { hello: "Hello World" };
+			},
+		});
+
+		app = new Vue({
+			el: "#app",
+			data: {
+				hello: "Hello World",
+				llista: [
+					{ id: 0, user: "omar", text: "he comido papas fritas hoy" },
+					{ id: 1, user: "manel", text: "he comido pulpo frito hoy" },
+					{ id: 2, user: "sergi", text: "he comido pollas fritas hoy" },
+				],
+			},
+		});
+	</script>
+</html>
