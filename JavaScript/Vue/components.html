@@ -21,6 +21,13 @@
 				v-bind:user="el.user"
 				v-bind:text="el.text"
 			></list-element>
+
+			<articles
+				v-for="el of article"
+				v-bind:key="el.num"
+				v-bind:title="el.title"
+				v-bind:text="el.text"
+			></articles>
 		</div>
 	</body>
 
@@ -30,6 +37,12 @@
 			data: function () {
 				return { hello: "Hello World" };
 			},
+		});
+
+		Vue.component("articles", {
+			props: ["num", "title", "text"],
+			template: `<div><h1>{{title}}</h1>
+		          <p>{{text}}</p></div>`,
 		});
 
 		Vue.component("helloworld2", {
@@ -56,6 +69,12 @@
 					{ id: 0, user: "omar", text: "he comido papas fritas hoy" },
 					{ id: 1, user: "manel", text: "he comido pulpo frito hoy" },
 					{ id: 2, user: "sergi", text: "he comido pollas fritas hoy" },
+				],
+				article: [
+					{ num: "n1", title: "WOW", text: "blablabla" },
+					{ num: "n2", title: "WOW", text: "blablabla" },
+					{ num: "n3", title: "WOW", text: "blablabla" },
+					{ num: "n4", title: "WOW", text: "blablabla" },
 				],
 			},
 		});
