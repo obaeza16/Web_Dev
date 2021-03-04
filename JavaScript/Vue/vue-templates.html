@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue templates</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<img src="https://placehold.it/200x150" alt="" />
+			<h3>{{title}}</h3>
+			<p>{{text}}</p>
+			<a v-bind:href="link"></a>
+		</div>
+
+		<script>
+			Vue.component("", {
+				props: { title: String, text: String, link: String, linkText: String },
+				template: " #card",
+			});
+			var app = new Vue({
+				el: "#app",
+				data: {},
+				methods: {},
+			});
+		</script>
+	</body>
+</html>
