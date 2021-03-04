@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Firebase Experiment</title>
+		<style>
+			div {
+				border: 1px solid black;
+				border-radius: 5px;
+				width: 400px;
+				margin: auto;
+				padding: 20px;
+			}
+			h3 {
+				margin-top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form">
+			<h3>Image upload</h3>
+			<input type="text" id="name" placeholder="Image name" /><br /><br />
+			<input type="file" name="" id="inputImg" /><br /><br />
+			<button>Enviar</button>
+		</div>
+		<br />
+
+		<div class="cont">
+			<h3>Image selection</h3>
+			<select name="" id="select"></select
+			><br /><br />
+			<img
+				src="https://placehold.it/300x300?text=Placeholder%20image"
+				alt=""
+				id="img"
+			/>
+		</div>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+		<!-- Add SDK for Realtime Database, Storage and Cloud Firestore-->
+		<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyDRY3lWzlhJWxRdGs8XZsnQojzVy7gT-m0",
+				authDomain: "prueba-singulars2020.firebaseapp.com",
+				databaseURL:
+					"https://prueba-singulars2020-default-rtdb.europe-west1.firebasedatabase.app",
+				projectId: "prueba-singulars2020",
+				storageBucket: "prueba-singulars2020.appspot.com",
+				messagingSenderId: "16493139000",
+				appId: "1:16493139000:web:8969dfba18245b6f87c2cd",
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+		</script>
+	</body>
+</html>
