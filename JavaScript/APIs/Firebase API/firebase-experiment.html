@@ -89,7 +89,11 @@
 					.put(file);
 
 				// guarda el nombre de la imagen en el storage
-				firebase.database().ref("img/").push({ name: nom }).then(res=>console.log();)
+				firebase
+					.database()
+					.ref("img/")
+					.push({ name: nom })
+					.then((res) => console.log());
 			}
 
 			function name(params) {}
